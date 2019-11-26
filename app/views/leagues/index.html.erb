@@ -1,0 +1,16 @@
+<div class="main-container">
+<h1>Your Leagues</h1>
+  <% @leagues.each do |league| %>
+<div class="league-card">
+  <h2><%= league.name %></h2>
+  <%= link_to ""  %>
+</div>
+<% end %>
+
+<div class="creation-card">
+  <h2>Create your League</h2>
+   <%= link_to "+", new_league_path %>
+</div>
+
+</div>
+
