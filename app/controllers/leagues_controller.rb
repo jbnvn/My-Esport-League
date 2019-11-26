@@ -16,7 +16,7 @@ class LeaguesController < ApplicationController
 
   def create
     @league = League.new(league_params)
-    @league.user = current_user
+    @league.creator = current_user
     if @league.save
       redirect_to league_path(@league)
     else
