@@ -1,0 +1,24 @@
+class Player < ApplicationRecord
+  has_many :bids
+  has_many :teams, through: :bids
+  has_many :rounds
+
+  # todo validation  uniqueness scope
+  enum role: {
+    top: 0,
+    jungle: 1,
+    mid: 2,
+    adc: 3,
+    support: 4
+  }
+  # doit rester identique au challenge#role
+
+  enum nationality: {
+    french: 0,
+    american: 1,
+    chinese: 2,
+    korean: 3,
+    german: 4,
+    swedish: 5
+  }
+end

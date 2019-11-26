@@ -1,0 +1,10 @@
+<%= @league.name %>
+<div class="creation-card">
+  <h2>Edit your League</h2>
+   <%= link_to "edit", edit_league_path, class: 'btn btn-primary' %>
+</div>
+
+  <%= link_to "Delete", @league, class: 'btn btn-primary',
+    method: :delete,
+    data: { confirm: "Are you sure?" }  %>
+
