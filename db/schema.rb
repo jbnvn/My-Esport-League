@@ -12,8 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2019_11_26_105839) do
 
+
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
 
   create_table "bids", force: :cascade do |t|
     t.integer "status"
@@ -52,6 +54,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_105839) do
     t.index ["league_id"], name: "index_participations_on_league_id"
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
+
 
   create_table "players", force: :cascade do |t|
     t.string "name"
@@ -104,6 +107,7 @@ ActiveRecord::Schema.define(version: 2019_11_26_105839) do
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
+
 
   create_table "weekly_scores", force: :cascade do |t|
     t.decimal "score"
