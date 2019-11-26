@@ -1,1 +1,31 @@
-// Specific CSS for your home-page
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 190px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin-bottom: 10px;
+}
+
+.card-category .btn.btn-dangerhome {
+  margin-top: 110px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: red;
+  color: white;
+}
+
+.card-category .btn.btn-dangerhome2 {
+  margin-top: 110px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  background-color: #fa877f;
+  color: white;
+}
