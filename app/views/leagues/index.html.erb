@@ -1,0 +1,17 @@
+<div class="main-container">
+<h1>Your Leagues</h1>
+  <% @leagues.each do |league| %>
+<div class="league-card">
+  <% if league.creator == current_user || league.participants.include?(current_user) %>
+  <h2><%= league.name %></h2>
+  <%= link_to ""  %>
+  <% end %>
+</div>
+<% end %>
+
+<div class="creation-card">
+  <h2>Create your League</h2>
+   <%= link_to "+", new_league_path %>
+</div>
+</div>
+

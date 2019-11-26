@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_25_171803) do
+ActiveRecord::Schema.define(version: 2019_11_26_105839) do
+
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+
+  create_table "bids", force: :cascade do |t|
+    t.integer "status"
+    t.decimal "points"
+    t.bigint "player_id"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_bids_on_player_id"
+    t.index ["team_id"], name: "index_bids_on_team_id"
+  end
+
+  create_table "challenges", force: :cascade do |t|
+    t.string "name"
+    t.text "description"
+    t.integer "bonus"
+    t.integer "malus"
+    t.integer "role"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "leagues", force: :cascade do |t|
     t.string "name"
@@ -32,6 +55,47 @@ ActiveRecord::Schema.define(version: 2019_11_25_171803) do
     t.index ["user_id"], name: "index_participations_on_user_id"
   end
 
+
+  create_table "players", force: :cascade do |t|
+    t.string "name"
+    t.integer "role"
+    t.integer "nationality"
+    t.decimal "minimum_bid"
+    t.string "pro_team"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "round_challenges", force: :cascade do |t|
+    t.integer "state", default: 0, null: false
+    t.bigint "round_id"
+    t.bigint "challenge_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["challenge_id"], name: "index_round_challenges_on_challenge_id"
+    t.index ["round_id"], name: "index_round_challenges_on_round_id"
+  end
+
+  create_table "rounds", force: :cascade do |t|
+    t.date "date"
+    t.decimal "kda"
+    t.bigint "player_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["player_id"], name: "index_rounds_on_player_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.decimal "global_score", precision: 12, scale: 2
+    t.bigint "user_id"
+    t.bigint "league_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["league_id"], name: "index_teams_on_league_id"
+    t.index ["user_id"], name: "index_teams_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -44,7 +108,25 @@ ActiveRecord::Schema.define(version: 2019_11_25_171803) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+
+  create_table "weekly_scores", force: :cascade do |t|
+    t.decimal "score"
+    t.date "date"
+    t.bigint "team_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["team_id"], name: "index_weekly_scores_on_team_id"
+  end
+
+  add_foreign_key "bids", "players"
+  add_foreign_key "bids", "teams"
   add_foreign_key "leagues", "users"
   add_foreign_key "participations", "leagues"
   add_foreign_key "participations", "users"
+  add_foreign_key "round_challenges", "challenges"
+  add_foreign_key "round_challenges", "rounds"
+  add_foreign_key "rounds", "players"
+  add_foreign_key "teams", "leagues"
+  add_foreign_key "teams", "users"
+  add_foreign_key "weekly_scores", "teams"
 end
