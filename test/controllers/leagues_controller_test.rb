@@ -5,5 +5,4 @@ class LeaguesControllerTest < ActionDispatch::IntegrationTest
     get leagues_index_url
     assert_response :success
   end
-
 end
