@@ -1,8 +1,9 @@
 class LeaguesController < ApplicationController
-  before_action :set_league, only: [:show]
-  
+  before_action :set_league, only: [:show, :edit, :update, :destroy]
+
   def index
     @leagues = League.all
+  end
 
   def show
   end
@@ -19,6 +20,22 @@ class LeaguesController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    if @league.update(league_params)
+      redirect_to @league
+    else
+      render 'edit'
+    end
+  end
+
+  def destroy
+    @league.destroy
+    redirect_to leagues_path
   end
 
   private
