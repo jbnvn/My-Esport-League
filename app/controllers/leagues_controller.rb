@@ -1,4 +1,9 @@
 class LeaguesController < ApplicationController
+  before_action :set_league, only: [:show]
+
+  def show
+  end
+
   def new
     @league = League.new
   end
