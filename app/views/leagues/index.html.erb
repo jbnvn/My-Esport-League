@@ -2,7 +2,7 @@
 <h1>Your Leagues</h1>
   <% @leagues.each do |league| %>
 <div class="league-card">
-  <% if league.user_id == current_user.id || league.participations == current_user.participations %>
+  <% if league.creator == current_user || league.participants.include?(current_user) %>
   <h2><%= league.name %></h2>
   <%= link_to ""  %>
   <% end %>
@@ -13,6 +13,5 @@
   <h2>Create your League</h2>
    <%= link_to "+", new_league_path %>
 </div>
-
 </div>
 
