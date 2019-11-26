@@ -3,7 +3,7 @@
   <% @leagues.each do |league| %>
 <div class="league-card">
   <% if league.creator == current_user || league.participants.include?(current_user) %>
-  <h2><%= league.name %></h2>
+  <h2><%= link_to league.name, league_path(league) %></h2>
   <%= link_to ""  %>
   <% end %>
 </div>

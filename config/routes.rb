@@ -1,9 +1,8 @@
 Rails.application.routes.draw do
-  get 'leagues/index'
   devise_for :users
-  root to: 'pages#home'
+  root to: 'leagues#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  resources :leagues do
+  resources :leagues, only: [:index, :show, :new, :create, :edit, :update] do
     resources :teams, only: [:new, :create]
   end
 
@@ -11,5 +10,5 @@ Rails.application.routes.draw do
     resources :bids, only: [:new, :create]
   end
 
-
+resources :leagues, only: [:destroy]
 end
