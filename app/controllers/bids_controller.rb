@@ -1,19 +1,19 @@
 class BidsController < ApplicationController
-  before_action :set_bid, only: [:show, :edit, :update, :destroy]
-  def show
-  end
+  before_action :set_bid, only: [:show, :destroy]
+  # def show
+  # end
 
-  def new
-  end
+  # def new
+  # end
 
   def create
   end
 
-  def edit
-  end
+  # def edit
+  # end
 
-  def update
-  end
+  # def update
+  # end
 
   def destroy
   end
