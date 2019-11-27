@@ -1,17 +1,27 @@
 <div class="main-container">
-<h1>Your Leagues</h1>
-  <% @leagues.each do |league| %>
-<div class="league-card">
-  <% if league.creator == current_user || league.participants.include?(current_user) %>
-  <h2><%= link_to league.name, league_path(league) %></h2>
-  <%= link_to ""  %>
-  <% end %>
-</div>
-<% end %>
 
-<div class="creation-card">
-  <h2>Create your League</h2>
-   <%= link_to "+", new_league_path %>
-</div>
-</div>
+  <%= link_to new_league_path do %>
+    <div class="creation-card">
+      <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/1769202/screenshots/5109430/league_of_legends.png)">
+        <h3>Create your League</h3>
+      </div>
+    </div>
+  <% end %>
+
+  <% @leagues.each do |league| %>
+
+    <%= link_to new_league_path do %> <!-- path à modifier pour load -->
+      <% if league.creator == current_user || league.participants.include?(current_user) %>
+        <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/46562/screenshots/5301836/odyssey_kayne.jpg)">
+          <div class="load">
+            <h3> Load your League </h3>
+              <div>
+                <p class="leaguename"> <%= league.name %> </p>
+              </div>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+ </div>
 
