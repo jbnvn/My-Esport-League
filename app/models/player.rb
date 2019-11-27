@@ -21,4 +21,8 @@ class Player < ApplicationRecord
     german: 4,
     swedish: 5
   }
+
+  def name
+    lol_name
+  end
 end
