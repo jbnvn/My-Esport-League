@@ -19,5 +19,24 @@
     <% end %>
 </ul>
 
+<ul>
+  <li><%= @league.creator.email %></li>
+  <% @league.participations.each do |participant| %>
+  <li>
+    <%= User.find(participant.user_id).email %>
+  </li>
+    <% end %>
+</ul>
+
+<h3>Add a friend</h3>
+<ul>
+ <% User.all.each do |user| %>
+ <li>
+   <%= link_to user.email, participations_path(league_id: @league.id, user_id: user.id), method: :post %>
+ </li>
+ <% end %>
+</ul>
+
+
 
 
