@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_26_105839) do
+ActiveRecord::Schema.define(version: 2019_11_27_123902) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -58,9 +58,20 @@ ActiveRecord::Schema.define(version: 2019_11_26_105839) do
     t.integer "role"
     t.integer "nationality"
     t.decimal "minimum_bid"
-    t.string "pro_team"
+    t.string "pro_team_name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "lol_name"
+    t.integer "lol_id"
+    t.string "country"
+    t.string "image_url"
+    t.string "role_string"
+    t.integer "pro_team_id"
+    t.string "pro_team_acronym"
+    t.string "pro_team_image_url"
+    t.string "current_videogame_name"
   end
 
   create_table "round_challenges", force: :cascade do |t|
