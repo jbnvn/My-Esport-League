@@ -1,4 +1,10 @@
-<%= simple_form_for(@league) do |f| %>
-  <%= f.input :name %>
-  <%= f.submit class: 'btn btn-primary' %>
-<% end %>
+<div class="bodydashboard">
+  <%= simple_form_for(@league) do |f| %>
+    <%= f.input :name, placeholder: "choose your league's name"%>
+
+    <div class="width-max">
+      <%= f.submit class: 'btn btn-primarycenter' %>
+    </div>
+
+  <% end %>
+</div>
