@@ -1,0 +1,45 @@
+.form-group.string.optional.league_name {
+  display: inline-flex;
+  margin-top: 20px;
+  margin-left: 10px;
+ }
+
+.form-control.string.optional{
+  width: 250px;
+  margin-left: 20px;
+  margin-top: -5px;
+}
+
+.cards-user {
+  display: grid;
+  grid-template-columns: 3fr 3fr;
+  grid-gap: 16px;
+  margin: 10px 10px 30px 10px;
+  height: 100px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  border-radius: 5px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.width-max {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.btn.btn-successcenter {
+  color: #fff;
+  background-color: #1EDD88;
+  border-color: #1EDD88;
+}
