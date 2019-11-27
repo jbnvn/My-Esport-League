@@ -1,7 +1,7 @@
 .card-categoryleague {
   background-size: cover;
   background-position: center;
-  height: 130px;
+  height: 190px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -16,11 +16,21 @@
   max-height: auto;
 }
 
-.card-categoryleague .btn.btn-dangerhome {
-  margin-top: 110px;
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  background-color: #fa4252;
-  color: white;
+h3 {
   font-weight: bold;
+}
+
+.load {
+  height: 150px;
+}
+
+.load h3 {
+  font-weight: bold;
+  padding-top: 25px;
+}
+
+p.leaguename {
+  color: gold;
+  text-align: center;
+  padding-top: 60px;
 }
