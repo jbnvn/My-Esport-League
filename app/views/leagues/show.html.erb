@@ -8,3 +8,16 @@
     method: :delete,
     data: { confirm: "Are you sure?" }  %>
 
+  <h2>Create your Team</h2>
+   <%= link_to "+", new_league_team_path(@league),  class: 'btn btn-primary' %>
+</div>
+
+<ul>
+    <% @league.teams.each do |team| %>
+    <li> <%=link_to team.name, team_path(team)%>   </li>
+
+    <% end %>
+</ul>
+
+
+
