@@ -8,8 +8,8 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= simple_form_for(new_league_path, method: :post) do |f| %>
-          <%= f.input :name, placeholder: ""%>
+        <%= simple_form_for(league) do |f| %>
+          <%= f.input :name %>
           <%= f.submit "Create", class: 'btn btn-successcenter' %>
         <% end %>
       </div>

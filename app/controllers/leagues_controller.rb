@@ -3,6 +3,7 @@ class LeaguesController < ApplicationController
 
   def index
     @leagues = League.all
+    @league = League.new
   end
 
   def show
