@@ -1,43 +1,103 @@
-<%= @league.name %>
-<div class="creation-card">
-  <h2>Edit your League</h2>
-   <%= link_to "edit", edit_league_path, class: 'btn btn-primary' %>
+<div class="bodydashboard">
+  <h2 style="text-align:center; color:#1B3444;"><%= @league.name %></h2>
+  <div class="cards-user">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+      <%= @league.creator.username %>
+    </div>
+    <% if @league.participations.count == 0 %>
+      <% 5.times do  %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+        +
+      </div>
+    <% end %>
+
+    <% elsif @league.participations.count == 1 %>
+      <% @league.participations.each do |participant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+        <%= User.find(participant.user_id).username %>
+      </div>
+      <% end %>
+      <% 4.times do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+      +
+     </div>
+    <% end %>
+
+    <% elsif @league.participations.count == 2 %>
+      <% @league.participations.each do |participant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+        <%= User.find(participant.user_id).username %>
+      </div>
+      <% end %>
+      <% 3.times do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+      ✚     </div>
+    <% end %>
+
+    <% elsif @league.participations.count == 3 %>
+      <% @league.participations.each do |participant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+        <%= User.find(participant.user_id).username %>
+      </div>
+      <% end %>
+      <% 2.times do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+      ✚     </div>
+    <% end %>
+
+    <% elsif @league.participations.count == 4 %>
+      <% @league.participations.each do |participant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+        <%= User.find(participant.user_id).username %>
+      </div>
+      <% end %>
+      <% 1.times do %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+      +
+     </div>
+    <% end %>
+
+    <% else %>
+    <% @league.participations.each do |participant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+        <%= User.find(participant.user_id).username %>
+      </div>
+      <% end %>
+      <% end %>
+    </div>
+
+
+
+  <div class="sub-container">
+    <p>Add your friends</p>
+    <%= form_tag(league_path, method: :get) do %>
+      <%= text_field_tag(:search, params[:search]) %>
+      <%= submit_tag ("Find"), class: 'btn btn-dark' %>
+    <% end %>
+
+    <% if @users.blank? %>
+      <%="" %>
+    <% else %>
+      <ul><% @users.each do |user| %>
+        <% unless user == @league.creator || @league.participants.include?(user)  %>
+          <li><%= link_to user.username, participations_path(league_id: @league.id, user_id: user.id), method: :post %> </li>
+        <% end %>
+      <% end %>
+    <% end %>
+      </ul>
+    <div class="buttons-show">
+      <% if (@league.participations.count + 1).odd? %>
+       <%= "" %>
+      <% else %>
+        <%= link_to "Start Playing!", new_league_team_path(@league),  class: 'btn btn-primary' %>
+      <% end %>
+     <%= link_to "Back", @league, class: 'btn btn-primary',
+       method: :delete,
+       data: { confirm: "Are you sure?" }  %>
+    </div>
+  </div>
 </div>
 
-  <%= link_to "Delete", @league, class: 'btn btn-primary',
-    method: :delete,
-    data: { confirm: "Are you sure?" }  %>
-
-  <h2>Create your Team</h2>
-   <%= link_to "+", new_league_team_path(@league),  class: 'btn btn-primary' %>
-</div>
-
-<ul>
-    <% @league.teams.each do |team| %>
-    <li> <%=link_to team.name, team_path(team)%>   </li>
-
-    <% end %>
-</ul>
-
-<ul>
-  <li><%= @league.creator.username %></li>
-  <% @league.participations.each do |participant| %>
-  <li>
-    <%= User.find(participant.user_id).username %>
-  </li>
-    <% end %>
-</ul>
-
-<h3>Add a friend</h3>
-<ul>
- <% User.all.each do |user| %>
-  <% unless user == @league.creator  %>
- <li>
-   <%= link_to user.username, participations_path(league_id: @league.id, user_id: user.id), method: :post %>
- </li>
-   <% end %>
- <% end %>
-</ul>
 
 
 
