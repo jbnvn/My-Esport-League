@@ -1,4 +1,7 @@
-<%= render 'shared/dashboard_tabs' %>
+<div>
+  <%= render 'shared/dashboard_tabs' %>
+</div>
+
 
 
 <div>
@@ -9,8 +12,23 @@
   <%= image_tag "buttonplayer", id:"button4"%>
   <%= image_tag "buttonplayer", id:"button5"%>
   <%= image_tag "buttonplayer", id:"button6"%>
-
 </div>
 
+<div class="full-width">
+  <div class="budget">
+    <div id="rest">
+      <h4> Rest of budget </h4>
+      <p> 300 000 PI </p> <!-- à animer -->
+    </div>
 
+    <div>
+      <%= link_to "Done", "#", class: "btn btn-success-budget" %>
+    </div>
+
+    <div id="ongoing">
+      <h4> Round bet </h4>
+      <p> 40 000 PI </p>
+    </div>
+  </div>
+</div>
 
