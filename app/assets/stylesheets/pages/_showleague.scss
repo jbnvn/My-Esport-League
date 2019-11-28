@@ -15,7 +15,6 @@
   grid-template-columns: 3fr 3fr;
   grid-gap: 16px;
   margin: 10px 10px 30px 10px;
-  height: 100px;
 }
 
 .card-category {
@@ -25,7 +24,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color:#f0e6d2 ;
   font-size: 20px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
@@ -42,4 +41,45 @@
   color: #fff;
   background-color: #1EDD88;
   border-color: #1EDD88;
+}
+
+.sub-container {
+  text-align: center;
+}
+
+.sub-container p {
+  margin-top: -20px;
+  margin-bottom: 0px;
+  color:#1B3444;
+}
+
+.btn.btn-primary {
+  background-color:#23262D;
+  margin: 3px auto;
+  color:#f0e6d2;
+  border: 3px solid rgba(192,252,253,.7);
+}
+
+.buttons-show {
+  display:flex;
+  flex-direction: row-reverse;
+}
+
+form {
+  margin-bottom:4px;
+}
+
+.btn.btn-dark {
+  padding: 2px 5px;
+  margin-bottom: 4px;
+  color:#f0e6d2;
+  border: 2px solid rgba(192,252,253,.7);
+  background-color:#23262D;
+}
+
+.sub-container ul {
+  list-style-type: none;
+  margin-top: -5px;
+  margin-bottom: 6px;
+  padding: 0px;
 }
