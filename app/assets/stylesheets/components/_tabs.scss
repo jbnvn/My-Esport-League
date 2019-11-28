@@ -1,0 +1,26 @@
+
+.tabs-underlined {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+
+.tabs-underlined {
+  margin: 0;
+}
+
+.tabs-underlined .tabs-underlined {
+  color: black;
+  padding: 4px 8px 4px 8px;
+  margin: 1px 16px;
+  opacity: .4;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom: 4px solid transparent;
+
+}
+
+.tabs-underlined .tabs-underlined.active {
+  opacity: 1;
+  border-bottom: 3px solid #555555;
+}

@@ -19,5 +19,26 @@
     <% end %>
 </ul>
 
+<ul>
+  <li><%= @league.creator.username %></li>
+  <% @league.participations.each do |participant| %>
+  <li>
+    <%= User.find(participant.user_id).username %>
+  </li>
+    <% end %>
+</ul>
+
+<h3>Add a friend</h3>
+<ul>
+ <% User.all.each do |user| %>
+  <% unless user == @league.creator  %>
+ <li>
+   <%= link_to user.username, participations_path(league_id: @league.id, user_id: user.id), method: :post %>
+ </li>
+   <% end %>
+ <% end %>
+</ul>
+
+
 
 

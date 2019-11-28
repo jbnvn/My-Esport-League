@@ -1,5 +1,5 @@
 class TeamsController < ApplicationController
-  before_action :set_league, only: [:create, :new]
+  before_action :set_league, only: [:create, :new, :destroy]
   def show
     @team = Team.find(params[:id])
 #Construire la page pour un role
@@ -22,6 +22,11 @@ class TeamsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @team.destroy
+    redirect_to leagues_path
   end
 
   private
