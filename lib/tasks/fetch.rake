@@ -15,7 +15,8 @@ namespace :fetch do
 
     # CALL API
     # TODO store in dev
-    token = 'xb1ElQtaYJXzFl91fvLgZws930XNBVVQ2IcOyZrAzaj052zREeM'
+    token = ENV['PandaScoreToken']
+    # PandaScoreToken = 'xb1ElQtaYJXzFl91fvLgZws930XNBVVQ2IcOyZrAzaj052zREeM'
     limit = 10
     min_page = 1
     max_page = 1 # 50
