@@ -20,10 +20,10 @@
 </ul>
 
 <ul>
-  <li><%= @league.creator.email %></li>
+  <li><%= @league.creator.username %></li>
   <% @league.participations.each do |participant| %>
   <li>
-    <%= User.find(participant.user_id).email %>
+    <%= User.find(participant.user_id).username %>
   </li>
     <% end %>
 </ul>
@@ -31,9 +31,11 @@
 <h3>Add a friend</h3>
 <ul>
  <% User.all.each do |user| %>
+  <% unless user == @league.creator  %>
  <li>
-   <%= link_to user.email, participations_path(league_id: @league.id, user_id: user.id), method: :post %>
+   <%= link_to user.username, participations_path(league_id: @league.id, user_id: user.id), method: :post %>
  </li>
+   <% end %>
  <% end %>
 </ul>
 
