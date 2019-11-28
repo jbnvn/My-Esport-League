@@ -7,44 +7,44 @@
 
 <div class="card-formplayer">
   <%= simple_form_for [@team, @bid] do |f| %>
-    <%= f.association :player, collection: Player.top, as: :check_boxes, input_html: { class: 'd-nonetmp'}, label_method: lambda{ |player| render 'player_label', player:player } %>
+    <%= f.association :player, collection: Player.top, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group', id: 'top-players'}, label_method: lambda{ |player| render 'player_label', player:player } %>
     <div class="form-group decimal optional top_bid_points">
       <label class="decimal optional" for="top_bid_points">Top Points</label>
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[top_points]" id="top_bid_points">
     </div>
 
-    <%= f.association :player, collection: Player.jungle, as: :check_boxes, input_html: { class: 'd-nonetmp'}, label_method: lambda{ |player| render 'player_label', player:player } %>
+    <%= f.association :player, collection: Player.jungle, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group', id: 'jungle-players'}, label_method: lambda{ |player| render 'player_label', player:player } %>
 
     <div class="form-group decimal optional jungle_bid_points">
       <label class="decimal optional" for="jungle_bid_points">Jungle Points</label>
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[jungle_points]" id="jungle_bid_points">
     </div>
     <%#= f.submit %>
-    <%= f.association :player, collection: Player.mid, as: :check_boxes, input_html: { class: 'd-nonetmp'}, label_method: lambda{ |player| render 'player_label', player:player } %>
+    <%= f.association :player, collection: Player.mid, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group', id: 'mid-players'}, label_method: lambda{ |player| render 'player_label', player:player } %>
 
     <div class="form-group decimal optional mid_bid_points">
       <label class="decimal optional" for="mid_bid_points">Mid Points</label>
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[mid_points]" id="mid_bid_points">
     </div>
 
-    <%= f.association :player, collection: Player.adc, as: :check_boxes, input_html: { class: 'd-nonetmp'}, label_method: lambda{ |player| render 'player_label', player:player } %>
+    <%= f.association :player, collection: Player.adc, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group', id: 'adc-players'}, label_method: lambda{ |player| render 'player_label', player:player } %>
 
     <div class="form-group decimal optional adc_bid_points">
       <label class="decimal optional" for="adc_bid_points">Adc Points</label>
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[adc_points]" id="adc_bid_points">
     </div>
 
-    <%= f.association :player, collection: Player.support, as: :check_boxes, input_html: { class: 'd-nonetmp'}, label_method: lambda{ |player| render 'player_label', player:player } %>
+    <%= f.association :player, collection: Player.support, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group', id: 'support-players'}, label_method: lambda{ |player| render 'player_label', player:player } %>
 
     <div class="form-group decimal optional support_bid_points">
       <label class="decimal optional" for="support_bid_points">Support Points</label>
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[support_points]" id="support_bid_points">
     </div>
 
-    <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-nonetmp'}, label_method: lambda{ |player| render 'player_label', player:player } %>
+    <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group', id: 'all-players'}, label_method: lambda{ |player| render 'player_label', player:player } %>
 
     <div class="form-group decimal optional all_bid_points">
-      <label class="decimal optional" for="all_bid_points">Support Points</label>
+      <label class="decimal optional" for="all_bid_points">Sub Points</label>
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points">
     </div>
   <% end %>
