@@ -16,11 +16,9 @@ namespace :fetch do
     # CALL API
     # TODO store in dev
     token = 'xb1ElQtaYJXzFl91fvLgZws930XNBVVQ2IcOyZrAzaj052zREeM'
-<<<<<<< HEAD
+
     limit = 100 #100
-=======
-    limit = 10
->>>>>>> cd3e5bf357fc260c57d4e009a28537d773c02d28
+
     min_page = 1
     max_page = 1 # 50
     # max_page = 50 # 50
