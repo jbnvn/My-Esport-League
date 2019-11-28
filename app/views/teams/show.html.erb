@@ -26,12 +26,12 @@
 </div>
 
 <div class="card-validate">
-<input type="submit" value="Create Bid" form='new_bid'>
+<input type="submit" value="Create Bid" form='new_bid' disabled>
 </div>
 
 <div class="card-formplayer">
   <%= simple_form_for [@team, @bid] do |f| %>
-    <%= f.association :player, collection: Player.top, as: :check_boxes, input_html: { class: 'd-nonetmp'},
+    <%= f.association :player, collection: Player.top, as: :check_boxes, input_html: { class: 'd-none'},
     wrapper_html: { class: 'player-group d-none' , id: 'top-players'},
     label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos'>
@@ -61,13 +61,13 @@
           <input class="form-control numeric decimal optional" type="number" step="any" name="bid[top_points]" id="top_bid_points">
         </div>
 
-        <button type="button" data-dismiss="modal">Create BID</button>
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
 </div>
 
-    <%= f.association :player, collection: Player.jungle, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group d-none', id: 'jungle-players'},
+    <%= f.association :player, collection: Player.jungle, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'jungle-players'},
     label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos'>
     <h1>#{player.name}<p></p>
@@ -96,13 +96,13 @@
           <input class="form-control numeric decimal optional" type="number" step="any" name="bid[jungle_points]" id="jungle_bid_points">
         </div>
 
-        <button type="button" data-dismiss="modal">Create BID</button>
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
 </div>
     <%#= f.submit %>
-    <%= f.association :player, collection: Player.mid, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group d-none', id: 'mid-players'},
+    <%= f.association :player, collection: Player.mid, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'mid-players'},
        label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos'>
     <h1>#{player.name}<p></p>
@@ -132,13 +132,13 @@
     </div>
 
 
-        <button type="button" data-dismiss="modal">Create BID</button>
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
 </div>
 
-    <%= f.association :player, collection: Player.adc, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group d-none', id: 'adc-players'},
+    <%= f.association :player, collection: Player.adc, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'adc-players'},
      label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos'>
     <h1>#{player.name}<p></p>
@@ -167,13 +167,13 @@
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[adc_points]" id="adc_bid_points">
     </div>
 
-        <button type="button" data-dismiss="modal">Create BID</button>
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
 </div>
 
-    <%= f.association :player, collection: Player.support, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group d-none', id: 'support-players'},
+    <%= f.association :player, collection: Player.support, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'support-players'},
     label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos'>
     <h1>#{player.name}<p></p>
@@ -202,13 +202,13 @@
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[support_points]" id="support_bid_points">
     </div>
 
-        <button type="button" data-dismiss="modal">Create BID</button>
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
 </div>
 
-    <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-nonetmp'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
+    <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
      label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos'>
     <h1>#{player.name}<p></p>
@@ -237,7 +237,7 @@
       <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points">
     </div>
 
-        <button type="button" data-dismiss="modal">Create BID</button>
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
