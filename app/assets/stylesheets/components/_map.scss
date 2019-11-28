@@ -5,4 +5,54 @@
   height: 322px;
   justify-content: center;
   align-items: center;
+  display: flex;
+  position: relative;
   }
+
+.button1 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 7.5em;
+  right: 18em;
+}
+
+.button2 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 11em;
+  right: 15em;
+}
+
+.button3 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 14em;
+  right: 10em;
+}
+
+.button4 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 16.5em;
+  right: 6em;
+}
+
+.button5 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 20em;
+  right: 2em;
+}
+
+.button6 {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  top: 21.5em;
+  right: 20em;
+}
