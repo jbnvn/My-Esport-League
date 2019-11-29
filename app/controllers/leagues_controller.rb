@@ -7,8 +7,9 @@ class LeaguesController < ApplicationController
   end
 
   def show
+    @new_team = Team.new
     if params[:search].blank?
-       "Empty field!"
+      "Empty field!"
     else
       @parameter = params[:search]
       @users = User.all.where("username LIKE :search", search: "%#{@parameter}%")
