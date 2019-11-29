@@ -11,11 +11,20 @@ const hideAllCheckBoxes = (category) => {
     })
   }
 
+const hideYourPlayers = () => {
+  const inputs = document.getElementById("show-players").classList.add("d-none");
+}
+
+const hideIndexPlayers = () => {
+  const inputs = document.querySelector(".card-formplayer").add("d-none")
+}
+
 
 const initFilterPlayers = () => {
   document.querySelectorAll('.player-input-btns').forEach((btn) => {
     btn.addEventListener("click", (event) => {
       hideAllPlayersInputs();
+      hideYourPlayers();
       const targetSelector = `#${btn.id}-players`
       document.querySelector(targetSelector).classList.remove("d-none");
     });
@@ -35,5 +44,36 @@ const checkPlayerBoxe = (category) => {
 
 
 
+const initShowPlayers = () => {
+  document.querySelectorAll('.button-to-click').forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      hideAllPlayersInputs();
+      updateBids();
+      document.getElementById("show-players").classList.remove("d-none");
+    });
+  })
+}
+
+const updateBids = () => {
+  const bids = document.querySelectorAll('.bid-points')
+  bids.forEach((bid) => {
+    const position = bid.dataset.position;
+    const listElement = document.getElementById(`${position}-bid`);
+    listElement.innerText = bid.value;
+  })
+  // retrieve point list
+  // update each position for each point
+}
+
 export { checkPlayerBoxe };
 export { initFilterPlayers };
+export { initShowPlayers };
+
+
+
+
+
+
+
+
+
