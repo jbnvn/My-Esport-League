@@ -6,6 +6,9 @@ import { checkPlayerBoxe } from '../components/filter';
 import {initInputValidation} from '../components/key';
 import {validateForm2} from '../components/key';
 
+import { initShowPlayers } from '../components/filter';
+initShowPlayers();
+
 document.addEventListener('DOMContentLoaded', event => {
 
   document.validateForm2 = validateForm2;
