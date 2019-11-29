@@ -20,12 +20,56 @@
     </div>
 
     <div>
-      <input type="submit" value="Create Bid" form='new_bid' disabled>
+      <input type="submit" value="Create Bid" form='new_bid' >
     </div>
 
     <div id="ongoing">
       <h4> Round bet </h4>
       <p> 40 000 PI </p>
+    </div>
+  </div>
+</div>
+
+<div id="show-players">
+  <div class="card-product1">
+    <div class="card-product-infos">
+      <h2>Top</h2>
+      <p id="top-bid"></p>
+    </div>
+  </div>
+
+  <div class="card-product1">
+    <div class="card-product-infos">
+      <h2>Jungle</h2>
+      <p id="jungle-bid"></p>
+    </div>
+  </div>
+
+  <div class="card-product1">
+    <div class="card-product-infos">
+      <h2>Mid</h2>
+      <p id="mid-bid"></p>
+    </div>
+  </div>
+
+  <div class="card-product1">
+    <div class="card-product-infos">
+      <h2>Adc</h2>
+      <p id="adc-bid"></p>
+    </div>
+  </div>
+
+  <div class="card-product1">
+    <div class="card-product-infos">
+      <h2>Support</h2>
+      <p id="support-bid"></p>
+    </div>
+  </div>
+
+  <div class="card-product1">
+    <div class="card-product-infos">
+      <h2>Sub</h2>
+      <p id="sub-bid"></p>
     </div>
   </div>
 </div>
@@ -65,9 +109,9 @@
       <div class="modal-footer">
          <div class="form-group decimal optional all_bid_points">
       <label class="decimal optional" for="all_bid_points">Sub Points</label>
-      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points">
+      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
     </div>
-        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+        <button type="button" class="button-to-click" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
       </div>
     </div>
   </div>
