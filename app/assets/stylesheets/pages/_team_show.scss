@@ -4,3 +4,34 @@
     display: inline-block;
   }
 }
+
+.list-of-players legend {
+  display: none;
+}
+
+.form-check {
+  padding: 0px;
+  margin: 3px 0px;
+}
+
+.bid-button {
+  padding: 2px 5px;
+  margin-bottom: 18px;
+  color:#f0e6d2;
+  border: 2px solid rgba(192,252,253,.7);
+  background-color:#23262D;
+}
+
+.list-of-players .card-product {
+  height: 52px;
+}
+
+.card-product .card-product-infos {
+  padding: 12px;
+  display: flex;
+  margin-bottom: -7px;
+}
+
+.card-product .card-product-infos h3 {
+  font-size: 21px;
+}

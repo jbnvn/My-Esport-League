@@ -9,7 +9,7 @@ namespace :pandascore do
 
     # PARAMS
     token = ENV['PandaScoreToken']
-    limit = 5 #100 per page
+    limit = 20 #100 per page
 
     min_page = 1
     max_page = 1 # 50
