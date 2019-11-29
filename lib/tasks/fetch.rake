@@ -6,9 +6,11 @@ namespace :pandascore do
   task fetch_players: :environment do
     puts "checking token..."
 
+
     # PARAMS
     token = ENV['PandaScoreToken']
     limit = 5 #100 per page
+
     min_page = 1
     max_page = 1 # 50
     # max_page = 50 # 50

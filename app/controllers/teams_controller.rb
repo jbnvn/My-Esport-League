@@ -1,6 +1,12 @@
 class TeamsController < ApplicationController
   before_action :set_league, only: [:create, :new, :destroy]
   def show
+    @team = Team.find(params[:id])
+#Construire la page pour un role
+#Button validate formulaire on peut lier le submit et son formulaire avec l id "for"
+#Creer un formulaire de bids qui va taper create de bids avec deux inputs l'id du player et son prix
+  @bid = Bid.new
+
   end
 
   def new

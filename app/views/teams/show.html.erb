@@ -4,13 +4,262 @@
 
 <div>
   <%= image_tag "lolmap", class:"map" %>
-  <%= image_tag "buttonplayer", id:"button1"%>
-  <%= image_tag "buttonplayer", id:"button2"%>
-  <%= image_tag "buttonplayer", id:"button3"%>
-  <%= image_tag "buttonplayer", id:"button4"%>
-  <%= image_tag "buttonplayer", id:"button5"%>
-  <%= image_tag "buttonplayer", id:"button6"%>
+  <%= image_tag "buttonplayer", class: 'player-input-btns', id:"top"%>
+  <%= image_tag "buttonplayer", class: 'player-input-btns', id:"jungle"%>
+  <%= image_tag "buttonplayer", class: 'player-input-btns', id:"mid"%>
+  <%= image_tag "buttonplayer", class: 'player-input-btns', id:"adc"%>
+  <%= image_tag "buttonplayer", class: 'player-input-btns', id:"support"%>
+  <%= image_tag "buttonplayer", class: 'player-input-btns', id:"all"%>
+
 </div>
+<div class="full-width">
+  <div class="budget">
+    <div id="rest">
+      <h4> Rest of budget </h4>
+      <p> 300 000 PI </p> <!-- à animer -->
+    </div>
+
+    <div>
+      <input type="submit" value="Create Bid" form='new_bid' disabled>
+    </div>
+
+    <div id="ongoing">
+      <h4> Round bet </h4>
+      <p> 40 000 PI </p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= render 'shared/modal_player_mercato' %>
+</div>
+
+
+<div class="card-formplayer">
+  <%= simple_form_for [@team, @bid] do |f| %>
+    <%= f.association :player, collection: Player.top, as: :check_boxes, input_html: { class: 'd-none'},
+    wrapper_html: { class: 'player-group d-none' , id: 'top-players'},
+    label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+  <div class='card-product-infos'>
+    <h1>#{player.name}<p></p>
+    <p>Minimum Bet</p>
+    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalTopPlayers'>
+    </button>
+  </h1></div>
+</div>
+</label>".html_safe } %>
+
+    <div class="modal fade" id="modalTopPlayers" tabindex="-1" role="dialog" aria-labelledby="modalTopPlayers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <div class="form-group decimal optional top_bid_points">
+          <label class="decimal optional" for="top_bid_points">Top Points</label>
+          <input class="form-control numeric decimal optional" type="number" step="any" name="bid[top_points]" id="top_bid_points">
+        </div>
+
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <%= f.association :player, collection: Player.jungle, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'jungle-players'},
+    label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+  <div class='card-product-infos'>
+    <h1>#{player.name}<p></p>
+    <p>Minimum Bet</p>
+    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalJunglePlayers'>
+    </button>
+  </h1></div>
+</div>
+</label>".html_safe } %>
+
+    <div class="modal fade" id="modalJunglePlayers" tabindex="-1" role="dialog" aria-labelledby="modalJunglePlayers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <div class="form-group decimal optional jungle_bid_points">
+          <label class="decimal optional" for="jungle_bid_points">Jungle Points</label>
+          <input class="form-control numeric decimal optional" type="number" step="any" name="bid[jungle_points]" id="jungle_bid_points">
+        </div>
+
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <%#= f.submit %>
+    <%= f.association :player, collection: Player.mid, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'mid-players'},
+       label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+  <div class='card-product-infos'>
+    <h1>#{player.name}<p></p>
+    <p>Minimum Bet</p>
+    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalMidPlayers'>
+    </button>
+  </h1></div>
+
+</div>
+</label>".html_safe } %>
+
+    <div class="modal fade" id="modalMidPlayers" tabindex="-1" role="dialog" aria-labelledby="modalMidPlayers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <div class="form-group decimal optional mid_bid_points">
+      <label class="decimal optional" for="mid_bid_points">Mid Points</label>
+      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[mid_points]" id="mid_bid_points">
+    </div>
+
+
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <%= f.association :player, collection: Player.adc, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'adc-players'},
+     label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+  <div class='card-product-infos'>
+    <h1>#{player.name}<p></p>
+    <p>Minimum Bet</p>
+    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAdcPlayers'>
+    </button>
+  </h1></div>
+</div>
+</label>".html_safe } %>
+
+    <div class="modal fade" id="modalAdcPlayers" tabindex="-1" role="dialog" aria-labelledby="modalAdcPlayers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+         <div class="form-group decimal optional adc_bid_points">
+      <label class="decimal optional" for="adc_bid_points">Adc Points</label>
+      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[adc_points]" id="adc_bid_points">
+    </div>
+
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <%= f.association :player, collection: Player.support, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'support-players'},
+    label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+  <div class='card-product-infos'>
+    <h1>#{player.name}<p></p>
+    <p>Minimum Bet</p>
+    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalSupportPlayers'>
+    </button>
+  </h1></div>
+</div>
+</label>".html_safe } %>
+
+    <div class="modal fade" id="modalSupportPlayers" tabindex="-1" role="dialog" aria-labelledby="modalSupportPlayers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+         <div class="form-group decimal optional support_bid_points">
+      <label class="decimal optional" for="support_bid_points">Support Points</label>
+      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[support_points]" id="support_bid_points">
+    </div>
+
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+    <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
+     label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+  <div class='card-product-infos'>
+    <h1>#{player.name}<p></p>
+    <p>Minimum Bet</p>
+    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAllPlayers'>
+    </button>
+  </h1></div>
+</div>
+</label>".html_safe } %>
+
+    <div class="modal fade" id="modalAllPlayers" tabindex="-1" role="dialog" aria-labelledby="modalAllPlayers" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+         <div class="form-group decimal optional all_bid_points">
+      <label class="decimal optional" for="all_bid_points">Sub Points</label>
+      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points">
+    </div>
+
+        <button type="button" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+  <% end %>
+
+</div>
+
+
+
+
+
+
 
 <div class="full-width">
   <div class="budget">
