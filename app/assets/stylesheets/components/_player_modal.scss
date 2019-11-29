@@ -1,0 +1,126 @@
+.card-player {
+  overflow: hidden;
+  // background: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  color: black;
+  // width: 100%;
+  opacity: 1;
+  transition: all .3s ease;
+  margin: 10px 0px 10px 0px;
+}
+
+// .card-dog-master :hover {
+//   transform: translateY(-2px);
+// }
+
+// .card-player > img {
+//   height: 200px;
+//   width: 100%;
+//   object-fit: cover;
+// }
+
+
+.card-player h2 {
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-player p {
+  font-size: 14px;
+  opacity: .7;
+  margin: 0;
+}
+
+.card-player .card-player-infos {
+  // padding: 16px;
+  // width: 100%;
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  position: relative;
+  margin: 15px 0px 15px 0px;
+}
+
+.card-player-infos .card-player-team {
+  position: absolute;
+  right: 5%;
+  top: -5%;
+  // top: 19px;
+  // width: 40px;
+}
+
+.card-player-infos .team-avatar {
+  width: 42px;
+  border-radius: 50%;
+  position: absolute;
+  right: 7%;
+  top: -5%;
+}
+
+.card-player-infos #role {
+  width: 40px;
+  border-radius: 50%;
+  position: absolute;
+  right: 5%;
+  top: 0%;
+}
+
+#country {
+  font-weight: 30px;
+}
+
+
+// .card-link {
+//   position: relative;
+//   top: 0;
+//   bottom: 0;
+//   right: 0;
+//   left: 0;
+// }
+
+
+
+// CAROUSEL
+
+.carousel-stats {
+  // height: 200px;
+  border-radius: 6px;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
+.carousel-stats h2 {
+  font-size: 14px;
+  font-weight: bold;
+  padding-top: 10px;
+}
+
+.carousel-block {
+  width: 50%;
+  height: 200px;
+}
+
+.carousel-block-season {
+  width: 50%;
+  height: 200px;
+  background-color: #3191d469;
+}
+
+
+// Hover effect
+
+// .card-player:hover {
+//   transform: translateY(-10px);
+//   transition: all .3s ease;
+// }
+
+// .row a:hover {
+//   text-decoration: none;
+//   opacity: 0.6;
+//   transition: all .3s ease;
+// }
+
