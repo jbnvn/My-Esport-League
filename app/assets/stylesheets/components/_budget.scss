@@ -1,0 +1,59 @@
+.full-width {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  height: 58px;
+  border-radius: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.budget {
+  display: inline-flex;
+  margin-left: 18px;
+  margin-right: 20px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+ }
+
+.btn.btn-success-budget {
+color: #212529;
+background-color: #1EDD88;
+border-color: #1EDD88;
+width: 80px;
+font-size: 15px;
+font-weight: bold;
+color: white;
+}
+
+.budget #rest {
+  margin-right: 20px;
+  text-align: center;
+  margin-top: -1px;
+}
+
+.budget #rest h4 {
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.budget #rest p {
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+.budget #ongoing {
+  margin-left: 25px;
+  text-align: center;
+  margin-top: -1px;
+}
+
+.budget #ongoing h4 {
+  font-size: 15px;
+  margin-bottom: 0px;
+}
+
+.budget #ongoing p {
+  font-weight: lighter;
+  font-size: 13px;
+}
+
+

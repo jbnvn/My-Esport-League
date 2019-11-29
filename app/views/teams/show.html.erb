@@ -1,18 +1,6 @@
-  <ul class="list-inline tabs-underlined">
-  <li>
-    <a href="#" class="tabs-underlined active">T</a>
-  </li>
-  <li>
-    <a href="#" class="tabs-underlined">R</a>
-  </li>
-  <li>
-    <a href="#" class="tabs-underlined">R</a>
-  </li>
-  <li>
-    <a href="#" class="tabs-underlined">C</a>
-  </li>
-</ul>
-
+<div>
+  <%= render 'shared/dashboard_tabs' %>
+</div>
 
 <div>
   <%= image_tag "lolmap", class:"map" %>
@@ -24,10 +12,28 @@
   <%= image_tag "buttonplayer", class: 'player-input-btns', id:"all"%>
 
 </div>
+<div class="full-width">
+  <div class="budget">
+    <div id="rest">
+      <h4> Rest of budget </h4>
+      <p> 300 000 PI </p> <!-- à animer -->
+    </div>
 
-<div class="card-validate">
-<input type="submit" value="Create Bid" form='new_bid' disabled>
+    <div>
+      <input type="submit" value="Create Bid" form='new_bid' disabled>
+    </div>
+
+    <div id="ongoing">
+      <h4> Round bet </h4>
+      <p> 40 000 PI </p>
+    </div>
+  </div>
 </div>
+
+<div>
+  <%= render 'shared/modal_player_mercato' %>
+</div>
+
 
 <div class="card-formplayer">
   <%= simple_form_for [@team, @bid] do |f| %>
@@ -110,6 +116,7 @@
     <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalMidPlayers'>
     </button>
   </h1></div>
+
 </div>
 </label>".html_safe } %>
 
@@ -254,5 +261,25 @@
 
 
 
+<div class="full-width">
+  <div class="budget">
+    <div id="rest">
+      <h4> Rest of budget </h4>
+      <p> 300 000 PI </p> <!-- à animer -->
+    </div>
 
+    <div>
+      <%= link_to "Done", "#", class: "btn btn-success-budget" %>
+<!--       <input type="submit" value="Create Bid" form='new_bid'> -->
+    </div>
 
+    <div id="ongoing">
+      <h4> Round bet </h4>
+      <p> 40 000 PI </p>
+    </div>
+  </div>
+</div>
+
+<div>
+  <%= render 'shared/modal_player_mercato' %>
+</div>

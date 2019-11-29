@@ -1,15 +1,15 @@
+<%= render 'modal_create_league', league: @league %>
 <div class="main-container">
 
-  <%= link_to new_league_path do %>
     <div class="creation-card">
+    <type="button" data-toggle="modal" data-target="#createleagueModal">
       <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/1769202/screenshots/5109430/league_of_legends.png)">
         <h3>Create your League</h3>
       </div>
     </div>
-  <% end %>
 
   <% @leagues.each do |league| %>
-    <%= link_to league_path(league) do %> <!-- path à modifier pour load -->
+    <%= link_to league_path(league) do %>
       <% if league.creator == current_user || league.participants.include?(current_user) %>
         <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/46562/screenshots/5301836/odyssey_kayne.jpg)">
           <div class="load">
