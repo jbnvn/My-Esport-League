@@ -3,25 +3,40 @@
 
     <div class="creation-card">
     <type="button" data-toggle="modal" data-target="#createleagueModal">
-      <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/1769202/screenshots/5109430/league_of_legends.png)">
-        <h3>Create your League</h3>
+      <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(http://all4desktop.com/data_images/original/4237948-league-of-legends.jpg); color:#f0e6d2;">
+        <span>Create a League</span>
+        <span style="font-size: 30px;">+</span>
       </div>
     </div>
 
   <% @leagues.each do |league| %>
-    <%= link_to league_path(league) do %>
-      <% if league.creator == current_user || league.participants.include?(current_user) %>
-        <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(https://cdn.dribbble.com/users/46562/screenshots/5301836/odyssey_kayne.jpg)">
+  <% if league.teams.where(user_id: current_user.id).exists? %>
+  <%= link_to team_path(league.teams.where(user_id: current_user.id)) do %>
+        <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://image.jeuxvideo.com/medias-md/153668/1536680478-26-card.jpg)">
           <div class="load">
-            <h3> Load your League </h3>
-              <div>
-                <p class="leaguename"> <%= league.name %> </p>
-              </div>
+            <h3><%= league.name %></h3>
+          </div>
+        </div>
+        <% end %>
+   <% else %>
+  <% if current_user == league.creator %>
+    <%= link_to league_path(league) do %>
+        <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://image.jeuxvideo.com/medias-md/153668/1536680478-26-card.jpg)">
+          <div class="load">
+            <h3><%= league.name %></h3>
+          </div>
+        </div>
+        <% end %>
+      <% elsif league.participants.include?(current_user) %>
+      <%= link_to new_league_team_path(league) do %>
+      <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://image.jeuxvideo.com/medias-md/153668/1536680478-26-card.jpg)">
+          <div class="load">
+            <h3><%= league.name %></h3>
           </div>
         </div>
       <% end %>
     <% end %>
   <% end %>
-
- </div>
+<% end %>
+</div>
 

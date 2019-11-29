@@ -6,7 +6,7 @@
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 24px;
+  font-size: 23px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -14,19 +14,16 @@
   margin-bottom: 10px;
   max-width: auto;
   max-height: auto;
+  flex-direction: column;
 }
 
 h3 {
   font-weight: bold;
 }
 
-.load {
-  height: 150px;
-}
-
 .load h3 {
   font-weight: bold;
-  padding-top: 25px;
+  color:#f0e6d2;
 }
 
 p.leaguename {
