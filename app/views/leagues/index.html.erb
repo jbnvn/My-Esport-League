@@ -10,8 +10,8 @@
     </div>
 
   <% @leagues.each do |league| %>
-  <% if league.teams.where(user_id: current_user.id).exists? %>
-  <%= link_to team_path(league.teams.where(user_id: current_user.id)) do %>
+  <% if league.teams.find_by(user_id: current_user.id) %>
+  <%= link_to team_path(league.teams.find_by(user_id: current_user)) do %>
         <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(http://image.jeuxvideo.com/medias-md/153668/1536680478-26-card.jpg)">
           <div class="load">
             <h3><%= league.name %></h3>
