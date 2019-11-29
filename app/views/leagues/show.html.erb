@@ -1,3 +1,4 @@
+<%= render 'modal_create_team', league: @league, team: @new_team %>
 <div class="bodydashboard">
   <h2 style="text-align:center; color:#1B3444;"><%= @league.name %></h2>
   <div class="cards-user">
@@ -89,7 +90,9 @@
       <% if (@league.participations.count + 1).odd? %>
        <%= "" %>
       <% else %>
-        <%= link_to "Start Playing!", new_league_team_path(@league),  class: 'btn btn-primary' %>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#createteamModal">
+        Let's play
+        </button>
       <% end %>
      <%= link_to "Back", @league, class: 'btn btn-primary',
        method: :delete,
