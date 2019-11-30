@@ -24,6 +24,8 @@
               <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
             </li>
           </ul>
+        <% else %>
+          <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
         <% end %>
 
     <% else %>
