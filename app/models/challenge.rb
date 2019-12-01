@@ -4,10 +4,10 @@ class Challenge < ApplicationRecord
 
   enum role: {
     top: 0,
-    jungle: 1,
+    jun: 1,
     mid: 2,
     adc: 3,
-    support: 4
+    sup: 4
   }
 # doit rester identique au player#role
 end

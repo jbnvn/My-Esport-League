@@ -9,7 +9,7 @@ namespace :pandascore do
 
     # PARAMS
     token = ENV['PandaScoreToken']
-    limit = 20 #100 per page
+    limit = 50 #100 per page
 
     min_page = 1
     max_page = 1 # 50
@@ -108,10 +108,10 @@ namespace :pandascore do
   def role_api_to_app
     {
       "top" => 'top!',
-      "jun" => 'jungle!',
+      "jun" => 'jun!',
       "mid" => 'mid!',
       "adc" => 'adc!',
-      "sup" => 'support!'
+      "sup" => 'sup!'
     }
   end
 end
