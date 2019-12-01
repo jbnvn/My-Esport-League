@@ -11,7 +11,8 @@
 
 .form-check {
   padding: 0px;
-  margin: 3px 0px;
+  margin: 1px 0px;
+  width:100%;
 }
 
 .bid-button {
@@ -23,7 +24,10 @@
 }
 
 .list-of-players .card-product {
-  height: 52px;
+  height: 45px;
+  border-radius: 3px;
+  width: 56vh;
+  margin-left: 0.5px;
 }
 
 .card-product .card-product-infos {
@@ -33,5 +37,23 @@
 }
 
 .card-product .card-product-infos h3 {
-  font-size: 21px;
+  font-size: 17px;
+}
+
+.list-of-players p {
+  margin-top: 4px;
+}
+
+.description-list {
+  display: flex;
+  justify-content: space-around;
+  font-size: 11px;
+  height: 18px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  background-color: white;
+}
+
+.full-width {
+  margin-bottom: 1px;
 }
