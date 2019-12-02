@@ -1,3 +1,21 @@
+.modal-content-player {
+  border-radius: 5px;
+  background-color: #F0E6D2;
+}
+
+.close span#close-cross {
+  margin-right: 20px;
+}
+
+.modal-content-player .card-player {
+  background-color: white;
+}
+
+.modal-content-player .modal-footer {
+  background-color: white;
+  border-radius: 10px;
+}
+
 .card-player {
   overflow: hidden;
   // background: white;
@@ -9,6 +27,7 @@
   transition: all .3s ease;
   margin: 10px 0px 10px 0px;
 }
+
 
 // .card-dog-master :hover {
 //   transform: translateY(-2px);
@@ -23,6 +42,7 @@
 .create-bid-button{
   display:none;
 }
+
 .card-player h2 {
   font-size: 16px;
   font-weight: bold;
@@ -83,12 +103,9 @@
 //   left: 0;
 // }
 
-
-
 // CAROUSEL
 
 .carousel-stats {
-  // height: 200px;
   border-radius: 6px;
   text-align: center;
   margin-top: 15px;
@@ -112,6 +129,14 @@
   background-color: #3191d469;
 }
 
+.btn.btn-small-blue3 {
+  background-color: #1F3A6F;
+  border-color: #1F3A6F;
+  width:130px;
+  font-weight: bold;
+  color: #f0e6d2;
+  margin-top: 15px;
+}
 
 // Hover effect
 

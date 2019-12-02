@@ -15,12 +15,15 @@
   width:100%;
 }
 
-.bid-button {
-  padding: 2px 5px;
+.bid-button input {
+  padding: 5px 5px;
+  padding-right: 13px;
+  padding-left: 13px;
   margin-bottom: 18px;
   color:#f0e6d2;
-  border: 2px solid rgba(192,252,253,.7);
-  background-color:#23262D;
+  background-color: #1F3A6F;
+  border-color: #1F3A6F;
+  border-radius: 13px;
 }
 
 .list-of-players .card-product {
@@ -55,5 +58,5 @@
 }
 
 .full-width {
-  margin-bottom: 1px;
+  margin-bottom: 5px;
 }
