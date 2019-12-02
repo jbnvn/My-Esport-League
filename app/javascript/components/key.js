@@ -6,6 +6,7 @@
 //   };
 //   // do something
 // }
+
 let test = 0;
 const validateForm2 = () => {
   test++;
@@ -17,25 +18,26 @@ const validateForm2 = () => {
   return false;
 }
 
-const initInputValidation = (category) => {
-  const bidinputs = document.querySelector(`#${category}`)
-  // console.log(bidinputs)
 
-  bidinputs.parentElement.parentElement.querySelector('button').disabled = true
+// const initInputValidation = (category) => {
+//   const bidinputs = document.querySelector(`#${category}`)
+//   // console.log(bidinputs)
 
-  bidinputs.addEventListener('keyup', (event) => {
-    if (event.currentTarget.value != '') {
-      bidinputs.parentElement.parentElement.querySelector('button').disabled = false
-    } else {
-      bidinputs.parentElement.parentElement.querySelector('button').disabled = true
-    }
-  })
-}
+//   bidinputs.parentElement.parentElement.querySelector('button').disabled = true
+
+//   bidinputs.addEventListener('keyup', (event) => {
+//     if (event.currentTarget.value != '') {
+//       bidinputs.parentElement.parentElement.querySelector('button').disabled = false
+//     } else {
+//       bidinputs.parentElement.parentElement.querySelector('button').disabled = true
+//     }
+//   })
+// }
 
 
 
-export { initInputValidation }
-export { validateForm2 }
+// export { initInputValidation }
+// export { validateForm2 }
 
 // onkeypress="refuserToucheEntree(event);"
 

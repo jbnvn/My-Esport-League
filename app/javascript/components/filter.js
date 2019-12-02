@@ -33,7 +33,9 @@ const initFilterPlayers = () => {
 
 
 const checkPlayerBoxe = (category) => {
-    document.querySelector(`#${category}`).querySelectorAll('label').forEach((player) => {
+  const categoryDiv = document.querySelector(`#${category}`);
+  if (categoryDiv) {
+    categoryDiv.querySelectorAll('label').forEach((player) => {
       player.addEventListener("click", (event) => {
         hideAllCheckBoxes(category);
         event.currentTarget.parentElement.checked = true;
@@ -47,8 +49,11 @@ const checkPlayerBoxe = (category) => {
           modalBody.innerHTML = '';
           modalBody.appendChild(modalContent);
         }
-    })
-  });
+      })
+    });
+
+  }
+
 }
 
 
