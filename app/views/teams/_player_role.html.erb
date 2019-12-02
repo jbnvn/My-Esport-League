@@ -13,6 +13,7 @@
     </button>
   </div>
 </div>
+<div id=#{player.id} data-modal='modal#{role.capitalize}Players'></div>
 </label>".html_safe } %>
 </div>
 
@@ -27,7 +28,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= render 'shared/modal_player_mercato' %>
       </div>
       <div class="modal-footer">
         <div class="form-group decimal optional <%= role %>_bid_points">

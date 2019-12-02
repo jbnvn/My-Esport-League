@@ -38,6 +38,15 @@ const checkPlayerBoxe = (category) => {
         hideAllCheckBoxes(category);
         event.currentTarget.parentElement.checked = true;
         player.querySelector('button').click()
+        const id = player.lastElementChild.id;
+        const modalId = player.lastElementChild.dataset.modal;
+        const modalContent = document.getElementById(`player_infos_${id}`);
+        const modal = document.getElementById(modalId);
+        if (modal) {
+          const modalBody = modal.querySelector('.modal-body');
+          modalBody.innerHTML = '';
+          modalBody.appendChild(modalContent);
+        }
     })
   });
 }

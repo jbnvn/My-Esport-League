@@ -6,6 +6,7 @@ class TeamsController < ApplicationController
     #Button validate formulaire on peut lier le submit et son formulaire avec l id "for"
     #Creer un formulaire de bids qui va taper create de bids avec deux inputs l'id du player et son prix
     @bid = Bid.new
+    @players = Player.all
   end
 
   def new
