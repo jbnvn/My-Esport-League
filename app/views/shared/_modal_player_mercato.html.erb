@@ -1,22 +1,40 @@
 
-<div class="shadow-sm p-2 py-4 rounded">
+<div class="p-2 rounded">
   <div class="card-player d-flex w-100">
     <div class="p-1">
       <% if player.image_url.present? %>
         <%= image_tag player.image_url, class: "avatar-large", alt: "avatar-large" %>
       <% else %>
+      <!-- placeholder to put -->
         <p>placeholder</p>
       <% end %>
     </div>
     <div class="my-auto flex-grow-1">
       <div class="card-player-infos">
         <div>
-          <h2><%= player.name %></h2>
-          <p><%= player.pro_team_acronym %></p>
+          <% if player.name.present? %>
+            <h2><%= player.name %></h2>
+          <% else %>
+          <!-- placeholder to put -->
+            <p>placeholder</p>
+          <% end %>
+
+          <% if player.pro_team_acronym.present? %>
+            <p><%= player.pro_team_acronym %></p>
+          <% else %>
+          <!-- placeholder to put -->
+            <p>placeholder</p>
+          <% end %>
+
         </div>
         <div class="team-avatar">
         <!-- <p>team_logo</p> -->
-        <%= image_tag player.pro_team_image_url, class: "team-avatar", alt: "avatar" %>
+          <% if player.pro_team_image_url.present? %>
+            <%= image_tag player.pro_team_image_url, class: "team-avatar", alt: "avatar" %>
+          <% else %>
+            <!-- placeholder to put -->
+            <p>placeholder</p>
+          <% end %>
         </div>
       </div>
       <div class="card-player-infos">
@@ -25,7 +43,12 @@
           <i class="fas fa-ad"></i>
         </div>
         <div>
-          <h2 id="role"><%= player.role %></h2>
+          <%if player.role.present? %>
+            <h2 id="role"><%= player.role %></h2>
+          <% else %>
+            <!-- placeholder to put -->
+            <p>placeholder</p>
+          <% end %>
         </div>
       </div>
     </div>
@@ -116,14 +139,4 @@
     <!-- buttons controller-->
 
   </div>
-<!-- Stats Carousel -->
-
-<!-- Bet -->
-  <div class="card-player d-flex">
-    <div class="w-100">
-
-    </div>
-    <button type="button" class="btn btn-success-budget">Bet</button>
-  </div>
-<!-- Bet -->
 </div>
