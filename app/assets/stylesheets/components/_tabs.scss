@@ -1,9 +1,7 @@
-
 .tabs-underlined {
   display: flex;
   justify-content: space-evenly;
 }
-
 
 .tabs-underlined {
   margin: 0;
@@ -23,5 +21,5 @@
 
 .tabs-underlined .tabs-underlined.active {
   opacity: 1;
-  border-bottom: 3px solid #555555;
+  border-bottom: 3px solid #DF4D64;
 }
