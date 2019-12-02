@@ -42,16 +42,14 @@
             <h2>Last game</h2>
             <div class="my-4 py-2">
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <!-- <p class="fas fa-shield-alt"></p> -->
+                <p class=""><strong>KDA  </strong> <%= player.kda.round(2)  %></p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>WR  </strong> <%= player.win_rate.round %> % </p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
-              </div>
-              <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>KS  </strong> <%= player.kill_share.round %> % </p>
               </div>
             </div>
           </div>
@@ -59,16 +57,13 @@
             <h2>Season average</h2>
             <div class="my-4 py-2">
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>KDA  </strong> <%= player.kda.round(2)  %></p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>WR  </strong> <%= player.win_rate.round.round %> % </p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
-              </div>
-              <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>KS  </strong> <%= player.kill_share.round %> % </p>
               </div>
             </div>
           </div>
@@ -81,16 +76,13 @@
             <h2>Last game</h2>
             <div class="my-4 py-2">
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>GS  </strong> <%= player.gold_share.round %> % </p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>KPAR  </strong> <%= player.kill_participation.round %> % </p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
-              </div>
-              <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>CSPM  </strong> <%= player.creep_score_per_minute.round(2) %> </p>
               </div>
             </div>
           </div>
@@ -98,16 +90,13 @@
             <h2>Season average</h2>
             <div class="my-4 py-2">
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>GS  </strong> <%= player.gold_share.round %> % </p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>KPAR  </strong> <%= player.kill_participation.round %> % </p>
               </div>
               <div>
-                <p class="fas fa-shield-alt"></p>
-              </div>
-              <div>
-                <p class="fas fa-shield-alt"></p>
+                <p class=""><strong>CSPM  </strong> <%= player.creep_score_per_minute.round(2) %> </p>
               </div>
             </div>
           </div>
