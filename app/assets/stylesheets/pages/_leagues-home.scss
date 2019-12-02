@@ -16,22 +16,11 @@
   max-height: auto;
   flex-direction: column;
 }
-
-h3 {
-  font-weight: bold;
-}
-
 .load h3 {
   font-weight: bold;
   color:#f0e6d2;
+  font-family: sans-serif;
 }
-
-p.leaguename {
-  color: gold;
-  text-align: center;
-  padding-top: 60px;
-}
-
 a:hover {
   text-decoration: none;
 }

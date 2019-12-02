@@ -1,3 +1,9 @@
+.league-name {
+  color: #1B3444;
+  text-align: center;
+  font-weight: bold;
+}
+
 .form-group.string.optional.league_name {
   display: inline-flex;
   margin-top: 20px;
@@ -37,12 +43,6 @@
   text-align: center;
 }
 
-.btn.btn-successcenter {
-  color: #fff;
-  background-color: #1EDD88;
-  border-color: #1EDD88;
-}
-
 .sub-container {
   text-align: center;
 }
@@ -53,28 +53,40 @@
   color:#1B3444;
 }
 
-.btn.btn-primary {
-  background-color:#23262D;
-  margin: 3px auto;
-  color:#f0e6d2;
-  border: 3px solid rgba(192,252,253,.7);
-}
-
 .buttons-show {
   display:flex;
   flex-direction: row-reverse;
+  margin-top: 10px;
+  justify-content: space-around;
+}
+
+.btn.btn-small-blue{
+  padding: 2px 5px;
+  margin-bottom: 4px;
+  color:#f0e6d2;
+  background-color:#1F3A6F;
+  border-color: #1F3A6F;
+  color: #f0e6d2;
+}
+
+.btn.btn-small-blue2{
+  color:#f0e6d2;
+  background-color:#1F3A6F;
+  border-color: #1F3A6F;
+  color: #f0e6d2;
+}
+
+.btn.btn-center-red {
+  color: white;
+  background-color: #DF4D64;
+  border-color: #DF4D64;
+  width: 140px;
+  font-weight: bold;
+  color: #f0e6d2;
 }
 
 form {
   margin-bottom:4px;
-}
-
-.btn.btn-dark {
-  padding: 2px 5px;
-  margin-bottom: 4px;
-  color:#f0e6d2;
-  border: 2px solid rgba(192,252,253,.7);
-  background-color:#23262D;
 }
 
 .sub-container ul {
