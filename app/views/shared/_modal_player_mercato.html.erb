@@ -39,12 +39,13 @@
       </div>
       <div class="card-player-infos">
         <div class="d-flex">
-          <p><%= player.first_name %> <%= player.last_name %>aaaa</p>
-          <i class="fas fa-ad">ddddd</i>
+          <p><%= player.first_name %> <%= player.last_name %></p>
+         <!--  <p><%= player.country %></p> -->
+         <!--  <i class="fas fa-ad"></i> -->
         </div>
         <div>
           <%if player.role.present? %>
-            <h2 id="role"><%= player.role %></h2>
+            <h2 id="role"><%= player.role.upcase %></h2>
           <% else %>
             <!-- placeholder to put -->
             <p>placeholder</p>
