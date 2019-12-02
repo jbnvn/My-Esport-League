@@ -10,7 +10,6 @@ class BidsController < ApplicationController
     # Validate my bets if all players are chosen
     # Validate my best. turn all players status into pending
     params[:bid][:player_id].select{|p| p != ""}.each_with_index do |player_id, index|
-      bid = Bid.all.destroy
       bid = Bid.new()
       bid.team = @team
       bid.player_id = player_id
