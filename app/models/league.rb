@@ -3,6 +3,8 @@ class League < ApplicationRecord
   has_many :participations, dependent: :destroy
   has_many :participants, through: :participations
   has_many :teams, dependent: :destroy
+  has_many :bids, through: :teams
+  has_many :players, through: :teams
   MAX_PARTICIPANTS = 12
 
 end
