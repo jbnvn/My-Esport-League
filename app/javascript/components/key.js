@@ -1,4 +1,4 @@
-// const removeDisableKey = () => {
+// const removeDisableKey create-bid-button= () => {
 //  const eventTarget = document.querySelectorAll("")
 //   eventTarget.addEventListener("keyup", event => {
 //   if event.keycode === Integer
@@ -6,10 +6,18 @@
 //   };
 //   // do something
 // }
-// const validateForm2 = () => {
-//   console.log('VALID 2 VALID 2 VALID 2 ');
-//   return false;
-// }
+
+let test = 0;
+const validateForm2 = () => {
+  test++;
+  if (test===6){
+    //console.log('heyyyy');
+    const btn = document.querySelector('.create-bid-button');
+    btn.classList.remove("create-bid-button");
+}
+  return false;
+}
+
 
 // const initInputValidation = (category) => {
 //   const bidinputs = document.querySelector(`#${category}`)

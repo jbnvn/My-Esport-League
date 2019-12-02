@@ -74,6 +74,7 @@ const updateBids = () => {
     const position = bid.dataset.position;
     const listElement = document.getElementById(`${position}-bid`);
     listElement.innerText = bid.value;
+
   })
   // retrieve point list
   // update each position for each point
