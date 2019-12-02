@@ -1,38 +1,25 @@
 .modal-content {
   border-radius: 5px;
-  background-color: #f8f8f8;
+  background-color: #F0E6D2;;
 }
-
 .modal-header {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
 }
-
 .modal-title {
   font-weight: bold;
 }
-
-.btn.btn-successcenter {
+.btn.btn-center-blue {
   margin-left : 100px;
-  color: #fff;
-  background-color: #1EDD88;
-  border-color: #1EDD88;
+  color: white;
+  background-color: #1F3A6F;
+  border-color: #1F3A6F;
   width: 140px;
+  font-weight: bold;
 }
-
-button.btn.btn-successletsplay {
-  margin-left : 80px;
-  margin-right : 20px;
-  color: #fff;
-  background-color: #1EDD88;
-  border-color: #1EDD88;
-  width: 140px;
-}
-
 #createteamModal .modal-dialog {
   margin-top: 65vh;
 }
-
 #createleagueModal .modal-dialog {
   margin-top: 65vh;
 }
