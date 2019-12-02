@@ -1,0 +1,55 @@
+.round_container {
+  position: relative;
+  background-color: white;
+
+}
+
+.round_counter {
+  padding: 6px;
+  text-align: center;
+  width: max-content;
+  background: #adb5bd3d; // light grey
+  border-radius: 3px;
+}
+
+.round_week {
+  text-align: center;
+  background: #adb5bd3d; // light grey
+  border-radius: 3px;
+  font-size: 12px;
+}
+
+.round_teams {
+  height: 100px;
+  width: 250px;
+  border-bottom: 2px solid #adb5bd3d;
+  justify-content: space-between;
+  margin: auto;
+}
+
+.round_board {
+  font-size: 14px;
+  text-align: center;
+  color: #2125298c;
+}
+
+.round_board #first_row {
+  color: black;
+}
+
+.round_board .row{
+  border-bottom: 2px solid #adb5bd3d;
+  height: 35px;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
+  margin-top: 2px;
+}
+
+.round_board .col{
+  align-self: center;
+
+}
+
+.round_board .team_id{
+  font-size: 14px;
+  flex-grow: 0;
+}
