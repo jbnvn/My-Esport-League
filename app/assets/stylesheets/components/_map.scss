@@ -1,58 +1,64 @@
+// .mapimg {
+//   border-radius: 15px;
+//   background-size: cover;
+//   background-position: center;
+//   height: 322px;
+//   justify-content: center;
+//   align-items: center;
+//   display: flex;
+//   }
+
 .map {
   border-radius: 7px;
   background-size: cover;
-  background-position: center;
+  background: url("lolmap.png");
   height: 322px;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  width: 375px;
   position: relative;
-  }
-
+  border-radius: 15px;
+}
 #top {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 7.4em;
-  right: 18em;
+  top: 2.7em;
+  right: 17.8em;
 }
-
 #jun {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 10.8em;
+  top: 6em;
   right: 14.5em;
 }
-
 #mid {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 13.8em;
+  top: 9em;
   right: 10.3em;
 }
-
 #adc {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 20.5em;
+  top: 15.75em;
   right: 2.1em;
 }
-
 #sup {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 21.8em;
+  top: 16.7em;
   right: 5.5em;
 }
-
 #all {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 21.7em;
-  right: 20em;
+  top: 17em;
+  right: 20.2em;
 }
