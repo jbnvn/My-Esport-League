@@ -1,137 +1,141 @@
-<div class="map">
-  <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"top"%>
-  <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"jun"%>
-  <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"mid"%>
-  <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"adc"%>
-  <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"sup"%>
-  <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"all"%>
-</div>
+<div class="tab">
+  <div class="tab-team">
 
-<div class="full-width">
-  <div class="budget">
-    <div id="rest">
-      <h4> Rest of budget </h4>
-      <p>300 000 <strong>PI</strong></p> <!-- à animer -->
+    <div class="map">
+      <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"top"%>
+      <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"jun"%>
+      <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"mid"%>
+      <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"adc"%>
+      <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"sup"%>
+      <%= image_tag "buttonplayer.png", class: 'player-input-btns', id:"all"%>
+    </div>
+
+    <div class="full-width">
+      <div class="budget">
+        <div id="rest">
+          <h4> Rest of budget </h4>
+          <p>300 000 <strong>PI</strong></p> <!-- à animer -->
+        </div>
+
+
+        <div class="bid-button">
+          <input type="submit" value="Create Bid" form='new_bid'>
+        </div>
+
+        <div id="ongoing">
+          <h4> Round bet </h4>
+          <p> 0 <strong>PI</strong></p>
+        </div>
+      </div>
     </div>
 
 
-    <div class="bid-button">
-      <input type="submit" value="Create Bid" form='new_bid'>
+    <div class="description-list">
+      <div class="w-40"><p style="margin-left:47px;">PLAYER</p></div>
+      <div class="w-20"><p>TEAM</p></div>
+      <div class="w-20"><p>ROLE</p></div>
+      <div class="w-20"><p>PRICE</p></div>
     </div>
 
-    <div id="ongoing">
-      <h4> Round bet </h4>
-      <p> 0 <strong>PI</strong></p>
+
+    <div id="show-players">
+      <div class="card-product1">
+        <div class="card-product-infos">
+          <h2>Top</h2>
+          <p id="top-bid"></p>
+        </div>
+      </div>
+
+      <div class="card-product1">
+        <div class="card-product-infos">
+          <h2>Jungle</h2>
+          <p id="jun-bid"></p>
+        </div>
+      </div>
+
+      <div class="card-product1">
+        <div class="card-product-infos">
+          <h2>Mid</h2>
+          <p id="mid-bid"></p>
+        </div>
+      </div>
+
+      <div class="card-product1">
+        <div class="card-product-infos">
+          <h2>Adc</h2>
+          <p id="adc-bid"></p>
+        </div>
+      </div>
+
+      <div class="card-product1">
+        <div class="card-product-infos">
+          <h2>Support</h2>
+          <p id="sup-bid"></p>
+        </div>
+      </div>
+
+      <div class="card-product1">
+        <div class="card-product-infos">
+          <h2>Sub</h2>
+          <p id="sub-bid"></p>
+        </div>
+      </div>
     </div>
-  </div>
-</div>
 
 
-<div class="description-list">
-  <div class="w-40"><p style="margin-left:47px;">PLAYER</p></div>
-  <div class="w-20"><p>TEAM</p></div>
-  <div class="w-20"><p>ROLE</p></div>
-  <div class="w-20"><p>PRICE</p></div>
-</div>
 
+    <div class="list-of-players">
+      <%= simple_form_for [@team, @bid] do |f| %>
+        <% Player::roles.keys.each do |role| %>
+          <%= render 'player_role', f: f, role: role %>
+        <% end %>
 
-<div id="show-players">
-  <div class="card-product1">
-    <div class="card-product-infos">
-      <h2>Top</h2>
-      <p id="top-bid"></p>
+         <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
+         label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
+      <div class='card-product-infos justify-content-between w-100'>
+      <div class='w-40'><h3>#{player.name}</h3></div>
+      <div class='w-20'><h5>#{player.pro_team_acronym}</h5></div>
+      <div class='w-20'>
+      <h3>#{player.role}</h3></div>
+      <div class='w-20'><p>1000 PI</p></div>
+      </div>
     </div>
-  </div>
-
-  <div class="card-product1">
-    <div class="card-product-infos">
-      <h2>Jungle</h2>
-      <p id="jun-bid"></p>
-    </div>
-  </div>
-
-  <div class="card-product1">
-    <div class="card-product-infos">
-      <h2>Mid</h2>
-      <p id="mid-bid"></p>
-    </div>
-  </div>
-
-  <div class="card-product1">
-    <div class="card-product-infos">
-      <h2>Adc</h2>
-      <p id="adc-bid"></p>
-    </div>
-  </div>
-
-  <div class="card-product1">
-    <div class="card-product-infos">
-      <h2>Support</h2>
-      <p id="sup-bid"></p>
-    </div>
-  </div>
-
-  <div class="card-product1">
-    <div class="card-product-infos">
-      <h2>Sub</h2>
-      <p id="sub-bid"></p>
-    </div>
-  </div>
-</div>
-
-
-
-<div class="list-of-players">
-  <%= simple_form_for [@team, @bid] do |f| %>
-    <% Player::roles.keys.each do |role| %>
-      <%= render 'player_role', f: f, role: role %>
-    <% end %>
-
-     <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
-     label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
-  <div class='card-product-infos justify-content-between w-100'>
-  <div class='w-40'><h3>#{player.name}</h3></div>
-  <div class='w-20'><h5>#{player.pro_team_acronym}</h5></div>
-  <div class='w-20'>
-  <h3>#{player.role}</h3></div>
-  <div class='w-20'><p>1000 PI</p></div>
-  </div>
-</div>
-    <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAllPlayers'>
-    </button>
-</label>".html_safe } %>
-    <div class="modal fade" id="modalAllPlayers" tabindex="-1" role="dialog" aria-labelledby="modalAllPlayers" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
+        <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAllPlayers'>
         </button>
+    </label>".html_safe } %>
+        <div class="modal fade" id="modalAllPlayers" tabindex="-1" role="dialog" aria-labelledby="modalAllPlayers" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+          </div>
+          <div class="modal-footer">
+             <div class="form-group decimal optional all_bid_points">
+          <label class="decimal optional" for="all_bid_points">Sub Points</label>
+          <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
+        </div>
+            <button type="button" class="button-to-click" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+          </div>
+        </div>
       </div>
-      <div class="modal-body">
-      </div>
-      <div class="modal-footer">
-         <div class="form-group decimal optional all_bid_points">
-      <label class="decimal optional" for="all_bid_points">Sub Points</label>
-      <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
     </div>
-        <button type="button" class="button-to-click" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
-      </div>
+      <% end %>
+    </div>
+
+    <div class="d-none">
+      <% @players.each do |player| %>
+        <div id="player_infos_<%= player.id %>">
+          <%= render 'shared/modal_player_mercato', player: player %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
-  <% end %>
-</div>
-
-<div class="d-none">
-  <% @players.each do |player| %>
-    <div id="player_infos_<%= player.id %>">
-      <%= render 'shared/modal_player_mercato', player: player %>
-    </div>
-  <% end %>
-</div>
-
 
 
 

@@ -10,20 +10,22 @@
     <% if user_signed_in? %>
 
         <% unless current_page?(root_path) || current_page?(leagues_path) %>
-          <ul class="list-inline tabs-underlined">
-            <li>
-              <%= link_to "", "" , class: "fas fa-street-view tabs-underlined active" %>
-            </li>
-            <li>
-              <%= link_to "", "" , class: "fas fa-list-ol tabs-underlined" %>
-            </li>
-            <li>
-              <%= link_to "", "" , class: "fas fa-trophy tabs-underlined" %>
-            </li>
-            <li id="logout">
-              <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
-            </li>
-          </ul>
+          <div class="tab">
+            <ul class="list-inline tabs-underlined">
+              <li id="team">
+                <%= link_to "", team_path , class: "fas fa-street-view tabs-underlined active" %>
+              </li>
+              <li id="results">
+                <%= link_to "", "" , class: "fas fa-list-ol tabs-underlined" %>
+              </li>
+              <li id="leaderboard">
+                <%= link_to "", "" , class: "fas fa-trophy tabs-underlined" %>
+              </li>
+              <li id="logout">
+                <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
+              </li>
+            </ul>
+          </div>
         <% else %>
           <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
         <% end %>
@@ -31,7 +33,6 @@
     <% else %>
 
         <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-
     <% end %>
   </div>
 
