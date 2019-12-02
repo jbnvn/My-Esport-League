@@ -9,7 +9,7 @@ namespace :pandascore do
 
     # PARAMS
     token = ENV['PandaScoreToken']
-    limit = 50 #100 per page
+    limit = 100 #100 per page
 
     min_page = 1
     max_page = 1 # 50
@@ -60,37 +60,41 @@ namespace :pandascore do
 
     puts "generating random stats for players token..."
 
-    Player.all.update(
-      kda: rand(1.0...8.0),
-      win_rate: rand(25.0...75.0),
-      creep_score_per_minute: rand(8.0...12.0),
-      kill_participation: rand(35.0...70.0),
-      kill_share: rand(15.0...25.0),
-      gold_share: rand(15.0...25.0),
-      if player.role == "support"
-        support_player_minimum_bid
-      else
-        players_minimum_bid
-      end
-    )
-
-      def players_minimum_bid
-        bid = (((((kda-AVERAGE_KDA)/AVERAGE_KDA)+1)*40%)+((((KS-AVERAGE_KS)/AVERAGE_KS)+1)*15%)+((((win_rate-AVERAGE_WINRATE)/AVERAGE_WINRATE)+1)*15%+((((creep_score_per_minute-AVERAGE_CSPM)/AVERAGE_CSPM)+1)*15%)+((((kill_participation-AVERAGE_KPART)/AVERAGE_KPART)+1)*15%))*STANDARD_VALUE
-        minimum_bid: bid
-      end
-
-      def support_player_minimum_bid
-        bid = (((((kda-AVERAGE_KDA)/AVERAGE_KDA)+1)*40%)+((((win_rate-AVERAGE_WINRATE)/AVERAGE_WINRATE)+1)*30%+((((kill_participation-AVERAGE_KPART)/AVERAGE_KPART)+1)*30%))*STANDARD_VALUE
-        minimum_bid: bid
-      end
-
-    AVERAGE_KDA = 3,8
-    AVERAGE_KS = 23%
-    AVERAGE_WINRATE = 56%
-    AVERAGE_CSPM = 7,85
-    AVERAGE_KPART = 66%
+    AVERAGE_KDA = 3.8
+    AVERAGE_KS = 0.23
+    AVERAGE_WINRATE = 0.56
+    AVERAGE_CSPM = 7.85
+    AVERAGE_KPART = 0.66
     STANDARD_VALUE = 7000
 
+    Player.all.update(
+      kda: rand(1.0...8.0),
+      win_rate: rand(0.25...0.75),
+      creep_score_per_minute: rand(8.0...12.0),
+      kill_participation: rand(0.35...0.70),
+      kill_share: rand(0.15...0.25),
+      gold_share: rand(0.15...0.25)
+    )
+
+    puts "generating minimum_bid..."
+
+    Player.all.each do |player|
+      def players_minimum_bid(player)
+        bid = (((((player.kda - AVERAGE_KDA) / AVERAGE_KDA) + 1) * 0.4) + ((((player.kill_share - AVERAGE_KS) / AVERAGE_KS) + 1) * 0.15) + ((((player.win_rate - AVERAGE_WINRATE) / AVERAGE_WINRATE) + 1) * 0.15) + ((((player.creep_score_per_minute - AVERAGE_CSPM) / AVERAGE_CSPM) + 1) * 0.15) + ((((player.kill_participation - AVERAGE_KPART) / AVERAGE_KPART) + 1) * 0.15)) * STANDARD_VALUE
+        player.update(minimum_bid: bid)
+      end
+
+      def support_minimum_bid(player)
+        bid = ((((player.kda - AVERAGE_KDA) / AVERAGE_KDA) + 1) * 0.4 + (((player.win_rate - AVERAGE_WINRATE) / AVERAGE_WINRATE) + 1) * 0.30 + (((kill_participation - AVERAGE_KPART) / AVERAGE_KPART) + 1) * 0.30) * STANDARD_VALUE
+        player.update(minimum_bid: bid)
+      end
+
+      if player.role == 'support'
+        support_minimum_bid(player)
+      else
+        players_minimum_bid(player)
+      end
+    end
 
     puts "task completed !"
   end

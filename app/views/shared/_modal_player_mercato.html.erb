@@ -39,8 +39,8 @@
       </div>
       <div class="card-player-infos">
         <div class="d-flex">
-          <p><%= player.first_name %> <%= player.last_name %></p>
-          <i class="fas fa-ad"></i>
+          <p><%= player.first_name %> <%= player.last_name %>aaaa</p>
+          <i class="fas fa-ad">ddddd</i>
         </div>
         <div>
           <%if player.role.present? %>
@@ -69,10 +69,10 @@
                 <p class=""><strong>KDA  </strong> <%= player.kda.round(2)  %></p>
               </div>
               <div>
-                <p class=""><strong>WR  </strong> <%= player.win_rate.round %> % </p>
+                <p class=""><strong>WR  </strong> <%= (player.win_rate.round(2) * 100).round %> % </p>
               </div>
               <div>
-                <p class=""><strong>KS  </strong> <%= player.kill_share.round %> % </p>
+                <p class=""><strong>KS  </strong> <%= (player.kill_share.round(2) * 100).round %> % </p>
               </div>
             </div>
           </div>
@@ -83,10 +83,10 @@
                 <p class=""><strong>KDA  </strong> <%= player.kda.round(2)  %></p>
               </div>
               <div>
-                <p class=""><strong>WR  </strong> <%= player.win_rate.round.round %> % </p>
+                <p class=""><strong>WR  </strong> <%= (player.win_rate.round(2) * 100).round %> % </p>
               </div>
               <div>
-                <p class=""><strong>KS  </strong> <%= player.kill_share.round %> % </p>
+                <p class=""><strong>KS  </strong> <%= (player.kill_share.round(2) * 100).round %> % </p>
               </div>
             </div>
           </div>
@@ -99,10 +99,10 @@
             <h2>Last game</h2>
             <div class="my-4 py-2">
               <div>
-                <p class=""><strong>GS  </strong> <%= player.gold_share.round %> % </p>
+                <p class=""><strong>GS  </strong> <%= (player.gold_share.round(2) * 100).round %> % </p>
               </div>
               <div>
-                <p class=""><strong>KPAR  </strong> <%= player.kill_participation.round %> % </p>
+                <p class=""><strong>KPAR  </strong> <%= (player.kill_participation.round(2) * 100).round %> % </p>
               </div>
               <div>
                 <p class=""><strong>CSPM  </strong> <%= player.creep_score_per_minute.round(2) %> </p>
@@ -113,10 +113,10 @@
             <h2>Season average</h2>
             <div class="my-4 py-2">
               <div>
-                <p class=""><strong>GS  </strong> <%= player.gold_share.round %> % </p>
+                <p class=""><strong>GS  </strong> <%= (player.gold_share.round(2) * 100).round %> % </p>
               </div>
               <div>
-                <p class=""><strong>KPAR  </strong> <%= player.kill_participation.round %> % </p>
+                <p class=""><strong>KPAR  </strong> <%= (player.kill_participation.round(2) * 100).round %> % </p>
               </div>
               <div>
                 <p class=""><strong>CSPM  </strong> <%= player.creep_score_per_minute.round(2) %> </p>
