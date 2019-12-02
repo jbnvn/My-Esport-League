@@ -110,7 +110,6 @@
         </button>
       </div>
       <div class="modal-body">
-        <%= render 'shared/modal_player_mercato'%>
       </div>
       <div class="modal-footer">
          <div class="form-group decimal optional all_bid_points">
@@ -124,3 +123,26 @@
 </div>
   <% end %>
 </div>
+
+<div class="d-none">
+  <% @players.each do |player| %>
+    <div id="player_infos_<%= player.id %>">
+      <%= render 'shared/modal_player_mercato', player: player %>
+    </div>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
