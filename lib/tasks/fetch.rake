@@ -67,18 +67,26 @@ namespace :pandascore do
     AVERAGE_KPART = 0.66
     STANDARD_VALUE = 7000
 
-    Player.all.update(
-      kda: rand(1.0...8.0),
-      win_rate: rand(0.25...0.75),
-      creep_score_per_minute: rand(8.0...12.0),
-      kill_participation: rand(0.35...0.70),
-      kill_share: rand(0.15...0.25),
-      gold_share: rand(0.15...0.25)
-    )
+    # Player.all.update(
+    #   kda: rand(1.0...8.0),
+    #   win_rate: rand(0.25...0.75),
+    #   creep_score_per_minute: rand(8.0...12.0),
+    #   kill_participation: rand(0.35...0.70),
+    #   kill_share: rand(0.15...0.25),
+    #   gold_share: rand(0.15...0.25)
+    # )
 
     puts "generating minimum_bid..."
 
     Player.all.each do |player|
+
+      player.update(kda: rand(1.0...8.0))
+      player.update(win_rate: rand(0.25...0.75))
+      player.update(creep_score_per_minute: rand(8.0...12.0))
+      player.update(kill_participation: rand(0.35...0.70))
+      player.update(kill_share: rand(0.15...0.25))
+      player.update(gold_share: rand(0.15...0.25))
+
       def players_minimum_bid(player)
         bid = (((((player.kda - AVERAGE_KDA) / AVERAGE_KDA) + 1) * 0.4) + ((((player.kill_share - AVERAGE_KS) / AVERAGE_KS) + 1) * 0.15) + ((((player.win_rate - AVERAGE_WINRATE) / AVERAGE_WINRATE) + 1) * 0.15) + ((((player.creep_score_per_minute - AVERAGE_CSPM) / AVERAGE_CSPM) + 1) * 0.15) + ((((player.kill_participation - AVERAGE_KPART) / AVERAGE_KPART) + 1) * 0.15)) * STANDARD_VALUE
         player.update(minimum_bid: bid)
