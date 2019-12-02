@@ -12,13 +12,13 @@
         <% unless current_page?(root_path) || current_page?(leagues_path) %>
           <ul class="list-inline tabs-underlined">
             <li>
-              <%= link_to "", team_path , class: "fas fa-street-view tabs-underlined active" %>
+              <%= link_to "", "" , class: "fas fa-street-view tabs-underlined active" %>
             </li>
             <li>
-              <%= link_to "", team_path , class: "fas fa-list-ol tabs-underlined" %>
+              <%= link_to "", "" , class: "fas fa-list-ol tabs-underlined" %>
             </li>
             <li>
-              <%= link_to "", team_path , class: "fas fa-trophy tabs-underlined" %>
+              <%= link_to "", "" , class: "fas fa-trophy tabs-underlined" %>
             </li>
             <li id="logout">
               <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>

@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', event => {
 });
 
 checkPlayerBoxe('top-players');
-checkPlayerBoxe('jungle-players');
+checkPlayerBoxe('jun-players');
 checkPlayerBoxe('mid-players');
 checkPlayerBoxe('adc-players');
-checkPlayerBoxe('support-players');
+checkPlayerBoxe('sup-players');
 checkPlayerBoxe('all-players');
 
 initInputValidation('top_bid_points');
-initInputValidation('jungle_bid_points');
+initInputValidation('jun_bid_points');
 initInputValidation('mid_bid_points');
 initInputValidation('adc_bid_points');
-initInputValidation('support_bid_points');
+initInputValidation('sup_bid_points');
 initInputValidation('all_bid_points');
 
 
