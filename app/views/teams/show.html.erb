@@ -18,7 +18,7 @@
 
 
     <div class="create-bid" style="width:105px">
-      <input type="submit" value="Create Bid" form='new_bid' class='create-bid-button'>
+      <input type="submit" value="Create Bid" form='new_bid' class=''>
     </div>
 
 
@@ -121,7 +121,7 @@
             <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
 
           </div>
-          <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+          <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal" >Create BID</button>
         </div>
       </div>
     </div>
@@ -137,6 +137,17 @@
     <% end %>
   </div>
 </div>
+
+<div class="d-none">
+    <% @players.each do |player| %>
+      <div id="player_placeholder_infos_<%= player.id %>" data-name="<%= player.name %>" data-role="<%= player.role %>">
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<!-- onclick="document.validateForm2()
+ -->
 
 <!-- render partial of results and learderboards with class d-none -->
 

@@ -62,20 +62,41 @@ const initShowPlayers = () => {
     btn.addEventListener("click", (event) => {
       hideAllPlayersInputs();
       updateBids();
+
       document.getElementById("show-players").classList.remove("d-none");
     });
   })
 }
 
 const updateBids = () => {
-  const bids = document.querySelectorAll('.bid-points')
+  const bids = document.querySelectorAll('.bid-points');
+
+
+  const checkBoxes = document.querySelectorAll('.check_boxes');
+  // const selectedPlayers = [];
+  checkBoxes.forEach((box) => {
+    if (box.checked == true) {
+      const player = document.getElementById(`player_placeholder_infos_${box.value}`)
+      const role = player.dataset.role;
+      const name = player.dataset.name
+      const listElement = document.getElementById(`${role}-bid`);
+      listElement.innerText = name + " " + role
+      // selectedPlayers.push(player)
+    }
+  });
+
+  // console.log(selectedPlayers);
+
+
+
   bids.forEach((bid) => {
     const position = bid.dataset.position;
     const listElement = document.getElementById(`${position}-bid`);
-    listElement.innerText = bid.value;
+    listElement.innerText += bid.value;
+    if (bid.dataset.position == "sub") {
      const listAllElement = document.getElementById('sub-bid');
-     listAllElement.innerText = bid.value;
-
+     listAllElement.innerText += bid.value;
+    }
   })
 
   // retrieve point list
