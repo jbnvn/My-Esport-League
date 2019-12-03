@@ -13,6 +13,9 @@ initShowPlayers();
 import { initFilterTabs } from '../components/tab';
 initFilterTabs();
 
+// import { showAllPlayersInputs} from '../components/filter';
+// showAllPlayersInputs();
+
 // document.addEventListener('DOMContentLoaded', event => {
 
 //   document.validateForm2 = validateForm2;

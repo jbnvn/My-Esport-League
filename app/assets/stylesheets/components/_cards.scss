@@ -2,7 +2,8 @@
   overflow: hidden;
   height: 60px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 0.5px 0px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
 }
@@ -17,6 +18,10 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+}
+
+.card-product .card-product-infos h3 {
+  font-size: 12px;
 }
 
 .card-product p {
@@ -35,7 +40,8 @@
   overflow: hidden;
   height: 60px;
   background: white;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  margin: 1px 0px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   display: flex;
   align-items: center;
 }
@@ -62,4 +68,15 @@
 
 .card-product1 .card-product-infos {
   padding: 16px;
+}
+
+.card-product1 .list-img img {
+  height:30px;
+  width:30px;
+}
+
+.w-20 img {
+  height: 35px;
+  width: 35px;
+  margin-right: 43px;
 }

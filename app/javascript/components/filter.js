@@ -15,6 +15,11 @@ const hideYourPlayers = () => {
   const inputs = document.getElementById("show-players").classList.add("d-none");
 }
 
+// const showYourPlayers = () => {
+//   const inputs = document.getElementById("show-players").classList.remove("d-none");
+// }
+
+
 const hideIndexPlayers = () => {
   const inputs = document.querySelector(".card-formplayer").add("d-none")
 }
@@ -104,10 +109,19 @@ const updateBids = () => {
 }
 
 
+// const showAllPlayersInputs = () => {
+//   const button = document.querySelectorAll(".show-player-selection").forEach((button) => {
+//     button.addEventListener("click", (event) => {
+//     document.getElementById("show-players").classList.remove("d-none");
+//     hideAllPlayersInputs();
+//     })
+//   })
+// }
+
 export { checkPlayerBoxe };
 export { initFilterPlayers };
 export { initShowPlayers };
-
+// export { showAllPlayersInputs};
 
 
 

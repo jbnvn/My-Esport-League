@@ -1,0 +1,6 @@
+<div>
+    <% @teams.each do |team| %>
+    <%= team.name %>
+    <%= team.weekly_scores.first.score %>
+    <% end %>
+</div>

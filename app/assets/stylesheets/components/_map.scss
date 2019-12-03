@@ -18,44 +18,43 @@
   background-position: center center;
   width: 375px;
   position: relative;
-  border-radius: 15px;
 }
-#top {
+.map .top-map {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 2.7em;
-  right: 17.8em;
+  top: 2.6em;
+  right: 18.4em;
 }
-#jun {
+.map .jun-map {
   width: 30px;
   height: 30px;
   position: absolute;
   top: 6em;
-  right: 14.5em;
+  right: 14.2em;
 }
-#mid {
+.map .mid-map {
   width: 30px;
   height: 30px;
   position: absolute;
   top: 9em;
   right: 10.3em;
 }
-#adc {
+.map .adc-map {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 15.75em;
-  right: 2.1em;
+  top: 15.6em;
+  right: 2.0em;
 }
-#sup {
+.map .sup-map {
   width: 30px;
   height: 30px;
   position: absolute;
-  top: 16.7em;
-  right: 5.5em;
+  top: 16.9em;
+  right: 4.5em;
 }
-#all {
+.map .all-map {
   width: 30px;
   height: 30px;
   position: absolute;

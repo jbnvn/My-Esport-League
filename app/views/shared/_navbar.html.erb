@@ -1,38 +1,24 @@
 <div class="navbar navbar-expand-sm navbar-light navbar-lewagon">
-  <div>
-    <%= link_to root_path, class: "navbar-brand" do %>
-      <%= image_tag "logomel.png" %>
-    <% end %>
-  </div>
 
-
-  <div>
     <% if user_signed_in? %>
 
-        <% unless current_page?(root_path) || current_page?(leagues_path) %>
-          <ul class="list-inline tabs-underlined">
-            <li class="tabs-btn" id="team">
-              <%= link_to "", "" , class: "fas fa-street-view tabs-underlined active", 'data-target': "team-tabs" %>
-            </li>
-            <li class="tabs-btn" id="results">
-              <%= link_to "", "" , class: "fas fa-list-ol tabs-underlined" %>
-            </li>
-            <li  class="tabs-btn" id="leaderboard">
-              <%= link_to "", "" , class: "fas fa-trophy tabs-underlined", 'data-target': ""%>
-            </li>
-            <li id="logout">
-              <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
-            </li>
-          </ul>
-        <% else %>
-          <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
+      <% unless current_page?(root_path) || current_page?(leagues_path) %>
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%= image_tag "logomel.png" %>
         <% end %>
 
+      <% else %>
+        <%= link_to root_path, class: "navbar-brand-big" do %>
+          <%= image_tag "logomel.png" %>
+        <% end %>
+
+      <% end %>
+      <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
+
     <% else %>
-
-        <%= link_to "  Login", new_user_session_path, class: "fas fa-door-open" %>
-
+      <%= link_to root_path, class: "navbar-brand-big" do %>
+        <%= image_tag "logomel.png" %>
+      <% end %>
+      <%= link_to "  Login", new_user_session_path, class: "fas fa-door-open" %>
     <% end %>
-  </div>
-
 </div>
