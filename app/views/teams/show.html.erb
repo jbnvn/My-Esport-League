@@ -8,7 +8,7 @@
     <%= image_tag "buttonplayer.png", class: 'player-input-btns all-map', id:"all"%>
   </div>
 
-  <div class="full-width">
+  <div class="full-width show-player-selection">
     <div class="budget">
       <div id="rest">
         <h4> Rest of budget </h4>
@@ -40,32 +40,10 @@
 
 
     <div class="card-product1 player-input-btns" id="top">
-      <% if id="top-bid" %>
-        <div class='card-product'>
-          <div class='card-product-infos justify-content-between w-100'>
-          <div class='w-40'><h3>#{player.name}</h3></div>
-          <div class='w-20'><h5>#{player.pro_team_acronym}</h5></div>
-          <div class='w-20'>
-          <h3>#{player.role}</h3></div>
-          <div class='w-20'><p>#{player.minimum_bid.round} PI</p></div>
-          </div>
-        </div>
-      <% else %>
-
-      <% end %>
-
-
-
-
-
-
-
-
-
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your Top player</p>
-        <p id="top-bid"></p>
+          <p>Choose your TOP player</p>
+          <p id="top-bid"></p>
         </div>
         <div class="list-img d-inline ml-auto">
           <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"top"%>
@@ -78,7 +56,7 @@
     <div class="card-product1 player-input-btns" id="jun">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your Jungle player</p>
+        <p>Choose your JUNGLE player</p>
         <p id="jun-bid"></p>
         </div>
         <div class="list-img d-inline ml-auto">
@@ -90,7 +68,7 @@
     <div class="card-product1 player-input-btns" id="mid">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your Mid player</p>
+        <p>Choose your MID player</p>
         <p id="mid-bid"></p>
         </div>
         <div class="list-img d-inline ml-auto">
@@ -102,7 +80,7 @@
     <div class="card-product1 player-input-btns" id="adc">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your Adc player</p>
+        <p>Choose your ADC player</p>
         <p id="adc-bid"></p>
         </div>
         <div class="list-img d-inline ml-auto">
@@ -114,7 +92,7 @@
     <div class="card-product1 player-input-btns" id="sup">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your Support player</p>
+        <p>Choose your SUPPORT player</p>
         <p id="sup-bid"></p>
         </div>
         <div class="list-img d-inline ml-auto">
@@ -126,11 +104,11 @@
     <div class="card-product1 player-input-btns" id="sub">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your Sub player</p>
+        <p>Choose your SUB player</p>
         <p id="sub-bid"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sub"%>
+          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"all"%>
         </div>
       </div>
     </div>
