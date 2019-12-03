@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_02_133544) do
+ActiveRecord::Schema.define(version: 2019_12_03_093927) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -78,6 +78,7 @@ ActiveRecord::Schema.define(version: 2019_12_02_133544) do
     t.float "kill_participation"
     t.float "kill_share"
     t.float "gold_share"
+    t.integer "weekly_score"
   end
 
   create_table "round_challenges", force: :cascade do |t|
