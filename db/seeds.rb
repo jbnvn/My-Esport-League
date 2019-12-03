@@ -55,3 +55,10 @@ Bid.create!(status: "succeeded", points: 34, player_id: Player.where(role: "mid"
 Bid.create!(status: "succeeded", points: 23, player_id: Player.where(role: "adc").last.id, team_id: Team.last.id)
 Bid.create!(status: "succeeded", points: 38, player_id: Player.where(role: "sup").last.id, team_id: Team.last.id)
 Bid.create!(status: "succeeded", points: 40, player_id: 73, team_id: Team.last.id)
+
+WeeklyScore.create!(score: League.first.teams.first.players.map {|p| p.weekly_score}.sum, team_id: Team.first.id )
+WeeklyScore.create!(score: League.first.teams.second.players.map {|p| p.weekly_score}.sum, team_id: Team.second.id )
+WeeklyScore.create!(score: League.first.teams.third.players.map {|p| p.weekly_score}.sum, team_id: Team.third.id )
+WeeklyScore.create!(score: League.first.teams.last.players.map {|p| p.weekly_score}.sum, team_id: Team.last.id )
+
+
