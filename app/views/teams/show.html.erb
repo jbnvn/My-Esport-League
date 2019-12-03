@@ -123,9 +123,11 @@
 
      <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
      label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
-  <div class='card-product-infos justify-content-between w-100'>
+  <div class='card-product-infos justify-content-between w-100 align-items-center'>
   <div class='w-40'><h3>#{player.name}</h3></div>
-  <div class='w-20'><h5>#{player.pro_team_acronym}</h5></div>
+  <div class='w-20'>
+  <img class='team-image' src='#{player.pro_team_image_url}' style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
+  </div>
   <div class='w-20'>
   <h3>#{player.role}</h3></div>
   <div class='w-20'><p>#{player.minimum_bid.round} PI</p></div>
