@@ -37,7 +37,7 @@ const validateForm2 = () => {
 
 
 // export { initInputValidation }
-// export { validateForm2 }
+ export { validateForm2 }
 
 // onkeypress="refuserToucheEntree(event);"
 

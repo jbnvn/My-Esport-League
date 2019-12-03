@@ -1,5 +1,5 @@
 class BidsController < ApplicationController
-  before_action :set_bid, only: [:create]
+  before_action :set_team, only: [:create]
   # def show
   # end
 
@@ -9,10 +9,11 @@ class BidsController < ApplicationController
   def create
     # Validate my bets if all players are chosen
     # Validate my best. turn all players status into pending
-    params[:bid][:player_id].select{|p| p != ""}.each_with_index do |player_id, index|
+    params[:bid][:player_id].select{ |p| p != "" }.each_with_index do |player_id, index|
       bid = Bid.new()
       bid.team = @team
       bid.player_id = player_id
+
       bid.status ="pending"
       case index
       when 0 then bid.points = params[:bid][:top_points]
@@ -30,26 +31,26 @@ class BidsController < ApplicationController
       @team.league.players.each do |player|
         player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
         player_bids.first.succeeded!
-        player_bids[1..-1].each{ |pb| pb.failed! }
-
+        # player_bids[1..-1].each{ |pb| pb.failed! }
       end
-
-    else
-      raise
-      redirect_to leagues_path
     end
+    redirect_to team_path(@team)
+  end
 
   # Check if all partcipants players are pending
-  # Compare points by players
-  # If points higher are alone turn player status into validate
-  # Else turn players status into failed
+
+
+  # Compare points by players(half of it done)
+  # If points higher are alone turn player status into validate(half of it done)
+  # Else turn players status into failed(half of it done)
   # If all players validate then go into 'wait for others to finish mercato'
+
   # Else go to round 2
+
   # Round 2: remove all players chosen and chose from roles you don't have
   # go back to first step until all partcipants validate step 7
   # When all validate step seven go to controller of rounds
 
-  end
 
   # def edit
   # end
@@ -66,7 +67,7 @@ class BidsController < ApplicationController
     params.require(:bid).permit(:status, :points)
   end
 
-  def set_bid
+  def set_team
     @team = Team.find(params[:team_id])
   end
 end
