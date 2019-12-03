@@ -7,7 +7,6 @@ class BidsController < ApplicationController
   # end
 
   def create
-    raise
     # Validate my bets if all players are chosen
     # Validate my best. turn all players status into pending
     params[:bid][:player_id].select{|p| p != ""}.each_with_index do |player_id, index|
@@ -32,7 +31,7 @@ class BidsController < ApplicationController
         player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
         player_bids.first.succeeded!
         player_bids[1..-1].each{ |pb| pb.failed! }
-
+        player_bids.save
       end
 
     else
