@@ -66,6 +66,7 @@ namespace :pandascore do
     AVERAGE_CSPM = 7.85
     AVERAGE_KPART = 0.66
     STANDARD_VALUE = 7000
+    STANDARD_VALUE_SCORE = 7
 
     # Player.all.update(
     #   kda: rand(1.0...8.0),
@@ -101,6 +102,24 @@ namespace :pandascore do
         support_minimum_bid(player)
       else
         players_minimum_bid(player)
+      end
+
+      puts "generating weekly score..."
+
+      def players_weekly_score(player)
+      score = (((((player.kda - AVERAGE_KDA) / AVERAGE_KDA) + 1) * 0.4) + ((((player.kill_share - AVERAGE_KS) / AVERAGE_KS) + 1) * 0.15) + ((((player.win_rate - AVERAGE_WINRATE) / AVERAGE_WINRATE) + 1) * 0.15) + ((((player.creep_score_per_minute - AVERAGE_CSPM) / AVERAGE_CSPM) + 1) * 0.15) + ((((player.kill_participation - AVERAGE_KPART) / AVERAGE_KPART) + 1) * 0.15)) * STANDARD_VALUE_SCORE
+        player.update(weekly_score: score)
+      end
+
+      def support_weekly_score(player)
+        score = ((((player.kda - AVERAGE_KDA) / AVERAGE_KDA) + 1) * 0.4 + (((player.win_rate - AVERAGE_WINRATE) / AVERAGE_WINRATE) + 1) * 0.30 + (((kill_participation - AVERAGE_KPART) / AVERAGE_KPART) + 1) * 0.30) * STANDARD_VALUE_SCORE
+        player.update(weekly_score: score)
+      end
+
+      if player.role == 'support'
+        support_weekly_score(player)
+      else
+        players_weekly_score(player)
       end
     end
 
