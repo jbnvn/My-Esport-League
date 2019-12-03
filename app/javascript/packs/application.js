@@ -3,16 +3,19 @@ import { initFilterPlayers } from '../components/filter';
 initFilterPlayers();
 import { checkPlayerBoxe } from '../components/filter';
 
-import {initInputValidation} from '../components/key';
-import {validateForm2} from '../components/key';
+// import {initInputValidation} from '../components/key';
+// import {validateForm2} from '../components/key';
 
 import { initShowPlayers } from '../components/filter';
 initShowPlayers();
 
-document.addEventListener('DOMContentLoaded', event => {
+import { initFilterTabs } from '../components/tab';
+initFilterTabs();
 
-  document.validateForm2 = validateForm2;
-});
+// document.addEventListener('DOMContentLoaded', event => {
+
+//   document.validateForm2 = validateForm2;
+// });
 
 checkPlayerBoxe('top-players');
 checkPlayerBoxe('jun-players');
@@ -21,11 +24,11 @@ checkPlayerBoxe('adc-players');
 checkPlayerBoxe('sup-players');
 checkPlayerBoxe('all-players');
 
-initInputValidation('top_bid_points');
-initInputValidation('jun_bid_points');
-initInputValidation('mid_bid_points');
-initInputValidation('adc_bid_points');
-initInputValidation('sup_bid_points');
-initInputValidation('all_bid_points');
+// initInputValidation('top_bid_points');
+// initInputValidation('jun_bid_points');
+// initInputValidation('mid_bid_points');
+// initInputValidation('adc_bid_points');
+// initInputValidation('sup_bid_points');
+// initInputValidation('all_bid_points');
 
 
