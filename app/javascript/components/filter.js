@@ -3,7 +3,6 @@ const hideAllPlayersInputs = () => {
     input.classList.add("d-none")
   })
 }
-
 const hideAllCheckBoxes = (category) => {
   document.querySelector(`#${category}`)
     .querySelectorAll('.check_boxes')
@@ -16,9 +15,9 @@ const hideYourPlayers = () => {
   const inputs = document.getElementById("show-players").classList.add("d-none");
 }
 
-const showYourPlayers = () => {
-  const inputs = document.getElementById("show-players").classList.remove("d-none");
-}
+// const showYourPlayers = () => {
+//   const inputs = document.getElementById("show-players").classList.remove("d-none");
+// }
 
 
 const hideIndexPlayers = () => {

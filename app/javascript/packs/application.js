@@ -12,8 +12,8 @@ initShowPlayers();
 import { initFilterTabs } from '../components/tab';
 initFilterTabs();
 
-import { showAllPlayersInputs} from '../components/filter';
-showAllPlayersInputs();
+// import { showAllPlayersInputs} from '../components/filter';
+// showAllPlayersInputs();
 
 // document.addEventListener('DOMContentLoaded', event => {
 
