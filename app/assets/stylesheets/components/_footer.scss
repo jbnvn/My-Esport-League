@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 40px;
+  height: 45px;
   width: 100%;
   position: fixed;
   flex-shrink: 0;
@@ -25,7 +25,7 @@
 
 .tabs-underlined .tabs-underlined {
   color: black;
-  padding: 5px 20px 5px 20px;
+  padding: 5px 25px 5px 25px;
   margin: 0px 12px;
   opacity: .4;
   cursor: pointer;
@@ -40,9 +40,9 @@
 }
 
 #show-players {
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
 
 fieldset.form-group.check_boxes.required.bid_player.player-group{
-  margin-bottom: 40px;
+  margin-bottom: 50px;
 }
