@@ -121,11 +121,11 @@
         <%= render 'player_role', f: f, role: role %>
       <% end %>
 
-     <%= f.association :player, collection: Player.all, as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
+     <%= f.association :player, collection: Player.order(minimum_bid: :desc), as: :check_boxes, input_html: { class: 'd-none'}, wrapper_html: { class: 'player-group d-none', id: 'all-players'},
      label_method: lambda{ |player| "<label class='form-check-label collection_check_boxes' for='bid_player_id_#{player.id}'><div class='card-product'>
   <div class='card-product-infos justify-content-between w-100'>
   <div class='w-40'><h3>#{player.name}</h3></div>
-  <div class='w-20'><h5>#{player.pro_team_acronym}</h5></div>
+  <div class='w-20'><h3>#{player.pro_team_acronym}</h3></div>
   <div class='w-20'>
   <h3>#{player.role}</h3></div>
   <div class='w-20'><p>#{player.minimum_bid.round} PI</p></div>
