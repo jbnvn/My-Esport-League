@@ -48,6 +48,7 @@ const checkPlayerBoxe = (category) => {
           const modalBody = modal.querySelector('.modal-body');
           modalBody.innerHTML = '';
           modalBody.appendChild(modalContent);
+
         }
       })
     });
@@ -55,8 +56,6 @@ const checkPlayerBoxe = (category) => {
   }
 
 }
-
-
 
 const initShowPlayers = () => {
   document.querySelectorAll('.button-to-click').forEach((btn) => {
@@ -74,11 +73,15 @@ const updateBids = () => {
     const position = bid.dataset.position;
     const listElement = document.getElementById(`${position}-bid`);
     listElement.innerText = bid.value;
+     const listAllElement = document.getElementById('sub-bid');
+     listAllElement.innerText = bid.value;
 
   })
+
   // retrieve point list
   // update each position for each point
 }
+
 
 export { checkPlayerBoxe };
 export { initFilterPlayers };

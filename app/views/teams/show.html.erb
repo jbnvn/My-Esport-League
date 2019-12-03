@@ -152,36 +152,34 @@
   <div class='w-20'>
   <h3>#{player.role}</h3></div>
   <div class='w-20'><p>#{player.minimum_bid.round} PI</p></div>
-  </div>
-</div>
     <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAllPlayers'>
     </button>
+  </div>
+</div>
+<div id=#{player.id} data-modal='modalAllPlayers'></div>
 </label>".html_safe } %>
 
     <div class="modal fade" id="modalAllPlayers" tabindex="-1" role="dialog" aria-labelledby="modalAllPlayers" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLongTitle">Minimum Bet</h5>
+    <div class="modal-content modal-content-player">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
-        </div>
         <div class="modal-body">
         </div>
         <div class="modal-footer">
-           <div class="form-group decimal optional all_bid_points">
-        <label class="decimal optional" for="all_bid_points">Sub Points</label>
-        <input class="form-control numeric decimal optional" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
+          <div class="form-group decimal optional all_bid_points">
+            <label class="decimal optional" for="all_bid_points">Sub Points</label>
+            <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
 
-      </div>
-          <button type="button" class="button-to-click" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
+          </div>
+          <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal" onclick="document.validateForm2()">Create BID</button>
         </div>
       </div>
     </div>
   </div>
     <% end %>
-  </div>
+   </div>
 
   <div class="d-none">
     <% @players.each do |player| %>

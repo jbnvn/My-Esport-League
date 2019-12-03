@@ -20,7 +20,7 @@
 
 <div class="modal fade" id="modal<%= role.capitalize %>Players" tabindex="-1" role="dialog" aria-labelledby="modal<%= role.capitalize %>Players" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content-player">
+    <div class="modal-content modal-content-player">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span id="close-cross" aria-hidden="true">&times;</span>
         </button>
@@ -32,7 +32,7 @@
           <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[<%= role %>_points]" id="<%= role %>_bid_points" data-position="<%= role %>">
         </div>
 
-        <button type="button" class="btn btn-small-blue3" data-dismiss="modal" onclick="document.validateForm2()">Create Bid</button>
+        <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal" onclick="document.validateForm2()">Create Bid</button>
       </div>
     </div>
   </div>
