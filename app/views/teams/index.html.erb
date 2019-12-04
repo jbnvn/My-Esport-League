@@ -1,4 +1,16 @@
 <div class="round_container shadow-sm p-2 rounded">
+<div>
+    <% @teams.each do |team| %>
+    <%= team.name %>
+    <% if team.weekly_scores.first %>
+      <%= team.weekly_scores.first.score %>
+      <%= team.weekly_scores.first.updated_at %>
+      <%= image_tag team.image_url, class: "avatar-large", alt: "avatar-large" %>
+
+    <% end %>
+    <% end %>
+</div>
+
 
   <div class="p-2 py-3 d-flex justify-content-center">
     <div class="round_counter shadow-sm">

@@ -5,8 +5,7 @@
       <% if player.image_url.present? %>
         <%= image_tag player.image_url, class: "avatar-large", alt: "avatar-large" %>
       <% else %>
-      <!-- placeholder to put -->
-        <p>placeholder</p>
+        <%= image_tag "https://cdn.pandascore.co/images/player/image/7754/kev1n-5mwq0zy1.png", class: "avatar-large", alt: "avatar-large" %>
       <% end %>
     </div>
     <div class="my-auto flex-grow-1">
@@ -15,31 +14,31 @@
           <% if player.name.present? %>
             <h2><%= player.name %></h2>
           <% else %>
-          <!-- placeholder to put -->
-            <p>placeholder</p>
+            <h2>N/A</h2>
           <% end %>
 
           <% if player.pro_team_acronym.present? %>
             <p><%= player.pro_team_acronym %></p>
           <% else %>
-          <!-- placeholder to put -->
-            <p>placeholder</p>
+            <p>N/A</p>
           <% end %>
 
         </div>
         <div class="team-avatar">
-        <!-- <p>team_logo</p> -->
           <% if player.pro_team_image_url.present? %>
             <%= image_tag player.pro_team_image_url, class: "team-avatar", alt: "avatar" %>
           <% else %>
-            <!-- placeholder to put -->
-            <p>placeholder</p>
+            <%= image_tag "https://cdn.pandascore.co/images/player/image/7754/kev1n-5mwq0zy1.png", class: "avatar-large", alt: "avatar-large" %>
           <% end %>
         </div>
       </div>
       <div class="card-player-infos">
         <div class="d-flex">
-          <p><%= player.first_name %> <%= player.last_name %></p>
+          <% if player.first_name.present? && player.last_name.present?  %>
+            <p><%= player.first_name %> <%= player.last_name %></p>
+          <% else %>
+            <p>N/A</p>
+          <% end  %>
          <!--  <p><%= player.country %></p> -->
          <!--  <i class="fas fa-ad"></i> -->
         </div>
@@ -47,8 +46,7 @@
           <%if player.role.present? %>
             <h2 id="role"><%= player.role.upcase %></h2>
           <% else %>
-            <!-- placeholder to put -->
-            <p>placeholder</p>
+            <p>N/A</p>
           <% end %>
         </div>
       </div>
