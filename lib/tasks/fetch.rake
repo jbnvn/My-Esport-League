@@ -53,9 +53,6 @@ namespace :pandascore do
     puts "task completed !"
   end
 
-
-
-
   desc "Generate random dynamic stats for existing players"
   task random_stats: :environment do
 
