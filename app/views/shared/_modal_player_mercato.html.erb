@@ -54,71 +54,136 @@
   </div>
 
 <!-- Stats Carousel -->
-  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
     <div class="card-player carousel-stats carousel-inner banner" style="background-image: url(<%= player.pro_team_image_url %>); background-size: 50%; background-position: center; background-repeat: no-repeat;">
-      <div class="carousel-item active " >
-      <!-- <img src="https://source.unsplash.com/1600x900/?stats" class="d-block w-100" alt="..."> -->
+
+    <% player_gold = player.gold_share.round(2) * 100 %>
+    <% player_killparticipation = player.kill_participation.round(2) * 100 %>
+    <% player_cspm = player.creep_score_per_minute %>
+    <% player_kda = player.kda %>
+    <% player_winrate = player.win_rate.round(2) * 100 %>
+    <% player_killshare = player.kill_share.round(2) * 100 %>
+
+
+      <div class="carousel-item active">
+        <!-- <img src="https://source.unsplash.com/1600x900/?stats" class="d-block w-100" alt="..."> -->
         <div class="d-flex">
-          <div class="carousel-block">
-            <h2>Last game</h2>
-            <div class="my-4 py-2">
-              <div>
-                <!-- <p class="fas fa-shield-alt"></p> -->
-                <p class=""><strong>KDA  </strong> <%= player.kda.round(2)  %></p>
+          <div class="carousel-block d-flex align-items-center justify-content-center w-40">
+            <div class="py-2">
+              <h2>Last game</h2>
+              <!-- Chart -->
+
+              <div class="stats-score">
+                <p> <%= player.kda.round(2)%> </p>
               </div>
-              <div>
-                <p class=""><strong>WR  </strong> <%= (player.win_rate.round(2) * 100).round %> % </p>
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: player_winrate , empty: 100 - player_winrate}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage(player_winrate, precision: 0) %></p>
               </div>
-              <div>
-                <p class=""><strong>KS  </strong> <%= (player.kill_share.round(2) * 100).round %> % </p>
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: player_killshare , empty: 100 - player_killshare}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage(player_killshare, precision: 0) %></p>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="carousel-block d-flex align-items-center justify-content-center w-20">
+            <div class="pt-2">
+              <h2></h2>
+              <div class="stats-score pt-2">
+                <p>KDA</p>
+              </div>
+              <div class="stats-score pt-2">
+                <p>WR</p>
+              </div>
+              <div class="stats-score pt-2">
+                <p>KS</p>
               </div>
             </div>
+
           </div>
-          <div class="carousel-block-season">
-            <h2>Season average</h2>
-            <div class="my-4 py-2">
-              <div>
-                <p class=""><strong>KDA  </strong> <%= player.kda.round(2)  %></p>
+          <div class="carousel-block d-flex align-items-center justify-content-center w-40">
+            <div class="py-2">
+              <h2>Season</h2>
+              <!-- Chart -->
+              <div class="stats-score">
+                <p> <%= (player.kda.round(2) * 0.95).round(2) %> </p>
               </div>
-              <div>
-                <p class=""><strong>WR  </strong> <%= (player.win_rate.round(2) * 100).round %> % </p>
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: (player_winrate * 0.95) , empty: 100 - (player_winrate * 0.95)}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage((player_winrate * 0.95), precision: 0) %></p>
               </div>
-              <div>
-                <p class=""><strong>KS  </strong> <%= (player.kill_share.round(2) * 100).round %> % </p>
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: (player_killshare * 0.95) , empty: 100 - (player_killshare* 0.95)}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage((player_killshare * 0.95), precision: 0) %></p>
               </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="carousel-item">
-        <!-- <img src="https://source.unsplash.com/1600x900/?stats" class="d-block w-100" alt="..."> -->
         <div class="d-flex">
-          <div class="carousel-block">
-            <h2>Last game</h2>
-            <div class="my-4 py-2">
-              <div>
-                <p class=""><strong>GS  </strong> <%= (player.gold_share.round(2) * 100).round %> % </p>
+          <div class="carousel-block d-flex align-items-center justify-content-center w-40">
+            <div class="py-2">
+              <h2>Last game</h2>
+              <!-- Chart -->
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: player_gold , empty: 100 - player_gold}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage(player_gold, precision: 0) %></p>
               </div>
-              <div>
-                <p class=""><strong>KPAR  </strong> <%= (player.kill_participation.round(2) * 100).round %> % </p>
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: player_killparticipation , empty: 100 - player_killparticipation}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage(player_killparticipation, precision: 0) %></p>
               </div>
-              <div>
-                <p class=""><strong>CSPM  </strong> <%= player.creep_score_per_minute.round(2) %> </p>
+
+              <div class="stats-score">
+                <p> <%= player.creep_score_per_minute.round(2)%> </p>
+              </div>
+
+            </div>
+
+          </div>
+          <div class="carousel-block d-flex align-items-center justify-content-center w-20">
+            <div class="pt-2">
+              <h2></h2>
+              <div class="stats-score pt-2">
+                <p>GS</p>
+              </div>
+              <div class="stats-score pt-2">
+                <p>KPAR</p>
+              </div>
+              <div class="stats-score pt-2">
+                <p>CSPM</p>
               </div>
             </div>
+
           </div>
-          <div class="carousel-block-season">
-            <h2>Season average</h2>
-            <div class="my-4 py-2">
-              <div>
-                <p class=""><strong>GS  </strong> <%= (player.gold_share.round(2) * 100).round %> % </p>
+          <div class="carousel-block d-flex align-items-center justify-content-center w-40">
+            <div class="py-2">
+              <h2>Season</h2>
+              <!-- Chart -->
+              <div class="pie-chart-score">
+                <%= pie_chart({score: (player_gold * 0.80) , empty: 100 - (player_gold  * 0.80)}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage((player_gold  * 0.80), precision: 0) %></p>
               </div>
-              <div>
-                <p class=""><strong>KPAR  </strong> <%= (player.kill_participation.round(2) * 100).round %> % </p>
+
+              <div class="pie-chart-score">
+                <%= pie_chart({score: (player_killparticipation  * 0.80) , empty: 100 - (player_killparticipation  * 0.80)}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
+                <p><%= number_to_percentage((player_killparticipation  * 0.80), precision: 0) %></p>
               </div>
-              <div>
-                <p class=""><strong>CSPM  </strong> <%= player.creep_score_per_minute.round(2) %> </p>
+
+              <div class="stats-score">
+                <p> <%= (player.creep_score_per_minute.round(2) * 0.80).round(2) %> </p>
               </div>
+
             </div>
           </div>
         </div>

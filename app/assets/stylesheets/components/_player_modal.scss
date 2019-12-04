@@ -121,18 +121,41 @@
 
 .carousel-block {
   width: 50%;
-  height: 200px;
+  height: 250px;
   font-weight: bold;
   background-color: #f4f4f4b0;
 }
 
-.carousel-block-season {
-  width: 50%;
-  height: 200px;
-  font-weight: bold;
-  // background-color: #5d799a6b;
-  background-color: #79818aa1;
-  color: #ffffff;
+// .carousel-block-season {
+//   width: 50%;
+//   height: 250px;
+//   font-weight: bold;
+//   // background-color: #5d799a6b;
+//   background-color: #79818aa1;
+//   color: #ffffff;
+// }
+
+.carousel-block .stats-score {
+  height: 60px;
+  width: 60px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-block .stats-score p {
+  color: #1f3a6f !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
+}
+
+.carousel-block .stats-score .label-score p {
+  color: #1f3a6f !important;
+  opacity: 1 !important;
+  font-weight: bold !important;
+  font-size: 16px !important;
 }
 
 .btn.btn-small-blue3 {
