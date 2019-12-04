@@ -26,8 +26,9 @@ namespace :pandascore do
       data = JSON.parse response
 
       data.each do |player|
-        next if player["current_team"].nil? || player["role"].nil? ||
+        next if player["current_team"].nil? || player["role"].nil? || player["image_url"].nil? ||
           Player.where(lol_id: player["id"]).exists?
+
 
         new_player = Player.create!(
           first_name: player["first_name"],

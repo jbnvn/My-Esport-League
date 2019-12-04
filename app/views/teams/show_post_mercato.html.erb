@@ -1,5 +1,5 @@
 <div class="tab-content" id="team-tabs">
-  <% if @team.players.count == 6 %>
+  <% if @team.players.count == 18 %>
   <div class="map">
     <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map'%>
     <%= image_tag @team.players.find_by(role: 'jun').image_url, class: 'player-input-btns jun-map'%>
@@ -47,3 +47,5 @@
         </div>
       </div>
     <% end %>
+    <% end %>
+

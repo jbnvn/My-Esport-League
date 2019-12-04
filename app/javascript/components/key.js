@@ -12,7 +12,7 @@ const validateFormButton = () => {
         }
       })
 
-      if (count == 6) {
+      if (count == 2) {
         const button = document.getElementById("validate-button");
         button.classList.remove('d-none');
         console.log("4")
