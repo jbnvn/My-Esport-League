@@ -6,6 +6,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :leagues do
     resources :teams
+
+    member do
+      get 'leaderboard'
+    end
+
   end
 
   resources :teams, only: [:show] do
