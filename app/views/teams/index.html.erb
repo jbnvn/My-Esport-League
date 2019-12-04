@@ -1,77 +1,36 @@
-<div>
-    <% @teams.each do |team| %>
-    <%= team.name %>
-    <% if team.weekly_scores.first %>
-      <%= team.weekly_scores.first.score %>
-    <% end %>
-    <% end %>
-</div>
-
-<div class="round_container shadow-sm p-2 py-4 rounded">
+<div class="round_container shadow-sm p-2 rounded">
 
   <div class="p-2 py-3 d-flex justify-content-center">
     <div class="round_counter shadow-sm">
-      ROUND COUNT
+      Round 2
     </div>
   </div>
 
   <div class="round_week">
-    WEEK 02/12/2019
+    <%= @teams.first.weekly_scores.first.created_at.to_date %>
   </div>
 
+  <% @games.each do |game| %>
   <div class="round_teams">
     <div class="d-flex justify-content-between align-items-center pt-3">
-      <div>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      </div>
-      <div>23</div>
-      <div>-</div>
-      <div>30</div>
-      <div>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      </div>
+        <div>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+        </div>
+        <div>
+          <%= game.first.weekly_scores.first.score %>
+        </div>
+        <div>-</div>
+        <div>
+          <%= game.last.weekly_scores.first.score %>
+        </div>
+        <div>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
+        </div>
     </div>
 
     <div class="d-flex justify-content-between pt-2">
-      <div>Team 1</div>
-      <div>Team 2</div>
+      <div><%= game.first.name %></div>
+      <div><%= game.last.name %></div>
     </div>
   </div>
-  <div class="round_teams">
-    <div class="d-flex justify-content-between align-items-center pt-3">
-      <div>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      </div>
-      <div>23</div>
-      <div>-</div>
-      <div>30</div>
-      <div>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-between pt-2">
-      <div>Team 1</div>
-      <div>Team 2</div>
-    </div>
-  </div>
-  <div class="round_teams">
-    <div class="d-flex justify-content-between align-items-center pt-3">
-      <div>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      </div>
-      <div>23</div>
-      <div>-</div>
-      <div>30</div>
-      <div>
-        <%= image_tag "https://kitt.lewagon.com/placeholder/users/cveneziani", class: "avatar", alt: "avatar" %>
-      </div>
-    </div>
-
-    <div class="d-flex justify-content-between pt-2">
-      <div>Team 1</div>
-      <div>Team 2</div>
-    </div>
-  </div>
-
-</div>
+  <% end %>
