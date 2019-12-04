@@ -1,43 +1,20 @@
-// const removeDisableKey create-bid-button= () => {
-//  const eventTarget = document.querySelectorAll("")
-//   eventTarget.addEventListener("keyup", event => {
-//   if event.keycode === Integer
-//     .classList.remove('.disabled')
-//   };
-//   // do something
-// }
+const validateFormButton = () => {
+  document.querySelectorAll('.button-to-click').forEach((btn) => {
+    btn.addEventListener("click", (event) => {
+      const checkBoxes = document.querySelectorAll('.check_boxes');
+      let count = 0;
+      checkBoxes.forEach((boxe) => {
+        if (boxe.checked == true) {
+          count += 1
+        }
+      })
 
-let test = 0;
-const validateForm2 = () => {
-  test++;
-  if (test===6){
-    //console.log('heyyyy');
-    const btn = document.querySelector('.create-bid-button');
-    btn.classList.remove("create-bid-button");
+      if (count == 6) {
+        const button = document.getElementById("validate-button");
+        button.classList.remove('d-none');
+      }
+    });
+  });
 }
-  return false;
-}
 
-
-// const initInputValidation = (category) => {
-//   const bidinputs = document.querySelector(`#${category}`)
-//   // console.log(bidinputs)
-
-//   bidinputs.parentElement.parentElement.querySelector('button').disabled = true
-
-//   bidinputs.addEventListener('keyup', (event) => {
-//     if (event.currentTarget.value != '') {
-//       bidinputs.parentElement.parentElement.querySelector('button').disabled = false
-//     } else {
-//       bidinputs.parentElement.parentElement.querySelector('button').disabled = true
-//     }
-//   })
-// }
-
-
-
-// export { initInputValidation }
- export { validateForm2 }
-
-// onkeypress="refuserToucheEntree(event);"
-
+export { validateFormButton }
