@@ -2,7 +2,7 @@ class TeamsController < ApplicationController
   before_action :set_league, only: [:create, :new, :destroy]
 
   def index
-    @teams = Team.all
+    @teams = League.find(params[:league_id]).teams
   end
 
   def show
