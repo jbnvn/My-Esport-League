@@ -31,7 +31,7 @@ class BidsController < ApplicationController
       @team.league.players.each do |player|
         player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
         player_bids.first.succeeded!
-        # player_bids[1..-1].each{ |pb| pb.failed! }
+        player_bids[1..-1].each{ |pb| pb.failed! }
       end
     end
     redirect_to team_path(@team)

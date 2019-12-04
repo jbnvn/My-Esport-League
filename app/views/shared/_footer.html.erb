@@ -3,7 +3,9 @@
     <ul class="list-inline tabs-underlined">
       <li class="tabs-btn" id="results">
          <% if params[:league_id] %>
-          <%= link_to "", team_path(League.find(params[:league_id]).teams.find_by(user: current_user)), class: "fas fa-street-view tabs-underlined", 'data-target': "team-tabs" %>
+          <% if League.find(params[:league_id]).teams.find_by(user: current_user) %>
+            <%= link_to "", team_path(League.find(params[:league_id]).teams.find_by(user: current_user)), class: "fas fa-street-view tabs-underlined", 'data-target': "team-tabs" %>
+          <% end %>
         <% else %>
           <%= link_to "", "" , class: "fas fa-street-view tabs-underlined active" %>
         <% end %>
