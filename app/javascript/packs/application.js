@@ -4,8 +4,8 @@ initFilterPlayers();
 import { checkPlayerBoxe } from '../components/filter';
 
 // import {initInputValidation} from '../components/key';
- import {validateForm2} from '../components/key';
- validateForm2();
+ import {validateFormButton} from '../components/key';
+ validateFormButton();
 
 import { initShowPlayers } from '../components/filter';
 initShowPlayers();
