@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_03_093927) do
+ActiveRecord::Schema.define(version: 2019_12_04_123031) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -66,7 +66,7 @@ ActiveRecord::Schema.define(version: 2019_12_03_093927) do
     t.string "lol_name"
     t.integer "lol_id"
     t.string "country"
-    t.string "image_url"
+    t.string "image_url", default: "https://cdn.pandascore.co/images/player/image/7754/kev1n-5mwq0zy1.png"
     t.string "role_string"
     t.integer "pro_team_id"
     t.string "pro_team_acronym"
