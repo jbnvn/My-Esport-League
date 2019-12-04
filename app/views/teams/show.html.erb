@@ -3,12 +3,12 @@
 <div class="tab-content" id="team-tabs">
   <% if @team.players.count == 6 %>
   <div class="map">
-    <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map'%>
+    <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map', id:'top'%>
     <%#=image_tag @team.players.find_by(role: 'jun').image_url, class: 'player-input-btns jun-map'%>
-    <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map'%>
-    <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map'%>
-    <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map'%>
-    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map' %>
+    <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map',id:'mid'%>
+    <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map',id:'adc'%>
+    <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
+    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%>
   </div>
   <div class="full-width">
     <div class="budget">
@@ -73,6 +73,7 @@
   </div>
       </div>
 
+
   <% else %>
     <div class="map">
     <%= image_tag "buttonplayer.png", class: 'player-input-btns top-map', id:"top"%>
@@ -103,69 +104,69 @@
   <div class="w-20"><p>PRICE</p></div>
 </div>
   <div id="show-players">
-    <div class="card-product1 player-input-btns" id="top">
+    <div class="card-product1 player-input-btns" id="top" style="height: 44px;">
               <div class="card-product-infos d-flex w-100 align-items-center">
           <div class="d-inline">
-            <p>Choose your TOP player</p>
-            <p id="top-bid"></p>
+            <p style="margin-top: 13px;">Choose your TOP player</p>
+            <p id="top-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
           </div>
           <div class="list-img d-inline ml-auto">
-            <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"top"%>
+            <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"top", style:'margin-bottom:0;'%>
           </div>
         </div>
     </div>
-    <div class="card-product1 player-input-btns" id="jun">
+    <div class="card-product1 player-input-btns" id="jun" style="height: 44px;">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your JUNGLE player</p>
-        <p id="jun-bid"></p>
+        <p style="margin-top: 13px;">Choose your JUNGLE player</p>
+        <p id="jun-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"jun"%>
+          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"jun", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
-    <div class="card-product1 player-input-btns" id="mid">
+    <div class="card-product1 player-input-btns" id="mid" style="height: 44px;">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your MID player</p>
-        <p id="mid-bid"></p>
+        <p style="margin-top: 13px;">Choose your MID player</p>
+        <p id="mid-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"mid"%>
+          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"mid", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
-    <div class="card-product1 player-input-btns" id="adc">
+    <div class="card-product1 player-input-btns" id="adc" style="height: 44px;">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your ADC player</p>
-        <p id="adc-bid"></p>
+        <p style="margin-top: 13px;">Choose your ADC player</p>
+        <p id="adc-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"adc"%>
+          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"adc", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
-    <div class="card-product1 player-input-btns" id="sup">
+    <div class="card-product1 player-input-btns" id="sup" style="height: 44px;">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your SUPPORT player</p>
-        <p id="sup-bid"></p>
+        <p style="margin-top: 13px;">Choose your SUPPORT player</p>
+        <p id="sup-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sup"%>
+          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sup", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
-    <div class="card-product1 player-input-btns" id="all">
+    <div class="card-product1 player-input-btns" id="all" style="height: 44px;">
       <div class="card-product-infos d-flex w-100 align-items-center">
         <div class="d-inline">
-        <p>Choose your SUB player</p>
-        <p id="sub-bid"></p>
+        <p style="margin-top: 13px;">Choose your SUB player</p>
+        <p id="sub-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sub"%>
+          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sub", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
@@ -224,11 +225,11 @@
 
   <div class="d-none">
     <% @players.each do |player| %>
-      <div id="player_placeholder_infos_<%= player.id %>" data-name="<%= player.name %>" data-role="<%= player.role %>">
+      <div id="player_placeholder_infos_<%= player.id %>" data-name="<%= player.name %>" data-role="<%= player.role %>" >
+        <%= player.team %>
       </div>
     <% end %>
   </div>
-
 
 
 
