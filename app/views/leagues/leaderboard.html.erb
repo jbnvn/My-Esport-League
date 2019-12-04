@@ -1,0 +1,28 @@
+<div class="round_container shadow-sm p-2 py-4 rounded" style="text-align: -webkit-center">
+    <div class="round_counter shadow-sm">
+      Leaderboard
+    </div>
+
+  <div class="container my-4 round_board">
+    <div class="row shadow-sm" id="first_row" style="padding-left: inherit;font-weight: bold">
+      <div class="col team_id">#</div>
+      <div class="col">Team</div>
+      <div class="col">Points</div>
+      <div class="col team_id" style="padding-right: 13px">V</div>
+      <div class="col team_id" style="padding-right: 11px">N</div>
+      <div class="col team_id">D</div>
+    </div>
+
+    <% @sort_team.each_with_index do |team, index| %>
+      <div class="row" style="padding-left: inherit">
+        <div class="col team_id"><%= index + 1 %></div>
+        <div class="col"><%= team.name %></div>
+        <div class="col"> <%= team.weekly_scores.first.score %> </div>
+        <div class="col team_id">6</div>
+        <div class="col team_id">1</div>
+        <div class="col team_id">0</div>
+      </div>
+    <% end %>
+
+ </div>
+</div>

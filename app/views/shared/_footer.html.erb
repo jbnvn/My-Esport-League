@@ -1,27 +1,39 @@
 <% unless current_page?(root_path) || current_page?(leagues_path) || current_page?(new_user_session_path) %>
   <div class="footer">
     <ul class="list-inline tabs-underlined">
-      <li class="tabs-btn" id="results">
-         <% if params[:league_id] %>
-          <% if League.find(params[:league_id]).teams.find_by(user: current_user) %>
-            <%= link_to "", team_path(League.find(params[:league_id]).teams.find_by(user: current_user)), class: "fas fa-street-view tabs-underlined", 'data-target': "team-tabs" %>
-          <% end %>
-        <% else %>
-          <%= link_to "", "" , class: "fas fa-street-view tabs-underlined active" %>
-        <% end %>
-      </li>
 
       <li class="tabs-btn" id="team">
-       <% if params[:id] %>
-          <%= link_to "", league_teams_path(Team.find(params[:id]).league) , class: "fas fa-list-ol tabs-underlined" %>
+        <% if params[:action] == 'show' %>
+          <%= link_to "", "" , class: "fas fa-street-view tabs-underlined active" %>
         <% else %>
-          <%= link_to "", "", class: "fas fa-list-ol tabs-underlined active", 'data-target': "team-tabs" %>
+          <% if params[:league_id] %>
+              <%= link_to "", team_path(League.find(params[:league_id]).teams.find_by(user: current_user)), class: "fas fa-street-view tabs-underlined", 'data-target': "team-tabs" %>
+            <% else %>
+            <%= link_to "", team_path(League.find(params[:id]).teams.find_by(user: current_user)), class: "fas fa-street-view tabs-underlined", 'data-target': "team-tabs" %>
+            <% end %>
         <% end %>
       </li>
 
-      <li  class="tabs-btn" id="leaderboard">
-        <%= link_to "", "" , class: "fas fa-trophy tabs-underlined", 'data-target': ""%>
+      <li class="tabs_btn" id="results">
+        <% if params[:action] == 'index' %>
+          <%= link_to "", "", class: "fas fa-list-ol tabs-underlined active", 'data-target': "team-tabs" %>
+        <% else %>
+          <%= link_to "", league_teams_path(Team.find(params[:id]).league) , class: "fas fa-list-ol tabs-underlined" %>
+        <% end %>
       </li>
+
+      <li class="tabs-btn" id="leaderboard">
+       <% if params[:action] == 'leaderboard' %>
+          <%= link_to "", "", class: "fas fa-trophy tabs-underlined active", 'data-target': "team-tabs" %>
+       <% else %>
+          <% if params[:league_id] %>
+            <%= link_to "", leaderboard_league_path(params[:league_id]) , class: "fas fa-trophy tabs-underlined"%>
+          <% else %>
+            <%= link_to "", leaderboard_league_path(params[:id], params: {league_id: Team.find(params[:id]).league.id}) , class: "fas fa-trophy tabs-underlined"%>
+          <% end %>
+      <% end %>
+      </li>
+
     </ul>
   </div>
 <% end %>
