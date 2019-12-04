@@ -1,0 +1,133 @@
+.pie-chart-score {
+  height: 60px;
+  width: 60px;
+  position: relative;
+  margin: 5px;
+
+
+  p {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 60px;
+    width: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 !important;
+    margin: 0 !important;
+    color: #1f3a6f !important;
+    opacity: 1 !important;
+
+  }
+}
+
+
+
+// .chart-card {
+//   float: left;
+//   // background: #fff;
+//   padding: 5px;
+//   margin: auto;
+//   padding-left: 30px;
+//   // margin: 0 20px 0 0;
+// }
+
+
+// // Donut Chart Mixin //DO NOt TOUCH!
+// .donut-chart {
+//   position: relative;
+//   border-radius: 50%;
+//   overflow: hidden;
+
+//   .slice {
+//     position: absolute;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//   }
+
+//   .chart-center {
+//     position: absolute;
+//     border-radius: 50%;
+
+//     span {
+//       display: block;
+//       text-align: center;
+//     }
+//   }
+// }
+
+// @mixin donut-chart($name, $perc, $size, $width, $base, $center, $color, $textColor: $color, $textSize: 40px) {
+
+//   $color2: $color;
+//   $base2: $base;
+//   $deg: ($perc/100*360)+deg;
+//   $deg1: 90deg;
+//   $deg2: $deg;
+
+//   // If percentage is less than 50%
+//   @if $perc < 50 {
+//     $base: $color;
+//     $color: $base2;
+//     $color2: $base2;
+//     $deg1: ($perc/100*360+90)+deg;
+//     $deg2: 0deg;
+//   }
+
+//   .donut-chart {
+//     &#{$name} {
+//       width: $size;
+//       height: $size;
+//       background: $base;
+
+//       .slice {
+//         &.one {
+//           clip: rect(0 $size $size/2 0);
+//           -webkit-transform: rotate($deg1);
+//           transform: rotate($deg1);
+//           background: $color;
+//         }
+
+//         &.two {
+//           clip: rect(0 $size/2 $size 0);
+//           -webkit-transform: rotate($deg2);
+//           transform: rotate($deg2);
+//           background: $color2;
+//         }
+//       }
+
+//       .chart-center {
+//         top: $width;
+//         left: $width;
+//         width: $size - ($width * 2);
+//         height: $size - ($width * 2);
+//         background: $center;
+
+//         span {
+//           font-size: $textSize;
+//           line-height: $size - ($width * 2);
+//           color: $textColor;
+
+//           &:after {
+//           content: '#{$perc}%';
+//           }
+//         }
+//       }
+//     }
+//   }
+// } // mixin
+
+// // template :
+// // @mixin donut-chart($name, $perc, $size, $width, $base, $center, $color, $textColor: $color, $textSize: 40px)
+
+// // Charts
+// @include donut-chart('.chart-slim', 20, 200px, 10px, #DF4D64, #fff, #1f3a6f);
+// @include donut-chart('.chart-fat', 40, 60px, 9px, #DF4D64, #fff, #1f3a6f, #1f3a6f, 14px);
+// // @include donut-chart('.chart-fat-2', 91, 200px, 25px, #1f3a6f, #fff, #DF4D64);
+// @include donut-chart('.chart-big', 45, 240px, 15px, #DF4D64, #fff, #1f3a6f, #1f3a6f, 60px);
+
+// // Our colors :
+// // Redish/Pinkish : #DF4D64
+// // Blue : #1f3a6f
