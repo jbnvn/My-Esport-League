@@ -3,6 +3,7 @@ class TeamsController < ApplicationController
 
   def index
     @teams = League.find(params[:league_id]).teams
+    @games = @teams.each_slice(2).to_a
   end
 
   def show
