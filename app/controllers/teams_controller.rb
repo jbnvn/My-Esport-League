@@ -35,6 +35,12 @@ class TeamsController < ApplicationController
     redirect_to leagues_path
   end
 
+  def show_post_mercato
+    @team = Team.find(params[:id])
+    @bid = Bid.new
+    @players = Player.all
+  end
+
   private
 
   def team_params
