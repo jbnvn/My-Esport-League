@@ -3,9 +3,14 @@
     <%= team.name %>
     <% if team.weekly_scores.first %>
       <%= team.weekly_scores.first.score %>
+      <%= team.weekly_scores.first.updated_at %>
+      <%= image_tag team.image_url, class: "avatar-large", alt: "avatar-large" %>
+
     <% end %>
     <% end %>
 </div>
+
+
 
 <div class="round_container shadow-sm p-2 py-4 rounded">
 
