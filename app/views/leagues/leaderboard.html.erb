@@ -16,11 +16,11 @@
     <% @sort_team.each_with_index do |team, index| %>
       <div class="row" style="padding-left: inherit">
         <div class="col team_id"><%= index + 1 %></div>
-        <div class="col"><%= team.name %></div>
-        <div class="col"> <%= team.weekly_scores.first.score %> </div>
-        <div class="col team_id">6</div>
-        <div class="col team_id">1</div>
-        <div class="col team_id">0</div>
+        <div class="col"> <%= team.name %> </div>
+        <div class="col"> <%= team.compute_points %> </div>
+        <div class="col team_id"> <%= team.victory_count %> </div>
+        <div class="col team_id"> <%= team.draw_count %> </div>
+        <div class="col team_id"> <%= team.defeat_count %> </div>
       </div>
     <% end %>
 

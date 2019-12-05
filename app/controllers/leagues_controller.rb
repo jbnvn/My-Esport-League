@@ -11,7 +11,7 @@ class LeaguesController < ApplicationController
     @league = params[:league_id] ? League.find(params[:league_id]) : League.find(params[:id])
 
     @teams = @league.teams
-    @sort_team = League.find(1).teams.sort_by { |t| t.weekly_scores.first.score }.reverse
+    @sort_team = League.find(1).teams.sort_by { |t| t.compute_points }.reverse
   end
 
   def show
