@@ -3,8 +3,8 @@
 <div class="tab-content" id="team-tabs">
   <% if @team.players.count == 6 %>
   <div class="map">
-    <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map', id:'top'%>
-    <%#=image_tag @team.players.find_by(role: 'jun').image_url, class: 'player-input-btns jun-map'%>
+    <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map',id:'top'%>
+    <%= image_tag @team.players.find_by(role: 'jun').image_url, class: 'player-input-btns jun-map',id:'jun'%>
     <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map',id:'mid'%>
     <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map',id:'adc'%>
     <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
