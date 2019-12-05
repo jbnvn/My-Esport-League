@@ -98,10 +98,10 @@
   <% else %>
     <div class="map">
     <%= image_tag "top.png", class: 'player-input-btns top-map', id:"top"%>
-    <%= image_tag "jungle.png", class: 'player-input-btns jun-map', id:"jun"%>
+    <%= image_tag "jun.png", class: 'player-input-btns jun-map', id:"jun"%>
     <%= image_tag "mid.png", class: 'player-input-btns mid-map', id:"mid"%>
-    <%= image_tag "bottom.png", class: 'player-input-btns adc-map', id:"adc"%>
-    <%= image_tag "support.png", class: 'player-input-btns sup-map', id:"sup"%>
+    <%= image_tag "adc.png", class: 'player-input-btns adc-map', id:"adc"%>
+    <%= image_tag "sup.png", class: 'player-input-btns sup-map', id:"sup"%>
     <%= image_tag "Plus.jpg", class: 'player-input-btns all-map', id:"all"%>
   </div>
   <div class="full-width">
@@ -207,7 +207,8 @@
   <img class='team-image' src='#{player.pro_team_image_url}' style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
   </div>
   <div class='w-20'>
-  <h3>#{player.role}</h3></div>
+  <img src='#{image_path(player.role + ".png")}'>
+  </div>
   <div class='w-20'><p>#{player.minimum_bid.round} $</p></div>
     <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAllPlayers'>
     </button>
