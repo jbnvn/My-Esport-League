@@ -8,7 +8,7 @@
         <% end %>
 
       <% else %>
-        <%= link_to leagues_path, class: "navbar-brand-big" do %>
+        <%= link_to leagues_path, class: "navbar-brand" do %>
           <%= image_tag "logomel.png" %>
         <% end %>
 
@@ -16,7 +16,7 @@
       <%= link_to '', destroy_user_session_path, method: :delete, class: "fas fa-sign-out-alt" %>
 
     <% else %>
-      <%= link_to root_path, class: "navbar-brand-big" do %>
+      <%= link_to root_path, class: "navbar-brand" do %>
         <%= image_tag "logomel.png" %>
       <% end %>
       <%= link_to "  Login", new_user_session_path, class: "fas fa-door-open" %>
