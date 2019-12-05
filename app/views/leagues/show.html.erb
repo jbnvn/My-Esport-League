@@ -1,6 +1,9 @@
 <%= render 'modal_create_team', league: @league, team: @new_team %>
+<div class="board-show-league">
+  <h1 class="league-name"><%= @league.name %></h1>
+</div>
+
 <div class="bodydashboard">
-  <h2 class="league-name"><%= @league.name %></h2>
   <div class="cards-user">
     <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
       <%= @league.creator.username %>
