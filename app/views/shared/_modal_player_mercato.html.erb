@@ -1,13 +1,14 @@
 
 <div class="p-2 rounded">
-  <div class="card-player d-flex w-100">
-    <div class="p-1 d-flex m-auto">
-      <% if player.image_url.present? %>
-        <%= image_tag player.image_url, class: "avatar-large", alt: "avatar-large" %>
-      <% else %>
-        <%= image_tag "https://cdn.pandascore.co/images/player/image/7754/kev1n-5mwq0zy1.png", class: "avatar-large", alt: "avatar-large" %>
-      <% end %>
-    </div>
+  <div class="card-player d-flex w-100" style="background-image: url(<%= player.pro_team_image_url %>); background-size: 30%; background-position: right; background-repeat: no-repeat;">
+    <% if player.image_url.present? %>
+      <div class="p-1 d-flex m-auto avatar-large" style="background-image: url(<%= player.image_url %>)">
+      </div>
+        <%#= image_tag player.image_url, class: "avatar-large", alt: "avatar-large" %>
+    <% else %>
+      <div class="p-1 d-flex m-auto avatar-large" style="background-image: url(https://cdn.pandascore.co/images/player/image/7754/kev1n-5mwq0zy1.png)">
+      </div>
+    <% end %>
     <div class="my-auto flex-grow-1">
       <div class="card-player-infos">
         <div>
@@ -17,37 +18,25 @@
             <h2>N/A</h2>
           <% end %>
 
-          <% if player.pro_team_acronym.present? %>
-            <p><%= player.pro_team_acronym %></p>
+          <%if player.role.present? %>
+            <p><%= player.role.upcase %></p>
           <% else %>
             <p>N/A</p>
           <% end %>
-
-          <% if player.first_name.present? && player.last_name.present?  %>
-            <p><%= player.first_name %> <%= player.last_name %></p>
-          <% else %>
-            <p>N/A</p>
-          <% end  %>
 
         </div>
         <div class="team-avatar">
-          <% if player.pro_team_image_url.present? %>
-            <%= image_tag player.pro_team_image_url, class: "team-avatar", alt: "avatar" %>
-          <% else %>
-            <%= image_tag "https://cdn.pandascore.co/images/player/image/7754/kev1n-5mwq0zy1.png", class: "avatar-large", alt: "avatar-large" %>
-          <% end %>
+
         </div>
       </div>
       <div class="card-player-infos">
         <div class="d-flex">
-          <h2> <%= player.minimum_bid.round %> $</h2>
+          <!-- <h2> <%#= player.minimum_bid.round %> $</h2> -->
         </div>
         <div>
-          <%if player.role.present? %>
-            <h2 id="role"><%= player.role.upcase %></h2>
-          <% else %>
-            <p>N/A</p>
-          <% end %>
+
+
+
         </div>
       </div>
     </div>
@@ -55,7 +44,7 @@
 
 <!-- Stats Carousel -->
   <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="false">
-    <div class="card-player carousel-stats carousel-inner banner" style="background-image: url(<%= player.pro_team_image_url %>); background-size: 50%; background-position: center; background-repeat: no-repeat;">
+    <div class="card-player carousel-stats carousel-inner banner" >
 
     <% player_gold = player.gold_share.round(2) * 100 %>
     <% player_killparticipation = player.kill_participation.round(2) * 100 %>

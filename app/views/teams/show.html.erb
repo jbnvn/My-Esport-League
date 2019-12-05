@@ -22,7 +22,7 @@
         </div>
         <div id="ongoing">
           <h4> Round bet </h4>
-          <p> 0 <strong>$</strong></p>
+          <p id="round-bet"> 0 <strong>$</strong></p>
         </div>
       </div>
     </div>
@@ -198,7 +198,7 @@
     </button>
   </div>
 </div>
-<div id=#{player.id} data-modal='modalAllPlayers'></div>
+<div id=#{player.id} data-modal='modalAllPlayers' data-minimumbid='#{player.minimum_bid}' data-role='#{player.role}'></div>
 </label>".html_safe } %>
     <div class="modal fade" id="modalAllPlayers" tabindex="-1" role="dialog" aria-labelledby="modalAllPlayers" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
@@ -231,7 +231,7 @@
 
   <div class="d-none">
     <% @players.each do |player| %>
-      <div id="player_placeholder_infos_<%= player.id %>" data-name="<%= player.name %>" data-role="<%= player.role %>" >
+      <div id="player_placeholder_infos_<%= player.id %>" data-name="<%= player.name %>" data-role="<%= player.role %>">
       </div>
     <% end %>
   </div>

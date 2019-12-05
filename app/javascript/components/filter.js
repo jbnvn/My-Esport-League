@@ -46,16 +46,24 @@ const checkPlayerBoxe = (category) => {
       player.addEventListener("click", (event) => {
         hideAllCheckBoxes(category);
         event.currentTarget.parentElement.checked = true;
-        player.querySelector('button').click()
+        player.querySelector('button').click();
         const id = player.lastElementChild.id;
         const modalId = player.lastElementChild.dataset.modal;
         const modalContent = document.getElementById(`player_infos_${id}`);
         const modal = document.getElementById(modalId);
-        if (modal) {
+        if (modalContent && modal) {
           const modalBody = modal.querySelector('.modal-body');
           modalBody.innerHTML = '';
           modalBody.appendChild(modalContent);
-
+          const role = player.lastElementChild.dataset.role;
+          const minimumbid = player.lastElementChild.dataset.minimumbid;
+          const modalInput = document.getElementById(`${role}_bid_points`);
+          console.log(minimumbid);
+          console.log(role);
+          console.log(modalInput);
+          console.log(document.querySelector('#sup_bid_points'));
+          console.log(`#${role}_bid_points`);
+          modalInput.value = Number.parseInt(minimumbid, 10);
         }
       })
     });
