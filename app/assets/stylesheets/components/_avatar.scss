@@ -3,15 +3,23 @@
   border-radius: 50%;
 }
 .avatar-large {
-  width: 90px;
-  border-radius: 50%;
-  margin: 10px 5px 10px 5px;
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 50% !important;
+  margin: 10px 5px 10px 5px !important;
+  background-size: cover;
+  background-position: center;
 }
 
 .team-avatar-large {
   width: 50px;
   border-radius: 50%;
   margin: 10px 5px 10px 5px;
+}
+
+.team-avatar-smaller {
+  width: 37px;
+  border-radius: 50%;
 }
 
 .avatar-bordered {
