@@ -22,7 +22,7 @@
     <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map',id:'mid'%>
     <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map',id:'adc'%>
     <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
-    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%> 
+    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%>
 
   </div>
   <% if @team.bids.where(status: 'succeeded').count != 6 %>
@@ -102,7 +102,7 @@
     <%= image_tag "mid.png", class: 'player-input-btns mid-map', id:"mid"%>
     <%= image_tag "bottom.png", class: 'player-input-btns adc-map', id:"adc"%>
     <%= image_tag "support.png", class: 'player-input-btns sup-map', id:"sup"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns all-map', id:"all"%>
+    <%= image_tag "Plus.jpg", class: 'player-input-btns all-map', id:"all"%>
   </div>
   <div class="full-width">
     <div class="budget">

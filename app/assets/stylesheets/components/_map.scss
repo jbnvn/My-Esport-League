@@ -22,9 +22,10 @@
 
 .map img {
   object-fit: cover;
+  border-width: 2px;
+  padding: 5px;
   width: 40px !important;
   height: 40px !important;
-  border-width: 3px;
 }
 
 .map .top-map {
@@ -35,7 +36,6 @@
   right: 18.4em;
   border-radius: 30px;
   border-style: solid;
-  border-width: thin;
   border-color: white;
   background-color: #1f3a6f;
 }
@@ -47,7 +47,6 @@
   right: 14.2em;
   border-radius: 30px;
   border-style: solid;
-  border-width: thin;
   border-color: white;
   background-color: #1f3a6f;
 }
@@ -59,7 +58,6 @@
   right: 10.3em;
   border-radius: 30px;
   border-style: solid;
-  border-width: thin;
   border-color: white;
   background-color: #1f3a6f;
 }
@@ -71,7 +69,6 @@
   right: 2.0em;
   border-radius: 30px;
   border-style: solid;
-  border-width: thin;
   border-color: white;
   background-color: #1f3a6f;
 }
@@ -83,7 +80,6 @@
   right: 4.5em;
   border-radius: 30px;
   border-style: solid;
-  border-width: thin;
   border-color: white;
   background-color: #1f3a6f;
 }
@@ -95,7 +91,6 @@
   right: 20.2em;
   border-radius: 30px;
   border-style: solid;
-  border-width: thin;
   border-color: white;
   background-color: #1f3a6f;
 
