@@ -34,13 +34,13 @@ class BidsController < ApplicationController
 
     # autres équipes
     #if !(@team.league.teams.count * 6 == @team.league.bids.succeeded.count)
-      if @team.league.teams.count * 6 == @team.league.bids.pending.count
+      if @team.league.teams.count * 5 == @team.league.bids.pending.count
         @team.league.players.each do |player|
           player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
           player_bids.first.succeeded!
           player_bids[1..-1].each{ |pb| pb.failed! }
         end
-          redirect_to show_post_mercato_path(@team)
+          # redirect_to show_post_mercato_path(@team)
 
   #     elsif @team.league.teams.count * 6 == @team.league.bids.pending.count + @team.league.bids.succeeded.count
   #       @team.league.players.each do |player|
@@ -53,7 +53,7 @@ class BidsController < ApplicationController
 
         end
   #     end
-  #       redirect_to team_path(@team)
+         redirect_to team_path(@team)
   #   #else
    end
   # Round 2: remove all players chosen and chose from roles you don't have
