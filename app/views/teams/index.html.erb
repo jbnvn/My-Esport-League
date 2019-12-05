@@ -1,7 +1,7 @@
 <div class="round_container shadow-sm pb-3 rounded">
   <div class="p-2 py-3 d-flex justify-content-center">
     <div class="round_counter shadow-sm">
-      DAY 2
+      DAY 4
     </div>
   </div>
 
@@ -16,6 +16,7 @@
     <div class="d-flex justify-content-between align-items-center pt-3">
         <div>
           <%= image_tag game.first.image_url, class: "avatar-large", alt: "avatar-large" %>
+          <%= cl_image_tag game.first.photo.key, height: 300, width: 400, crop: :fill %>
         </div>
         <div>
           <%= game.first.weekly_scores.first.score.round %>
@@ -26,6 +27,7 @@
         </div>
         <div>
           <%= image_tag game.last.image_url, class: "avatar-large", alt: "avatar-large" %>
+          <%= cl_image_tag game.last.photo.key, height: 300, width: 400, crop: :fill %>
         </div>
     </div>
 
