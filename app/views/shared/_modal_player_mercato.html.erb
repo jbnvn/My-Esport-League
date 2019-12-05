@@ -1,6 +1,6 @@
 
 <div class="p-2 rounded">
-  <div class="card-player d-flex w-100" style="background-image: url(<%= player.pro_team_image_url %>); background-size: 30%; background-position: right; background-repeat: no-repeat;">
+  <div class="card-player d-flex w-100" style="background-image: url(<%= player.pro_team_image_url %>); background-size: 25%; background-position: right; background-repeat: no-repeat;">
     <% if player.image_url.present? %>
       <div class="p-1 d-flex m-auto avatar-large" style="background-image: url(<%= player.image_url %>)">
       </div>
@@ -66,12 +66,12 @@
                 <p> <%= player.kda.round(2)%> </p>
               </div>
 
-              <div class="pie-chart-score">
+              <div class="pie-chart-score-left">
                 <%= pie_chart({score: player_winrate , empty: 100 - player_winrate}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
                 <p><%= number_to_percentage(player_winrate, precision: 0) %></p>
               </div>
 
-              <div class="pie-chart-score">
+              <div class="pie-chart-score-left">
                 <%= pie_chart({score: player_killshare , empty: 100 - player_killshare}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
                 <p><%= number_to_percentage(player_killshare, precision: 0) %></p>
               </div>
@@ -82,14 +82,14 @@
           <div class="carousel-block d-flex align-items-center justify-content-center w-20">
             <div class="pt-2">
               <h2></h2>
-              <div class="stats-score pt-2">
-                <p>KDA</p>
+              <div class="stats-score pt-2" style="margin-bottom: 8px;">
+                <p style="color:black;">KDA</p>
               </div>
               <div class="stats-score pt-2">
-                <p>WR</p>
+                <p style="color:black;">WR</p>
               </div>
               <div class="stats-score pt-2">
-                <p>KS</p>
+                <p style="color:black;">KS</p>
               </div>
             </div>
 
@@ -123,12 +123,12 @@
               <h2>Last game</h2>
               <!-- Chart -->
 
-              <div class="pie-chart-score">
+              <div class="pie-chart-score-left">
                 <%= pie_chart({score: player_gold , empty: 100 - player_gold}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
                 <p><%= number_to_percentage(player_gold, precision: 0) %></p>
               </div>
 
-              <div class="pie-chart-score">
+              <div class="pie-chart-score-left">
                 <%= pie_chart({score: player_killparticipation , empty: 100 - player_killparticipation}, legend: false, colors: ["#1f3a6f","#DF4D64"], donut: true, height: "60px", width:"60px", library: {cutoutPercentage: 65}) %>
                 <p><%= number_to_percentage(player_killparticipation, precision: 0) %></p>
               </div>
@@ -144,13 +144,13 @@
             <div class="pt-2">
               <h2></h2>
               <div class="stats-score pt-2">
-                <p>GS</p>
+                <p style="color:black;">GS</p>
               </div>
               <div class="stats-score pt-2">
-                <p>KPAR</p>
+                <p style="margin-top: 17px; color:black;">KPAR</p>
               </div>
               <div class="stats-score pt-2">
-                <p>CSPM</p>
+                <p style="margin-bottom: -17px; color:black;">CSPM</p>
               </div>
             </div>
 
