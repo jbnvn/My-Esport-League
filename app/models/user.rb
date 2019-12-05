@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :joined_leagues, through: :participations
   has_many :teams
   validates :username, presence: true
+
+  # CLOUDINARY
+  has_one_attached :photo
 end
