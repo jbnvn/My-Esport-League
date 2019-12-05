@@ -10,8 +10,8 @@ import { checkPlayerBoxe } from '../components/filter';
 import { initShowPlayers } from '../components/filter';
 initShowPlayers();
 
-import { initFilterTabs } from '../components/tab';
-initFilterTabs();
+// import { initFilterTabs } from '../components/tab';
+// initFilterTabs();
 
 // import { showAllPlayersInputs} from '../components/filter';
 // showAllPlayersInputs();
