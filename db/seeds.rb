@@ -27,12 +27,35 @@ Participation.create!(user_id: User.fourth.id, league_id: League.first.id)
 Participation.create!(user_id: User.fifth.id, league_id: League.first.id)
 Participation.create!(user_id: User.last.id, league_id: League.first.id)
 
-Team.create!(name: "Sparter", league_id: League.first.id, user_id: User.first.id, victory_count: "2", draw_count: "0", defeat_count: "2", image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/b1143066129323.5b143ad5c4406.jpg")
-Team.create!(name: "DestroyR", league_id: League.first.id, user_id: User.second.id, victory_count: "3", draw_count: "0", defeat_count: "1", image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/9c9e7866129323.5b143ad5c548b.jpg")
-Team.create!(name: "ProGamer", league_id: League.first.id, user_id: User.third.id, victory_count: "1", draw_count: "0", defeat_count: "3", image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/7f002e66129323.5b143ad5bf794.jpg")
-Team.create!(name: "Sniper", league_id: League.first.id, user_id: User.fourth.id, victory_count: "2", draw_count: "1", defeat_count: "1", image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/d77ef566129323.5b143ad5bed2a.jpg")
-Team.create!(name: "Olympics", league_id: League.first.id, user_id: User.fifth.id, victory_count: "1", draw_count: "1", defeat_count: "2", image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/c2679d66129323.5b143ad5c5a5f.jpg")
-Team.create!(name: "Legend", league_id: League.first.id, user_id: User.last.id, victory_count: "2", draw_count: "0", defeat_count: "2", image_url: "https://mir-s3-cdn-cf.behance.net/project_modules/1400_opt_1/8d12d166129323.5b143ad5c278f.jpg")
+team_image1 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/poro.png')
+team_image2 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/starguardian.png')
+team_image3 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/garensword.png')
+team_image4 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/flamechomper.png')
+team_image5 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/helmetbro.png')
+team_image6 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/minions.png')
+
+
+team_1 = Team.create!(name: "Sparter", league_id: League.first.id, user_id: User.first.id, victory_count: "2", draw_count: "0", defeat_count: "2")
+team_2 = Team.create!(name: "DestroyR", league_id: League.first.id, user_id: User.second.id, victory_count: "3", draw_count: "0", defeat_count: "1")
+team_3 = Team.create!(name: "ProGamer", league_id: League.first.id, user_id: User.third.id, victory_count: "1", draw_count: "0", defeat_count: "3")
+team_4 = Team.create!(name: "Sniper", league_id: League.first.id, user_id: User.fourth.id, victory_count: "2", draw_count: "1", defeat_count: "1")
+team_5 = Team.create!(name: "Olympics", league_id: League.first.id, user_id: User.fifth.id, victory_count: "1", draw_count: "1", defeat_count: "2")
+team_6 = Team.create!(name: "Legend", league_id: League.first.id, user_id: User.last.id, victory_count: "2", draw_count: "0", defeat_count: "2")
+
+team_1.photo.attach(io: team_image1, filename: 'team_avatar.png', content_type: 'image/png')
+team_2.photo.attach(io: team_image2, filename: 'team_avatar.png', content_type: 'image/png')
+team_3.photo.attach(io: team_image3, filename: 'team_avatar.png', content_type: 'image/png')
+team_4.photo.attach(io: team_image4, filename: 'team_avatar.png', content_type: 'image/png')
+team_5.photo.attach(io: team_image5, filename: 'team_avatar.png', content_type: 'image/png')
+team_6.photo.attach(io: team_image6, filename: 'team_avatar.png', content_type: 'image/png')
+
+team_1.save!
+team_2.save!
+team_3.save!
+team_4.save!
+team_5.save!
+team_6.save!
+
 
 Bid.create!(status: "succeeded", points: 10, player_id: Player.where(role: "top").first.id, team_id: Team.first.id)
 Bid.create!(status: "succeeded", points: 11, player_id: Player.where(role: "jun").first.id, team_id: Team.first.id)

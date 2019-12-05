@@ -9,6 +9,4 @@ class User < ApplicationRecord
   has_many :teams
   validates :username, presence: true
 
-  # CLOUDINARY
-  has_one_attached :photo
 end

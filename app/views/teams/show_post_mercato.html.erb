@@ -49,3 +49,10 @@
     <% end %>
     <% end %>
 
+  <div class="d-none">
+    <% @players.each do |player| %>
+      <div id="player_infos_<%= player.id %>">
+        <%= render 'shared/modal_player_mercato', player: player %>
+      </div>
+    <% end %>
+  </div>
