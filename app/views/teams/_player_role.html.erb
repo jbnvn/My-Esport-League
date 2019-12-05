@@ -8,7 +8,7 @@
   <img class='team-image' src='#{player.pro_team_image_url}' style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
   </div>
   <div class='w-20'>
-  <h3>#{player.role}</h3></div>
+  <img src='#{image_path(player.role + ".png")}'></div>
   <div class='w-20'><p>#{player.minimum_bid.round} $</p></div>
 
     <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modal#{role.capitalize}Players'>
