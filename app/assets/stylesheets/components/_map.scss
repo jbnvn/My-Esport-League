@@ -19,9 +19,16 @@
   width: 100vw;
   position: relative;
 }
+
+.map img {
+  object-fit: cover;
+  width: 40px;
+  height: 40px;
+}
+
 .map .top-map {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   position: absolute;
   top: 2.6em;
   right: 18.4em;
@@ -32,8 +39,8 @@
   background-color: white;
 }
 .map .jun-map {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   position: absolute;
   top: 6em;
   right: 14.2em;
@@ -44,8 +51,8 @@
   background-color: white;
 }
 .map .mid-map {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   position: absolute;
   top: 9em;
   right: 10.3em;
@@ -56,8 +63,8 @@
   background-color: white;
 }
 .map .adc-map {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   position: absolute;
   top: 15.6em;
   right: 2.0em;
@@ -68,8 +75,8 @@
   background-color: white;
 }
 .map .sup-map {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   position: absolute;
   top: 16.9em;
   right: 4.5em;
@@ -80,8 +87,8 @@
   background-color: white;
 }
 .map .all-map {
-  width: 30px;
-  height: 30px;
+  // width: 30px;
+  // height: 30px;
   position: absolute;
   top: 17em;
   right: 20.2em;

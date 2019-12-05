@@ -1,10 +1,13 @@
 class Team < ApplicationRecord
-  belongs_to :user
-  belongs_to :league
+  belongs_to :user, dependent: :destroy
+  belongs_to :league, dependent: :destroy
 
   has_many :weekly_scores, dependent: :destroy
   has_many :bids, dependent: :destroy
   has_many :players, through: :bids
+
+    # CLOUDINARY
+  has_one_attached :photo
 
   def compute_points
     points = self.victory_count * 3

@@ -15,7 +15,8 @@
   <div class="round_teams">
     <div class="d-flex justify-content-between align-items-center pt-3">
         <div>
-          <%= image_tag game.first.image_url, class: "avatar-large", alt: "avatar-large" %>
+          <%#= image_tag game.first.image_url, class: "avatar-large", alt: "avatar-large" %>
+          <%= cl_image_tag url_for(game.first.photo), class: "team-avatar-large" %>
         </div>
         <div>
           <%= game.first.weekly_scores.first.score.round %>
@@ -25,7 +26,8 @@
           <%= game.last.weekly_scores.first.score.round %>
         </div>
         <div>
-          <%= image_tag game.last.image_url, class: "avatar-large", alt: "avatar-large" %>
+          <%#= image_tag game.last.image_url, class: "avatar-large", alt: "avatar-large" %>
+          <%= cl_image_tag url_for(game.last.photo), class: "team-avatar-large" %>
         </div>
     </div>
 

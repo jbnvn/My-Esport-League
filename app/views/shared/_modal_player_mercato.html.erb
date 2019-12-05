@@ -1,7 +1,7 @@
 
 <div class="p-2 rounded">
   <div class="card-player d-flex w-100">
-    <div class="p-1">
+    <div class="p-1 d-flex m-auto">
       <% if player.image_url.present? %>
         <%= image_tag player.image_url, class: "avatar-large", alt: "avatar-large" %>
       <% else %>
@@ -23,6 +23,12 @@
             <p>N/A</p>
           <% end %>
 
+          <% if player.first_name.present? && player.last_name.present?  %>
+            <p><%= player.first_name %> <%= player.last_name %></p>
+          <% else %>
+            <p>N/A</p>
+          <% end  %>
+
         </div>
         <div class="team-avatar">
           <% if player.pro_team_image_url.present? %>
@@ -34,13 +40,7 @@
       </div>
       <div class="card-player-infos">
         <div class="d-flex">
-          <% if player.first_name.present? && player.last_name.present?  %>
-            <p><%= player.first_name %> <%= player.last_name %></p>
-          <% else %>
-            <p>N/A</p>
-          <% end  %>
-         <!--  <p><%= player.country %></p> -->
-         <!--  <i class="fas fa-ad"></i> -->
+          <h2> <%= player.minimum_bid.round %> $</h2>
         </div>
         <div>
           <%if player.role.present? %>

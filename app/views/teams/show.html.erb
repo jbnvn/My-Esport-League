@@ -8,7 +8,7 @@
     <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map',id:'mid'%>
     <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map',id:'adc'%>
     <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
-    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%>
+    <!-- <%#= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%> -->
   </div>
   <% if @team.bids.where(status: 'succeeded').count != 6 %>
     <div class="full-width">
@@ -210,7 +210,7 @@
         </div>
         <div class="modal-footer">
           <div class="form-group decimal optional all_bid_points">
-            <label class="decimal optional" for="all_bid_points">Sub Points</label>
+            <label class="decimal optional" for="all_bid_points"><!-- Sub Points --></label>
             <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
           </div>
           <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal">Create BID</button>
@@ -237,7 +237,7 @@
   </div>
 
     <%= render "shared/footer" %>
-
+</div>
 
 
 
