@@ -63,7 +63,7 @@
           <img class='team-image' src= <%=bid.player.pro_team_image_url %> , style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
           </div>
           <div class='w-20'>
-          <h3><%= bid.player.role %></h3></div>
+          <%= image_tag "#{bid.player.role}.png"%> </div>
             <div class='w-20'><p>validated</p></div>
         </div>
           <% elsif bid.status == 'pending' %>
