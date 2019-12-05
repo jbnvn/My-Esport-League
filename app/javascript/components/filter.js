@@ -27,13 +27,13 @@ const hideIndexPlayers = () => {
 
 const initFilterPlayers = () => {
   document.querySelectorAll('.player-input-btns').forEach((btn) => {
-    console.log("1")
     btn.addEventListener("click", (event) => {
       hideAllPlayersInputs();
       hideYourPlayers();
+      hideAllFilters();
       const targetSelector = `#${btn.id}-players`
       document.querySelector(targetSelector).classList.remove("d-none");
-      console.log("2")
+      event.currentTarget.classList.add("filter");
     });
   })
 }
@@ -109,6 +109,18 @@ const updateBids = () => {
   // retrieve point list
   // update each position for each point
 }
+
+  // const filterOnButtons = () => {
+  //   const filterbuttons = document.querySelectorAll('.player-input-btns').forEach((filterbutton) => {
+  //     filterbutton.classList.add("filter");
+  //   })
+  // }
+
+  const hideAllFilters = () => {
+    const filterbuttons = document.querySelectorAll('.player-input-btns').forEach((filterbutton) => {
+      filterbutton.classList.remove("filter");
+    })
+  }
 
 
 // const showAllPlayersInputs = () => {

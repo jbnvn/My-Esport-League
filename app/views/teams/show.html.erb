@@ -16,12 +16,14 @@
 <div class="tab-content" id="team-tabs">
   <% if @team.players.count == 6 %>
   <div class="map">
+
     <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map',id:'top'%>
     <%= image_tag @team.players.find_by(role: 'jun').image_url, class: 'player-input-btns jun-map',id:'jun'%>
     <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map',id:'mid'%>
     <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map',id:'adc'%>
     <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
-    <!-- <%#= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%> -->
+    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%> 
+
   </div>
   <% if @team.bids.where(status: 'succeeded').count != 6 %>
     <div class="full-width">
@@ -95,11 +97,11 @@
 
   <% else %>
     <div class="map">
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns top-map', id:"top"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns jun-map', id:"jun"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns mid-map', id:"mid"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns adc-map', id:"adc"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns sup-map', id:"sup"%>
+    <%= image_tag "top.png", class: 'player-input-btns top-map', id:"top"%>
+    <%= image_tag "jungle.png", class: 'player-input-btns jun-map', id:"jun"%>
+    <%= image_tag "mid.png", class: 'player-input-btns mid-map', id:"mid"%>
+    <%= image_tag "bottom.png", class: 'player-input-btns adc-map', id:"adc"%>
+    <%= image_tag "support.png", class: 'player-input-btns sup-map', id:"sup"%>
     <%= image_tag "buttonplayer.png", class: 'player-input-btns all-map', id:"all"%>
   </div>
   <div class="full-width">
