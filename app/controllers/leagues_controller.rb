@@ -4,6 +4,14 @@ class LeaguesController < ApplicationController
   def index
     @leagues = League.all
     @league = League.new
+    @new_team = Team.new
+  end
+
+  def leaderboard
+    @league = params[:league_id] ? League.find(params[:league_id]) : League.find(params[:id])
+
+    @teams = @league.teams
+    @sort_team = League.find(1).teams.sort_by { |t| t.weekly_scores.first.score }.reverse
   end
 
   def show

@@ -9,6 +9,12 @@ class BidsController < ApplicationController
   def create
     # Validate my bets if all players are chosen
     # Validate my best. turn all players status into pending
+  # Check if all partcipants players are pending
+  # Compare points by players(half of it done)
+  # If points higher are alone turn player status into validate(half of it done)
+  # Else turn players status into failed(half of it done)
+  # If all players validate then go into 'wait for others to finish mercato'
+  # Else go to round 2
     params[:bid][:player_id].select{ |p| p != "" }.each_with_index do |player_id, index|
       bid = Bid.new()
       bid.team = @team
@@ -27,27 +33,38 @@ class BidsController < ApplicationController
     end
 
     # autres équipes
-    if @team.league.teams.count * 6 == @team.league.bids.pending.count
-      @team.league.players.each do |player|
-        player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
-        player_bids.first.succeeded!
-        # player_bids[1..-1].each{ |pb| pb.failed! }
-      end
-    end
-    redirect_to team_path(@team)
-  end
+    #if !(@team.league.teams.count * 6 == @team.league.bids.succeeded.count)
+      if @team.league.teams.count * 6 == @team.league.bids.pending.count
+        @team.league.players.each do |player|
+          player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
+          player_bids.first.succeeded!
+          player_bids[1..-1].each{ |pb| pb.failed! }
+        end
+          redirect_to show_post_mercato_path(@team)
 
-  # Check if all partcipants players are pending
+  #     elsif @team.league.teams.count * 6 == @team.league.bids.pending.count + @team.league.bids.succeeded.count
+  #       @team.league.players.each do |player|
+  #         player_bids = player.bids.where(team: @team.league.teams).order(points: :desc)
+  #         player_bids.first.succeeded!
+  #         player_bids[1..-1].each{ |pb| pb.failed! }
+  #       end
+  #       if @team.league.teams.count * 6 == @team.league.bids.succeeded.count
+  #         redirect_to show_post_mercato_path(@team)
 
-
-  # Compare points by players(half of it done)
-  # If points higher are alone turn player status into validate(half of it done)
-  # Else turn players status into failed(half of it done)
-  # If all players validate then go into 'wait for others to finish mercato'
-
-  # Else go to round 2
-
+        end
+  #     end
+  #       redirect_to team_path(@team)
+  #   #else
+   end
   # Round 2: remove all players chosen and chose from roles you don't have
+    # if @team.league.bids.failed == 0
+    # redirect to show_post_mercato
+    # else redirect to show team
+    # if first bid has been made change the condition of validation
+    # condition of validation : if @team.league.teams.count * 6 == @team.league.bids.pending.count + @team.league.bids.succeeded.count
+
+
+
   # go back to first step until all partcipants validate step 7
   # When all validate step seven go to controller of rounds
 

@@ -1,6 +1,5 @@
 <%= render 'modal_create_league', league: @league %>
 <div class="main-container p-3">
-
     <div class="creation-card">
     <type="button" data-toggle="modal" data-target="#createleagueModal">
       <div class="card-categoryleague" style="background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.4)), url(http://all4desktop.com/data_images/original/4237948-league-of-legends.jpg); color:#f0e6d2;">
@@ -8,7 +7,6 @@
         <span style="font-size: 30px;">+</span>
       </div>
     </div>
-
   <% @leagues.each do |league| %>
   <% if league.teams.find_by(user_id: current_user.id) %>
   <%= link_to team_path(league.teams.find_by(user_id: current_user)) do %>
@@ -39,4 +37,3 @@
   <% end %>
 <% end %>
 </div>
-

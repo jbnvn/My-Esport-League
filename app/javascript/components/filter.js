@@ -27,11 +27,13 @@ const hideIndexPlayers = () => {
 
 const initFilterPlayers = () => {
   document.querySelectorAll('.player-input-btns').forEach((btn) => {
+    console.log("1")
     btn.addEventListener("click", (event) => {
       hideAllPlayersInputs();
       hideYourPlayers();
       const targetSelector = `#${btn.id}-players`
       document.querySelector(targetSelector).classList.remove("d-none");
+      console.log("2")
     });
   })
 }
@@ -83,9 +85,9 @@ const updateBids = () => {
     if (box.checked == true) {
       const player = document.getElementById(`player_placeholder_infos_${box.value}`)
       const role = player.dataset.role;
-      const name = player.dataset.name
+      const name = player.dataset.name;
       const listElement = document.getElementById(`${role}-bid`);
-      listElement.innerText = name + " " + role
+      listElement.innerText = "Name: " + name + " | Role: " + role + " | Your bid: "
       // selectedPlayers.push(player)
     }
   });
