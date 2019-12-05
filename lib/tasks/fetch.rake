@@ -63,7 +63,7 @@ namespace :pandascore do
     AVERAGE_WINRATE = 0.56
     AVERAGE_CSPM = 7.85
     AVERAGE_KPART = 0.66
-    STANDARD_VALUE = 7000
+    STANDARD_VALUE = 70000
     STANDARD_VALUE_SCORE = 7
 
     # Player.all.update(

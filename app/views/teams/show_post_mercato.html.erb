@@ -12,14 +12,14 @@
     <div class="budget">
       <div id="rest">
         <h4> Rest of budget </h4>
-        <p>300 000 <strong>PI</strong></p> <!-- à animer -->
+        <p>500 000 <strong>$</strong></p> <!-- à animer -->
       </div>
      <div class="create-bid" style="width:105px">
       <input type="submit" value="Create Bid" form='new_bid' class='create-bid-button'>
     </div>
     <div id="ongoing">
       <h4> Round bet </h4>
-      <p> 0 <strong>PI</strong></p>
+      <p> 500 000<strong>$</strong></p>
     </div>
   </div>
   <div class="description-list">
@@ -49,3 +49,10 @@
     <% end %>
     <% end %>
 
+  <div class="d-none">
+    <% @players.each do |player| %>
+      <div id="player_infos_<%= player.id %>">
+        <%= render 'shared/modal_player_mercato', player: player %>
+      </div>
+    <% end %>
+  </div>

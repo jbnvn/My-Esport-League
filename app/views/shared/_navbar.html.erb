@@ -2,13 +2,13 @@
 
     <% if user_signed_in? %>
 
-      <% unless current_page?(root_path) || current_page?(leagues_path) %>
-        <%= link_to root_path, class: "navbar-brand" do %>
+      <% unless current_page?(leagues_path) %>
+        <%= link_to leagues_path, class: "navbar-brand" do %>
           <%= image_tag "logomel.png" %>
         <% end %>
 
       <% else %>
-        <%= link_to root_path, class: "navbar-brand-big" do %>
+        <%= link_to leagues_path, class: "navbar-brand-big" do %>
           <%= image_tag "logomel.png" %>
         <% end %>
 
