@@ -10,20 +10,26 @@
     <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
     <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%>
   </div>
-  <div class="full-width">
-    <div class="budget">
-      <div id="rest">
-        <h4> Rest of budget </h4>
-        <p>300 000 <strong>$</strong></p> <!-- à animer -->
+  <% if @team.bids.where(status: 'succeeded').count != 6 %>
+    <div class="full-width">
+      <div class="budget">
+        <div id="rest">
+          <h4> Rest of budget </h4>
+          <p>300 000 <strong>$</strong></p> <!-- à animer -->
+        </div>
+        <div class="create-bid" style="width:105px">
+          <input type="submit" value="Create Bid" form='new_bid' class='create-bid-button'>
+        </div>
+        <div id="ongoing">
+          <h4> Round bet </h4>
+          <p> 0 <strong>$</strong></p>
+        </div>
       </div>
-     <div class="create-bid" style="width:105px">
-      <input type="submit" value="Create Bid" form='new_bid' class='create-bid-button'>
     </div>
-    <div id="ongoing">
-      <h4> Round bet </h4>
-      <p> 0 <strong>$</strong></p>
-    </div>
-  </div>
+  <% else %>
+    <div class="budget-hidden"></div>
+  <% end %>
+
   <div class="description-list">
   <div class="w-40"><p style="margin-left:47px;">PLAYER</p></div>
   <div class="w-20"><p>TEAM</p></div>
