@@ -1,5 +1,18 @@
 <%= javascript_pack_tag 'chartkick' %>
 
+<div class="board-show">
+  <h1>
+    <%= @team.league.name %>
+  </h1>
+
+  <h3>
+    <%= @team.league.creator.username %>
+    <% @team.league.participants.each do |participant|%>
+    <%= " | " + participant.username %>
+    <% end %>
+  </h3>
+</div>
+
 <div class="tab-content" id="team-tabs">
   <% if @team.players.count == 6 %>
   <div class="map">
