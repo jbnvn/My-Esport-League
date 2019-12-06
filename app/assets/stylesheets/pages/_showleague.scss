@@ -26,7 +26,7 @@
 .card-category {
   background-size: cover;
   background-position: center;
-  height: 120px;
+  height: 105px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -47,31 +47,27 @@
   text-align: center;
 }
 
-.sub-container p {
-  margin-top: -20px;
-  margin-bottom: 0px;
-  color:#1B3444;
-}
-
 .buttons-show {
   display:flex;
   flex-direction: row-reverse;
-  margin-top: 10px;
+  margin-top: 7px;
   justify-content: space-around;
 }
 
 .btn.btn-small-blue{
   padding: 2px 5px;
   margin-bottom: 4px;
-  background-color:#1F3A6F;
+  background-color: white;
   border-color: #1F3A6F;
-  color: #f0e6d2;
+  color: black;
+  border-radius: 2px;
+  margin-left: 5px;
 }
 
 .btn.btn-small-blue2{
-  background-color:#1F3A6F;
+  background-color: white;
   border-color: #1F3A6F;
-  color: #f0e6d2;
+  color: black;
 }
 
 .btn.btn-center-red {

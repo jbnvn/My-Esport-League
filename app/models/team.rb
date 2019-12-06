@@ -8,6 +8,8 @@ class Team < ApplicationRecord
 
     # CLOUDINARY
   has_one_attached :photo
+  validates :photo, presence: true
+  validates :name, presence: true
 
   def compute_points
     points = self.victory_count * 3

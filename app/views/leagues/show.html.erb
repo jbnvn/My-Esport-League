@@ -1,62 +1,69 @@
 <%= render 'modal_create_team', league: @league, team: @new_team %>
 <div class="board-show-league">
+  <h3>
+    <%= link_to " Back", @league, class: 'fas fa-chevron-left',
+      method: :delete,
+      data: { confirm: "Are you sure?" }  %>
+  </h3>
   <h1 class="league-name"><%= @league.name %></h1>
 </div>
 
 <div class="bodydashboard">
   <div class="cards-user">
-    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+    <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
       <%= @league.creator.username %>
     </div>
     <% if @league.participations.count == 0 %>
       <% 5.times do  %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-          +
-        </div>
-      <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+      </div>
+    <% end %>
     <% elsif @league.participations.count == 1 %>
       <% @league.participations.each do |participant| %>
-      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
         <%= User.find(participant.user_id).username %>
       </div>
       <% end %>
       <% 4.times do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-        +
-        </div>
-      <% end %>
+
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+     </div>
+    <% end %>
     <% elsif @league.participations.count == 2 %>
       <% @league.participations.each do |participant| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-          <%= User.find(participant.user_id).username %>
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+        <%= User.find(participant.user_id).username %>
+      </div>
       <% end %>
       <% 3.times do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-        ✚
-        </div>
-      <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+      </div>
+    <% end %>
     <% elsif @league.participations.count == 3 %>
       <% @league.participations.each do |participant| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-          <%= User.find(participant.user_id).username %>
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+        <%= User.find(participant.user_id).username %>
+      </div>
       <% end %>
       <% 2.times do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-        ✚
-        </div>
-      <% end %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+      </div>
+    <% end %>
     <% elsif @league.participations.count == 4 %>
       <% @league.participations.each do |participant| %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-          <%= User.find(participant.user_id).username %>
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+        <%= User.find(participant.user_id).username %>
+      </div>
       <% end %>
       <% 1.times do %>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
-        +
-        </div>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+     </div>
+    <% end %>
+    <% else %>
+    <% @league.participations.each do |participant| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
+        <%= User.find(participant.user_id).username %>
+      </div>
       <% end %>
     <% else %>
       <% @league.participations.each do |participant| %>
@@ -64,26 +71,27 @@
           <%= User.find(participant.user_id).username %>
         </div>
       <% end %>
-    <% end %>
-  </div>
 
-  <div class="sub-container">
-    <p>Invite your friends</p>
-    <%= form_tag(league_path, method: :get) do %>
-      <%= text_field_tag(:search, params[:search]) %>
-      <%= submit_tag ("Find"), class: 'btn btn-small-blue' %>
-    <% end %>
-    <% if @users.blank? %>
-      <%="" %>
-    <% else %>
-      <ul>
-        <% @users.each do |user| %>
-          <% unless user == @league.creator || @league.participants.include?(user)  %>
-            <li><%= link_to "#{user.username}", participations_path(league_id: @league.id, user_id: user.id), method: :post, class: 'btn btn-invite-red mt-1'  %></li>
+    </div>
+
+  <div class="board-bottom-create-league">
+    <div class="sub-container">
+      <p>Invite your friends</p>
+      <%= form_tag(league_path, method: :get) do %>
+        <%= text_field_tag(:search, params[:search]) %>
+        <%= submit_tag ("Find"), class: 'btn btn-small-blue' %>
+      <% end %>
+      <% if @users.blank? %>
+        <%="" %>
+      <% else %>
+        <ul><% @users.each do |user| %>
+        <% unless user == @league.creator || @league.participants.include?(user)  %>
+          <li><%= link_to user.username, participations_path(league_id: @league.id, user_id: user.id), method: :post %> </li>
           <% end %>
         <% end %>
-      </ul>
-    <% end %>
+        </ul>
+      <% end %>
+
     <div class="buttons-show">
       <% if (@league.participations.count + 1).odd? %>
         <%= "" %>
@@ -92,9 +100,8 @@
         Let's play
         </button>
       <% end %>
-      <%= link_to "Back", @league, class: 'btn btn-small-blue2',
-        method: :delete,
-        data: { confirm: "Are you sure?" }  %>
     </div>
+    </div>
+  </div>
   </div>
 </div>

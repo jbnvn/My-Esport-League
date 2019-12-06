@@ -41,7 +41,7 @@ class TeamsController < ApplicationController
   private
 
   def team_params
-    params.require(:team).permit(:name, :global_score, :user_id)
+    params.require(:team).permit(:name, :global_score, :user_id, :photo)
   end
 
   def set_league
