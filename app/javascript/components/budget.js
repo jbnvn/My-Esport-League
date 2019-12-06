@@ -15,7 +15,7 @@ const sumAll = (e)=>{
   }, 0);
 
   document.querySelector('#round-bet').innerText = sum;
-  document.querySelector('#total-amount').innerText = 300000 - sum;
+  document.querySelector('#total-amount').innerText = 400000 - sum;
 
 }
 
