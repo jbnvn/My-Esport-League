@@ -12,12 +12,12 @@ Participation.destroy_all
 Team.destroy_all
 Bid.destroy_all
 
-User.create!(email: "JulienB@gmail.com", password: "azerty", username: "JulienB")
-User.create!(email: "CorentinC@gmail.com", password: "azerty", username: "CorentinC")
-User.create!(email: "KarimA@gmail.com", password: "azerty", username: "KarimA")
-User.create!(email: "RadomirZ@gmail.com", password: "azerty", username: "RadomirZ")
+User.create!(email: "JulienB@gmail.com", password: "azerty", username: "Julien")
+User.create!(email: "CorentinC@gmail.com", password: "azerty", username: "Coco")
+User.create!(email: "KarimA@gmail.com", password: "azerty", username: "Karim")
+User.create!(email: "RadomirZ@gmail.com", password: "azerty", username: "Rado")
 User.create!(email: "UserA@gmail.com", password: "azerty", username: "Roberto")
-User.create!(email: "UserB@gmail.com", password: "azerty", username: "Alex")
+User.create!(email: "UserB@gmail.com", password: "azerty", username: "Dude")
 
 League.create!(name: "Le Wagon" , user_id: User.first.id)
 
