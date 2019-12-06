@@ -35,12 +35,12 @@ team_image5 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/helmetbro
 team_image6 = URI.open(File.dirname(__FILE__) + '/../app/assets/images/minions.png')
 
 
-team_1 = Team.create!(name: "Sparter", league_id: League.first.id, user_id: User.first.id, victory_count: "2", draw_count: "0", defeat_count: "2")
-team_2 = Team.create!(name: "DestroyR", league_id: League.first.id, user_id: User.second.id, victory_count: "3", draw_count: "0", defeat_count: "1")
-team_3 = Team.create!(name: "ProGamer", league_id: League.first.id, user_id: User.third.id, victory_count: "1", draw_count: "0", defeat_count: "3")
-team_4 = Team.create!(name: "Sniper", league_id: League.first.id, user_id: User.fourth.id, victory_count: "2", draw_count: "1", defeat_count: "1")
-team_5 = Team.create!(name: "Olympics", league_id: League.first.id, user_id: User.fifth.id, victory_count: "1", draw_count: "1", defeat_count: "2")
-team_6 = Team.create!(name: "Legend", league_id: League.first.id, user_id: User.last.id, victory_count: "2", draw_count: "0", defeat_count: "2")
+team_1 = Team.create!(name: "Romain", league_id: League.first.id, user_id: User.first.id, victory_count: "2", draw_count: "0", defeat_count: "2")
+team_2 = Team.create!(name: "Coco", league_id: League.first.id, user_id: User.second.id, victory_count: "1", draw_count: "0", defeat_count: "3")
+team_3 = Team.create!(name: "Karim", league_id: League.first.id, user_id: User.third.id, victory_count: "3", draw_count: "0", defeat_count: "1")
+team_4 = Team.create!(name: "Rado", league_id: League.first.id, user_id: User.fourth.id, victory_count: "2", draw_count: "1", defeat_count: "1")
+team_5 = Team.create!(name: "Capucine", league_id: League.first.id, user_id: User.fifth.id, victory_count: "1", draw_count: "1", defeat_count: "2")
+team_6 = Team.create!(name: "Thomas", league_id: League.first.id, user_id: User.last.id, victory_count: "2", draw_count: "0", defeat_count: "2")
 
 team_1.photo.attach(io: team_image1, filename: 'team_avatar.png', content_type: 'image/png')
 team_2.photo.attach(io: team_image2, filename: 'team_avatar.png', content_type: 'image/png')
