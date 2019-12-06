@@ -1,14 +1,20 @@
 import "bootstrap";
 import { initFilterPlayers } from '../components/filter';
+if(document.querySelector('.board-show')){
 initFilterPlayers();
+}
 import { checkPlayerBoxe } from '../components/filter';
 
 // import {initInputValidation} from '../components/key';
  import {validateFormButton} from '../components/key';
+ if(document.querySelector('.board-show')){
  validateFormButton();
+}
 
 import { initShowPlayers } from '../components/filter';
+ if(document.querySelector('.board-show')){
 initShowPlayers();
+}
 
 import { initUpdateSum } from '../components/budget';
 initUpdateSum();
@@ -24,14 +30,14 @@ initUpdateSum();
 //   document.validateForm2 = validateForm2;
 // });
 
-// if(document.querySelector('')){
+ if(document.querySelector('.board-show')){
   checkPlayerBoxe('top-players');
   checkPlayerBoxe('jun-players');
   checkPlayerBoxe('mid-players');
   checkPlayerBoxe('adc-players');
   checkPlayerBoxe('sup-players');
   checkPlayerBoxe('all-players');
-// }
+  }
 
 
 

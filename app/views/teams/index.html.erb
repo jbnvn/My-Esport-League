@@ -1,8 +1,9 @@
+<div class="board">
+  <h1>DAY 4</h1>
+</div>
+
 <div class="round_container shadow-sm pb-3 rounded">
-  <div class="p-2 py-3 d-flex justify-content-center">
-    <div class="round_counter shadow-sm">
-      DAY 4
-    </div>
+  <div class="p-2 d-flex justify-content-center">
   </div>
 
   <div class="round_week">
@@ -18,11 +19,11 @@
           <%#= image_tag game.first.image_url, class: "avatar-large", alt: "avatar-large" %>
           <%= cl_image_tag url_for(game.first.photo), class: "team-avatar-large" %>
         </div>
-        <div>
+        <div style= "font-size: 18px;font-weight: bold">
           <%= game.first.weekly_scores.first.score.round %>
         </div>
-        <div> - </div>
-        <div>
+        <div style= "font-size: 18px; font-weight: bold"> - </div>
+        <div style= "font-size: 18px; font-weight: bold">
           <%= game.last.weekly_scores.first.score.round %>
         </div>
         <div>
@@ -31,7 +32,7 @@
         </div>
     </div>
 
-    <div class="d-flex", style= "justify-content: space-around">
+    <div class="d-flex", style= "font-size: 18px; font-weight: bold;justify-content: space-between">
       <div><%= game.first.name %></div>
       <div><%= game.last.name %></div>
     </div>

@@ -1,10 +1,9 @@
 .footer {
-  // background: #F4F4F4; //white
   background: #1f3a6f; //blue
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 55px;
+  height: 65px;
   width: 100%;
   position: fixed;
   flex-shrink: 0;
@@ -13,6 +12,7 @@
   border: outset;
   border-radius: 35px 35px 0 0;
   border-width: thin;
+  padding-bottom: 10px;
 }
 
 .tabs-underlined {
@@ -41,10 +41,14 @@
 }
 
 #show-players {
-  margin-bottom: 50px;
+  margin-bottom: 65px;
   width: 100vw;
 }
 
-fieldset.form-group.check_boxes.required.bid_player.player-group{
-  margin-bottom: 50px;
+.form-group.check_boxes.required.bid_player.player-group{
+  margin-bottom: 40px;
+}
+
+fieldset.form-group.check_boxes.required.bid_player.player-group {
+  margin-bottom: 40px;
 }

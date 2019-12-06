@@ -1,0 +1,75 @@
+.board {
+  background-color: #1F3A6F;
+  height: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.board-show-league {
+  background-color: #1F3A6F;
+  height: 105px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.board-index-league {
+  background-color: #1F3A6F;
+  height: 75px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2px;
+}
+
+.board-show {
+  background-color: #1F3A6F;
+  height: 130px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 5px;
+}
+
+.board h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  align-self: center;
+  padding-top: 68px;
+}
+
+.board h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 15px;
+  align-self: center;;
+}
+
+.board-show h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  align-self: center;
+  padding-top: 60px;
+}
+
+.board-show h3 {
+  color: white;
+  font-weight: bold;
+  font-size: 13px;
+  align-self: center;;
+}
+
+.board-show-league h1 {
+  color: white;
+  font-weight: bold;
+  font-size: 25px;
+  align-self: center;
+  padding-top: 66px;
+}

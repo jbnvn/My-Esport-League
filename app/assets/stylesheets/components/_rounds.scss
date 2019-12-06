@@ -17,9 +17,10 @@
   text-align: center;
   background: #adb5bd3d; // light grey
   border-radius: 3px;
-  font-size: 12px;
+  font-size: 14px;
   height: 25px;
   padding-top: 4px;
+  padding-bottom: 5px;
 }
 
 .round_teams {
@@ -38,11 +39,12 @@
 
 .round_board #first_row {
   color: black;
+  height: 25px;
 }
 
 .round_board .row{
   border-bottom: 2px solid #adb5bd3d;
-  height: 35px;
+  height: 68px;
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
   margin-top: 2px;
 }
@@ -59,4 +61,12 @@
 
 .d-flex .align-items-center .pt-3 {
   justify-content: space-around;
+}
+
+.col {
+  display:flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  color: black;
+  font-weight: bold;
 }

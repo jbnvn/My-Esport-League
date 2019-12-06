@@ -1,13 +1,14 @@
-<div class="round_container shadow-sm p-2 py-4 rounded" style="text-align: -webkit-center">
-    <div class="round_counter shadow-sm">
-      Leaderboard
-    </div>
+<div class="board">
+  <h1>Leaderboard</h1>
+</div>
 
-  <div class="container my-4 round_board">
+<div class="round_container shadow-sm p-1 rounded" style="text-align: -webkit-center">
+
+  <div class="container round_board" style="margin-top: 0px;">
     <div class="row shadow-sm" id="first_row" style="padding-left: inherit;font-weight: bold">
       <div class="col team_id">#</div>
       <div class="col">Team</div>
-      <div class="col">Points</div>
+      <div class="col ">Points</div>
       <div class="col team_id" style="padding-right: 13px">V</div>
       <div class="col team_id" style="padding-right: 11px">N</div>
       <div class="col team_id">D</div>
@@ -15,12 +16,12 @@
 
     <% @sort_team.each_with_index do |team, index| %>
       <div class="row" style="padding-left: inherit">
-        <div class="col team_id"><%= index + 1 %></div>
-        <div class="col"> <%= team.name %> </div>
-        <div class="col"> <%= team.compute_points %> </div>
-        <div class="col team_id"> <%= team.victory_count %> </div>
-        <div class="col team_id"> <%= team.draw_count %> </div>
-        <div class="col team_id"> <%= team.defeat_count %> </div>
+        <div class="col team_id"  style="font-size:16px;"><%= index + 1 %></div>
+        <div class="col">  <%= team.name %>  <%= cl_image_tag url_for(team.photo), class: "team-avatar-smaller" %></div>
+        <div class="col" style="font-size:16px;"> <%= team.compute_points %> </div>
+        <div class="col team_id" style="font-size:16px;"> <%= team.victory_count %> </div>
+        <div class="col team_id" style="font-size:16px;"> <%= team.draw_count %> </div>
+        <div class="col team_id" style="font-size:16px;"> <%= team.defeat_count %> </div>
       </div>
     <% end %>
 

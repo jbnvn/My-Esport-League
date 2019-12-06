@@ -1,12 +1,12 @@
 .card-categoryleague {
   background-size: cover;
   background-position: center;
-  height: 182px;
+  height: 175px;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
-  font-size: 23px;
+  font-size: 30px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
   border-radius: 5px;
@@ -18,8 +18,9 @@
 }
 .load h3 {
   font-weight: bold;
-  color:#f0e6d2;
+  color:white;
   font-family: sans-serif;
+  font-size: 30px;
 }
 a:hover {
   text-decoration: none;

@@ -1,21 +1,36 @@
 <%= javascript_pack_tag 'chartkick' %>
 
+<div class="board-show">
+  <h1>
+    <%= @team.league.name %>
+  </h1>
+
+  <h3>
+    <%= @team.league.creator.username %>
+    <% @team.league.participants.each do |participant|%>
+    <%= " | " + participant.username %>
+    <% end %>
+  </h3>
+</div>
+
 <div class="tab-content" id="team-tabs">
   <% if @team.players.count == 6 %>
   <div class="map">
+
     <%= image_tag @team.players.find_by(role: 'top').image_url, class: 'player-input-btns top-map',id:'top'%>
     <%= image_tag @team.players.find_by(role: 'jun').image_url, class: 'player-input-btns jun-map',id:'jun'%>
     <%= image_tag @team.players.find_by(role: 'mid').image_url, class: 'player-input-btns mid-map',id:'mid'%>
     <%= image_tag @team.players.find_by(role: 'adc').image_url, class: 'player-input-btns adc-map',id:'adc'%>
     <%= image_tag @team.players.find_by(role: 'sup').image_url, class: 'player-input-btns sup-map',id:'sup'%>
-    <!-- <%#= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%> -->
+    <%= image_tag @team.players.last.image_url, class: 'player-input-btns all-map', id:'all'%>
+
   </div>
   <% if @team.bids.where(status: 'succeeded').count != 6 %>
     <div class="full-width">
       <div class="budget">
         <div id="rest">
           <h4> Rest of budget </h4>
-          <p>300 000 <strong>$</strong></p> <!-- à animer -->
+          <p>500 000 <strong>$</strong></p> <!-- à animer -->
         </div>
         <div class="create-bid" style="width:105px">
           <input type="submit" value="Create Bid" form='new_bid' class='create-bid-button'>
@@ -48,7 +63,7 @@
           <img class='team-image' src= <%=bid.player.pro_team_image_url %> , style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
           </div>
           <div class='w-20'>
-          <h3><%= bid.player.role %></h3></div>
+          <%= image_tag "#{bid.player.role}.png"%> </div>
             <div class='w-20'><p>validated</p></div>
         </div>
           <% elsif bid.status == 'pending' %>
@@ -82,18 +97,19 @@
 
   <% else %>
     <div class="map">
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns top-map', id:"top"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns jun-map', id:"jun"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns mid-map', id:"mid"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns adc-map', id:"adc"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns sup-map', id:"sup"%>
-    <%= image_tag "buttonplayer.png", class: 'player-input-btns all-map', id:"all"%>
+    <%= image_tag "top.png", class: 'player-input-btns top-map', id:"top"%>
+    <%= image_tag "jun.png", class: 'player-input-btns jun-map', id:"jun"%>
+    <%= image_tag "mid.png", class: 'player-input-btns mid-map', id:"mid"%>
+    <%= image_tag "adc.png", class: 'player-input-btns adc-map', id:"adc"%>
+    <%= image_tag "sup.png", class: 'player-input-btns sup-map', id:"sup"%>
+    <%= image_tag "Plus.jpg", class: 'player-input-btns all-map', id:"all"%>
   </div>
   <div class="full-width">
     <div class="budget">
       <div id="rest">
         <h4> Rest of budget </h4>
         <p id="total-amount">300000</p> <!-- à animer -->
+
       </div>
      <div class="create-bid" style="width:105px">
       <input type="submit" value="Create Bid" form='new_bid' class='d-none' id="validate-button">
@@ -117,7 +133,7 @@
             <p id="top-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
           </div>
           <div class="list-img d-inline ml-auto">
-            <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"top", style:'margin-bottom:0;'%>
+            <%= image_tag "top.png", class: 'player-input-btns w-30 h-30', id:"top", style:'margin-bottom:0;'%>
           </div>
         </div>
     </div>
@@ -128,7 +144,7 @@
         <p id="jun-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"jun", style:'margin-bottom:0;'%>
+          <%= image_tag "jun.png", class: 'player-input-btns w-30 h-30', id:"jun", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
@@ -139,7 +155,7 @@
         <p id="mid-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"mid", style:'margin-bottom:0;'%>
+          <%= image_tag "mid.png", class: 'player-input-btns w-30 h-30', id:"mid", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
@@ -150,7 +166,7 @@
         <p id="adc-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"adc", style:'margin-bottom:0;'%>
+          <%= image_tag "adc.png", class: 'player-input-btns w-30 h-30', id:"adc", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
@@ -161,7 +177,7 @@
         <p id="sup-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sup", style:'margin-bottom:0;'%>
+          <%= image_tag "sup.png", class: 'player-input-btns w-30 h-30', id:"sup", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
@@ -172,7 +188,7 @@
         <p id="sub-bid" style="margin-bottom:14px; margin-top:-11px;"></p>
         </div>
         <div class="list-img d-inline ml-auto">
-          <%= image_tag "buttonplayer.png", class: 'player-input-btns w-30 h-30', id:"sub", style:'margin-bottom:0;'%>
+          <%= image_tag "Plus.jpg", class: 'player-input-btns w-30 h-30', id:"sub", style:'margin-bottom:0;'%>
         </div>
       </div>
     </div>
@@ -192,7 +208,8 @@
   <img class='team-image' src='#{player.pro_team_image_url}' style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
   </div>
   <div class='w-20'>
-  <h3>#{player.role}</h3></div>
+  <img src='#{image_path(player.role + ".png")}'>
+  </div>
   <div class='w-20'><p>#{player.minimum_bid.round} $</p></div>
     <button type='button' class='btn btn-primary d-none' data-toggle='modal' data-target='#modalAllPlayers'>
     </button>
@@ -210,10 +227,10 @@
         </div>
         <div class="modal-footer">
           <div class="form-group decimal optional all_bid_points">
-            <label class="decimal optional" for="all_bid_points"><!-- Sub Points --></label>
+            <label class="decimal optional" for="all_bid_points"><p>Select player</p></label>
             <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
           </div>
-          <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal">Create BID</button>
+          <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal">BID</button>
         </div>
       </div>
     </div>

@@ -44,4 +44,35 @@ a:hover {
   width: 35%;
 }
 
+.home-container {
+  height: 100vh;
+  background-color:#1f3a6e;
+  display:flex;
+  flex-direction: column;
+}
 
+.home-logo {
+  width: 100vw;
+  margin-top: 115px;
+  margin-left:18px;
+}
+
+.home-logo img {
+  width: 90vw;
+  border-radius: 140px 140px 0px 0px;
+}
+
+.home-phrase {
+  text-align:center;
+  margin: 25px 20px;
+  color: black;
+}
+
+.call-to-a {
+ text-align: center;
+  margin: 15px auto;
+  background-color: white;
+  height: 85px;
+  border-radius: 100px;
+  width: 85px;
+}
