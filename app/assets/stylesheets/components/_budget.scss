@@ -7,11 +7,12 @@
 }
 
 .budget {
-  display: inline-flex;
+  display: flex;
   margin-left: 18px;
   margin-right: 20px;
-  margin-top: 10px;
-  margin-bottom: 5px;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  justify-content: space-between;
  }
 
 .btn.btn-success-budget {
@@ -27,7 +28,7 @@ color: white;
 .budget #rest {
   margin-right: 27px;
   text-align: center;
-  margin-top: -1px;
+  margin-top: 11px;
 }
 
 .budget #rest h4 {
@@ -43,7 +44,7 @@ color: white;
 .budget #ongoing {
   margin-left: 24px;
   text-align: center;
-  margin-top: -1px;
+  margin-top: 11px;
 }
 
 .budget #ongoing h4 {
