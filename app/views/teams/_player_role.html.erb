@@ -30,11 +30,11 @@
       </div>
       <div class="modal-footer">
         <div class="form-group decimal optional <%= role %>_bid_points">
-          <label class="decimal optional" for="<%= role %>_bid_points"><p>Your Bid</p></label>
+          <label class="decimal optional" for="<%= role %>_bid_points"><p>Select player</p></label>
 
           <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[<%= role %>_points]" id="<%= role %>_bid_points" data-position="<%= role %>">
         </div>
-        <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal">Bid</button>
+        <button type="button" class="button-to-click btn btn-small-blue3" id="create-bid" data-dismiss="modal">Bid</button>
       </div>
     </div>
   </div>

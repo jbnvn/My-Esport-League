@@ -16,6 +16,9 @@ import { initShowPlayers } from '../components/filter';
 initShowPlayers();
 }
 
+import { initUpdateSum } from '../components/budget';
+initUpdateSum();
+
 // import { initFilterTabs } from '../components/tab';
 // initFilterTabs();
 
@@ -36,6 +39,51 @@ initShowPlayers();
   checkPlayerBoxe('all-players');
   }
 
+
+
+
+// const initBidPoints = () => {
+//   console.log('ioio')
+
+//   const forms = document.queryS
+// const initBidPoints = () => {
+//   console.log('ioio')
+
+//   const forms = document.querySelectorAll('.modal-footer')
+//   console.log(forms)
+
+//   let input = document.querySelectorAll('.bid-points');
+//   let btn = document.querySelector('#create-bid');
+
+//   let roundBet = document.querySelector('#round-bet');
+//   let total = document.querySelector('#total-amount');
+
+
+
+//   btn.addEventListener('click', e => {
+//     roundBet.innerText = parseInt(input.value, 10) + parseInt(roundBet.innerText, 10)
+//     total.innerText = parseInt(total.innerText, 10) - parseInt(input.value, 10)
+//   })
+// }
+
+// initBidPoints();electorAll('.modal-footer')
+//   console.log(forms)
+
+//   let input = document.querySelectorAll('.bid-points');
+//   let btn = document.querySelector('#create-bid');
+
+//   let roundBet = document.querySelector('#round-bet');
+//   let total = document.querySelector('#total-amount');
+
+
+
+//   btn.addEventListener('click', e => {
+//     roundBet.innerText = parseInt(input.value, 10) + parseInt(roundBet.innerText, 10)
+//     total.innerText = parseInt(total.innerText, 10) - parseInt(input.value, 10)
+//   })
+// }
+
+// initBidPoints();
 
 // initInputValidation('top_bid_points');
 // initInputValidation('jun_bid_points');
