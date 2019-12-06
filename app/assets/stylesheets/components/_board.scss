@@ -9,12 +9,39 @@
 
 .board-show-league {
   background-color: #1F3A6F;
-  height: 105px;
+  height: 110px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.board-show-league h3 a.fas.fa-chevron-left {
+  color: white;
+  margin-top: 80px;
+  font-size: 16px;
+  margin-left: 10px;
+  font-weight: bold;
+}
+
+.board-bottom-create-league {
+  background-color: #1F3A6F;
+  height: 136px;
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
+
+.board-bottom-create-league p {
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  align-self: center;
+  margin-top: -15px;
+}
+
 
 .board-index-league {
   background-color: #1F3A6F;
@@ -71,5 +98,6 @@
   font-weight: bold;
   font-size: 25px;
   align-self: center;
-  padding-top: 66px;
+  padding-top: -66px;
+  margin-top: -38px;
 }
