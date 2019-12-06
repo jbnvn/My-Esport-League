@@ -46,10 +46,10 @@
   <% end %>
 
   <div class="description-list">
-  <div class="w-40"><p style="margin-left:47px;">PLAYER</p></div>
-  <div class="w-20"><p>TEAM</p></div>
-  <div class="w-20"><p>ROLE</p></div>
-  <div class="w-20"><p>STATUS</p></div>
+  <div class="w-50"><p style="margin-left:30px; font-size: 14px; font-weight: bold;">PLAYER</p></div>
+  <div class="w-30"><p style="font-size: 14px; font-weight: bold;">TEAM</p></div>
+  <div class="w-20"><p style="font-size: 14px; font-weight: bold;">ROLE</p></div>
+<!--   <div class="w-20"><p>STATUS</p></div> -->
   </div>
       <div class="list-of-players">
 
@@ -58,13 +58,14 @@
       <div class='card-product'>
     <% if bid.status == 'succeeded' %>
         <div class='card-product-infos justify-content-between w-100 align-items-center'>
-          <div class='w-40'><h3><%= bid.player.name %></h3></div>
+          <div class='w-40'><h3 style="margin-left:10px; font-size: 16px"><%= bid.player.name %></h3></div>
           <div class='w-20'>
           <img class='team-image' src= <%=bid.player.pro_team_image_url %> , style='height:35px; width:35px; margin-right: 43px; margin-bottom: 9px;'>
           </div>
           <div class='w-20'>
           <%= image_tag "#{bid.player.role}.png"%> </div>
-            <div class='w-20'><p>validated</p></div>
+            <!-- <div class='w-20'><p>Starter</p></div> -->
+
         </div>
           <% elsif bid.status == 'pending' %>
       <div class='card-product-infos justify-content-between w-100 align-items-center'>
@@ -108,14 +109,15 @@
     <div class="budget">
       <div id="rest">
         <h4> Rest of budget </h4>
-        <p>500 000 <strong>$</strong></p> <!-- à animer -->
+        <p id="total-amount">300000</p> <!-- à animer -->
+
       </div>
      <div class="create-bid" style="width:105px">
       <input type="submit" value="Create Bid" form='new_bid' class='d-none' id="validate-button">
     </div>
     <div id="ongoing">
       <h4> Round bet </h4>
-      <p> 0 <strong>$</strong></p>
+      <p id="round-bet"> 0 <strong>$</strong></p>
     </div>
   </div>
 <div class="description-list">
@@ -226,7 +228,7 @@
         </div>
         <div class="modal-footer">
           <div class="form-group decimal optional all_bid_points">
-            <label class="decimal optional" for="all_bid_points"><p>Your Bid</p></label>
+            <label class="decimal optional" for="all_bid_points"><p>Select player</p></label>
             <input class="form-control numeric decimal optional bid-points" type="number" step="any" name="bid[all_points]" id="all_bid_points" data-position="sub">
           </div>
           <button type="button" class="button-to-click btn btn-small-blue3" data-dismiss="modal">BID</button>

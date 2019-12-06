@@ -25,6 +25,7 @@
       </div>
       <% end %>
       <% 4.times do %>
+
       <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(<%= image_path 'avatarplayer.png'%>)">
      </div>
     <% end %>
@@ -64,7 +65,13 @@
         <%= User.find(participant.user_id).username %>
       </div>
       <% end %>
+    <% else %>
+      <% @league.participations.each do |participant| %>
+        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(https://store.playstation.com/store/api/chihiro/00_09_000/container/BE/nl/19/EP4476-CUSA11273_00-AV00000000000031/image?w=240&h=240&bg_color=000000&opacity=100&_version=00_09_000)">
+          <%= User.find(participant.user_id).username %>
+        </div>
       <% end %>
+
     </div>
 
   <div class="board-bottom-create-league">
@@ -84,9 +91,10 @@
         <% end %>
         </ul>
       <% end %>
+
     <div class="buttons-show">
       <% if (@league.participations.count + 1).odd? %>
-       <%= "" %>
+        <%= "" %>
       <% else %>
         <button type="button" class="btn btn-center-red" data-toggle="modal" data-target="#createteamModal">
         Let's play
